@@ -1,0 +1,17 @@
+/* Tags */
+body{
+	background-color: #00ffaa;
+}	
+
+/* Classes */
+.cabecalho{
+	font-size: 25px;
+	font-family: verdana;
+}
+.rodape{
+	font-size: 12px;
+	font-family: lucida console;
+}
+.fundoDoSite{
+	background-color: #969696;
+}
