@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>teste1</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
 	<div id="top">
