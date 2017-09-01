@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Site show de bola</title>
+	<title>teste1</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<?php
-	include("cabecalho.inc");
-	?>	
-
-
-
-	<div class="fundoDoSite">
-		<?php
-		include("rodape.inc");
-		?>			
+	<div id="top">
+		site topzera
 	</div>
 
+	<div id="container">
+		<div id="mid">
+			
+			toptoptoptop
+		</div>
+	</div>
+
+	<div id="bot">
+		
+	</div>
 </body>
 </html>
