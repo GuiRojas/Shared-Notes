@@ -30,3 +30,4 @@ create table comentario(
 
 
 select * from usuario;
+

@@ -27,12 +27,13 @@
 				if($status){
 					echo "Inclusão realizada perfeitamente bem";
 				}else{
-					echo "Deu não filhotão";
+					echo "Não foi possivel realizar a inclusão";
 				}
 
 			}else{
 				echo "Senha difere da confirmação"; 
 			}
+
 		}else{
 			echo "Preencha o formulário inteiro";
 		}
