@@ -7,32 +7,35 @@
 
 <?php
 		include("connect.inc.php");
-		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['email'])&&isset($_POST['nome'])){
+		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
 
-			$username=$_POST['username'];
-			$senha=$_POST['senha'];
-			$email=$_POST['email'];
-			$nome=$_POST['nome'];
+			if($_POST['senha']===$_POST['senha_conf']){
 
-			$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
-							'cost'=>10
-						 ));
+				$username=$_POST['username'];
+				$senha=$_POST['senha'];
+				$email=$_POST['email'];
+				$nome=$_POST['nome'];
 
-			$sql = "INSERT INTO usuario values ('$username','$email','$nome','$stored_pass')";
-			echo $sql;
+				$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
+								'cost'=>10
+							 ));
 
-			$status=sqlsrv_query($conexao,$sql);
-			
-			if($status){
-				echo "Inclusão realizada perfeitamente bem";
+				$sql = "INSERT INTO usuario values ('$username','$email','$nome','$stored_pass')";
+
+				$status=sqlsrv_query($conexao,$sql);
+				
+				if($status){
+					echo "Inclusão realizada perfeitamente bem";
+				}else{
+					echo "Deu não filhotão";
+				}
+
 			}else{
-				echo "Deu não filhotão";
+				echo "Senha difere da confirmação"; 
 			}
-
 		}else{
-			echo "Preenche o formulario dnv bb"; 
+			echo "Preencha o formulário inteiro";
 		}
-
 
 	?>
 

@@ -8,7 +8,7 @@
 		Nome de Usuario:
 		<input type="text" name="username" maxlength="15"><br>
 		Senha:
-		<input type="text" name="senha"><br>
+		<input type="password" name="senha"><br>
 
 		<input type="submit" name="Logar">		
 
@@ -35,6 +35,7 @@
 				echo 'senha errada';
 			}
 		}else{
+			echo "<hr>";
 			echo "Usuario inexistente";
 		}
 

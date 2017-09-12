@@ -9,7 +9,9 @@
 		Nome de Usuario:
 		<input type="text" name="username" maxlength="15"><br>
 		Senha:
-		<input type="text" name="senha"><br>
+		<input type="password" name="senha"><br>
+		Confirmar Senha:
+		<input type="password_conf" name="senha"><br>
 		Email:
 		<input type="text" name="email" maxlength="100"><br>
 		Nome:
