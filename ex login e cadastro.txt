@@ -1,0 +1,12 @@
+--gerar senha com salt aleatorio
+echo password_hash('senha',PASSWORD_BCRYPT,array(
+	'cost'=>10
+));
+--armazenar senha (nesse caso em variavel msm)
+$pass = '$2y$10$I4Bhk5/2BW8rEPttNe6bleldTA/cLo0J2luspEvUTpaE2Yjqh8eka';
+--verificar senha
+if(password_verify('senha',$pass)){
+	echo 'cai dentro';
+}else{
+	echo 'cai fora';
+}

@@ -1,8 +1,8 @@
 create table usuario(
-	username varchar(15) primary key,
+	username varchar(30) primary key,
 	email varchar(100) not null,
 	nome varchar(50) not null,
-	senha varchar(20) not null
+	senha varchar(60) not null
 )
 
 create table categoria(
@@ -22,7 +22,13 @@ create table pagina(
 create table comentario(
 	codComentario int identity(1,1) primary key,
 	url varchar(100) not null,
-	username varchar(15) not null,
+	username varchar(30) not null,
 	constraint fkURL foreign key (url) references pagina (url),
 	constraint fkUsername foreign key (username) references usuario (username)
 )
+
+
+
+alter table usuario
+alter column senha varchar(60)
+
