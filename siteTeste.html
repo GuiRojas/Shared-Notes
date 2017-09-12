@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Site top Sem nome</title>
+	<script src="jquery-3.2.1.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function(){
+			var aberto = true;
+			$("#menu").click(function(){
+				if(aberto){
+					$("body").css({"grid-template-columns": "0 auto"});
+					aberto =false;
+				} else{
+					$("body").css({"grid-template-columns": "210px auto"});
+					aberto=true;
+				}
+				
+			})
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="siteTesteCSS.css">
+</head>
+<body>
+	<div id="top">
+		<div><span id="tituloSite">Site Top Sem Nome</span></div>
+		<div id="titulo">
+			<div id="menu">
+				<img src="imagens/botaoMenu.png">
+			</div>
+			<div><span id="textoTitulo">Perfil aleatorio no. 1</span></div>
+		</div>
+	</div>
+	
+	<div id="side">
+		<div id="contentSide">
+			<a href="#">Home</a>
+			<a href="#" class="aAtivo">Perfis</a>
+			<a href="#">Perguntas</a>
+			<a href="#">Enciclopédia</a>
+			<a href="#">Linguagens:</a>
+			<a href="#" id="linguagem">JavaScript</a>
+			<a href="#" id="linguagem">CSS</a>
+			<a href="#" id="linguagem">HTML</a>
+			<a href="#" id="linguagem">Java</a>
+			<a href="#" id="linguagem">SQL</a>
+			<a href="#" id="linguagem">PHP</a>
+			<a href="#" id="linguagem">Pascal</a>
+			<a href="#" id="linguagem">...</a>
+			<a href="#" id="linguagem">...</a>
+			<input type="button" class="subgrupo" value="Sobre">
+			<input type="button" class="subgrupo" value="Configurações">
+			<input type="button" class="subgrupo" value="Sair">
+		</div>
+	</div>
+	
+	<div id="container">
+		<div id="profilePosts">
+			<div class="info">
+				<div class="postTitle"><p class="txtPostTitle">Perguntas respondidas(13)</p></div>
+				<div class="postArea">
+					<div class="postsFechados">
+						<p class="nomeProj">. . .</p>
+					</div>
+				</div>
+			</div>	
+			
+			<div class="info">
+				<div class="postTitle"><p class="txtPostTitle">Projetos postados(2)</p></div>
+				<div class="postArea">
+					<div class="post">
+						<p class="nomeProj">Projeto aleatorio 1</p>
+						<p class="txtDescricao">Descrição:</p>
+						<p class="descricao"><i>"projeto MT top"</i></p>
+					</div>
+
+					<div class="post">
+						<p class="nomeProj">Projeto aleatorio 2</p>
+						<p class="txtDescricao">Descrição:</p>
+						<p class="descricao"><i>"projeto ainda mais top que o de cima"</i></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="profile">
+			<img src="imagens/fotoPerfil.jpg" class="img">
+			<div id="informacoes">
+				<span>
+					Status:<br>
+					<i>"gosto de bacalhau e comer café depois da janta"</i><br><br>
+					Especialidade: <br>
+					PHP<br>
+					SQL<br><br>
+					<hr>
+					<br>
+					Perguntas respondidas:<br>
+					13<br>
+					Perguntas feitas:<br>
+					0<br>
+					
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="bot">
+		
+	</div>
+</body>
+</html>
+
+<!--
+		
+		
+
+		
