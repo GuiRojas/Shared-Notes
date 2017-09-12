@@ -1,5 +1,5 @@
 create table usuario(
-	username varchar(30) primary key,
+	username varchar(15) primary key,
 	email varchar(100) not null,
 	nome varchar(50) not null,
 	senha varchar(60) not null
@@ -29,6 +29,4 @@ create table comentario(
 
 
 
-alter table usuario
-alter column senha varchar(60)
-
+select * from usuario;
