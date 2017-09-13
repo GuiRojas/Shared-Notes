@@ -77,8 +77,10 @@ select * from pergPerg;
 select * from pergResp;
 select * from projUsu;
 
-INSERT INTO pagUsuario values ('nodoya','Nada preenchido','null.png');
+insert into usuario values ('user','email','nome','espec');
+INSERT INTO pagUsuario values ('user','Sem status','null.png');
 
 --deleta toda a info da tabela + reseta identity
-delete from Usuario;
+          --   \/       \/
+delete from pagUsuario;
 DBCC CHECKIDENT (pagUsuario,reseed,0);

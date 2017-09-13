@@ -20,7 +20,7 @@
 								'cost'=>10
 							 ));
 
-				$sql = "INSERT INTO usuario values ('$username','$email','$nome','$stored_pass')";
+				$sql = "INSERT INTO usuario values ('$username','$email','$nome','$stored_pass','nada')";
 
 				$status=sqlsrv_query($conexao,$sql);
 
