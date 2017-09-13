@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<?php
-	include("inc/tile.inc.php");
+	include("inc/title.inc.php");
 	?>
 	<script src="jquery-3.2.1.js" type="text/javascript"></script>
 	<script src="script.js" type="text/javascript"></script>

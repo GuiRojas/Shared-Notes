@@ -23,8 +23,12 @@
 				$sql = "INSERT INTO usuario values ('$username','$email','$nome','$stored_pass')";
 
 				$status=sqlsrv_query($conexao,$sql);
+
+				$sql2 = "INSERT INTO pagUsuario values ('$username','Sem status','null.png');";
+
+				$status2=sqlsrv_query($conexao,$sql2);
 				
-				if($status){
+				if($status&&$status2){
 					echo "Inclusão realizada perfeitamente bem";
 				}else{
 					echo "Não foi possivel realizar a inclusão";
