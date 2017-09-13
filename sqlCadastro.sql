@@ -26,8 +26,4 @@ create table comentario(
 	constraint fkURL foreign key (url) references pagina (url),
 	constraint fkUsername foreign key (username) references usuario (username)
 )
-
-
-
 select * from usuario;
-

@@ -1,1 +1,0 @@
-<div class="cabecalho">Site nice</div>

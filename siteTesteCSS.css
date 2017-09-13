@@ -201,6 +201,12 @@ input[type="button"]:hover{
 	font-size: 23px;
 }
 
+.nomeProj{
+	margin: 0 15px;
+	color: #6584A3;
+	font-size: 23px;
+}
+
 .postsFechados{
 	margin: 30px;
 	background-color: #F9F9F9;

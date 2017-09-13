@@ -17,7 +17,7 @@
 	<?php
 
 	if(isset($_GET['username'])&&isset($_GET['senha'])){
-		include("connect.inc.php");
+		include("inc/connect.inc.php");
 
 		$username=$_GET['username'];
 		$senha=$_GET['senha'];
