@@ -16,6 +16,15 @@
 		<a href="#" id="linguagem">...</a>
 		<input type="button" class="subgrupo" value="Sobre">
 		<input type="button" class="subgrupo" value="Configurações">
-		<input type="button" class="subgrupo" value="Sair">
+
+		<?php
+			if(basename($_SERVER['PHP_SELF'])==="home.php")
+				echo "<a href='login/doLogout.php'>";
+			else
+				echo "<a href='../login/doLogout.php'>";
+		?>
+		
+			<input type="button" class="subgrupo" value="Sair" onclick="logout()">
+		</a>"
 	</div>
 </div>

@@ -17,7 +17,7 @@
 	<?php
 
 	if(isset($_GET['username'])&&isset($_GET['senha'])){
-		include("inc/connect.inc.php");
+		include("../inc/connect.inc.php");
 
 		$username=$_GET['username'];
 		$senha=$_GET['senha'];
@@ -30,7 +30,9 @@
 			echo "<hr>";
 			$pass_verf=$dados[3];
 			if(password_verify($senha,$pass_verf)){
-				echo 'senha correta';
+				session_start();
+				$_SESSION['user']=$username;
+				header('Location:../home.php');
 			}else{
 				echo 'senha errada';
 			}

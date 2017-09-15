@@ -6,7 +6,7 @@
 <body>
 
 <?php
-		include("inc/connect.inc.php");
+		include("../inc/connect.inc.php");
 		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
 
 			if($_POST['senha']===$_POST['senha_conf']){

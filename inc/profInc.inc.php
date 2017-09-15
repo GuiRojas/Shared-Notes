@@ -1,16 +1,16 @@
 <div id="top">
 	<?php
-	include("inc/bigHeader.inc.php");
-	include("inc/smallHeader.inc.php");
+	include("bigHeader.inc.php");
+	include("smallHeader.inc.php");
 	?>
 </div>
-	<?php
-include("inc/navBar.inc.php");
+<?php
+include("navBar.inc.php");
 ?>
-	<div id="container">
+<div id="container">	
 	<?php
-	include("inc/profilePosts.inc.php");
-	include("inc/profile.inc.php");
+	include("profilePosts.inc.php");
+	include("profile.inc.php");
 	?>
 </div>
 <div id="bot">

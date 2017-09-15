@@ -1,5 +1,5 @@
 <div id="profile">
-	<img src="imagens/fotoPerfil.jpg" class="img">
+	<img src="../imagens/fotoPerfil.jpg" class="img">
 	<div id="informacoes">
 		<span>
 			Status:<br>
