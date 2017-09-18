@@ -11,7 +11,7 @@ create table pagina(
 	descricao ntext,
 	categoria varchar(30) not null,
 	criador varchar(25) not null
-	constraint fkUUUUsername foreign key (criador) references usuario (username)
+	constraint fkUUUsername foreign key (criador) references usuario (username)
 )
 
 create table comentario(
@@ -32,15 +32,6 @@ create table pagUsuario(
 	img varchar(50) not null,
 	projPostados int not null
 	constraint fkUUsername foreign key (username) references usuario(username)
-)
-
-create table projUsuario(
-	projId int identity(1,1) primary key,
-	username varchar(25) not null,
-	url varchar(100) not null
-	constraint fkPJ foreign key (projId) references comentario (codComentario),
-	constraint fkUUUsername foreign key (username) references usuario(username),
-	constraint fkUURL foreign key (url) references pagina (url)
 )
 
 select * from comentario
