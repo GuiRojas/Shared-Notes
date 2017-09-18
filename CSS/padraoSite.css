@@ -9,10 +9,9 @@ body{
 	grid-template: 	"top top"
 					"side container"
 					"bot bot";
-	grid-template-columns: 210px auto;
-	grid-template-rows: 100px auto 100px;
+	grid-template-columns: 230px auto;
+	grid-template-rows: 110px auto auto;
 	background-color: #D3D3D3;
-	-webkit-animation-delay:10s;
 }
 
 #top{
@@ -23,8 +22,8 @@ body{
 	/*border-bottom: 1px solid #303E4D;*/
 	grid-area: top;
 	display: grid;
-	grid-template-rows: auto 35px;
-	box-shadow: 0px 1.1px 12px #3a4c60;
+	grid-template-rows: auto 40px;
+	box-shadow: 0px 2px 15px #3a4c60;
 	z-index: 11;
 }
 
@@ -41,12 +40,7 @@ body{
 	grid-template-columns: 35px auto;
 }
 
-#linguagem{
-	padding-left: 30px;
-}
-
 #side{
-	height: 100%;
 	background-color: #3a4c60;
 	grid-area: side;
 	z-index: 10;
@@ -57,10 +51,8 @@ a{
 	text-decoration: none;
 	color: #303E4D;
 	font-family: "Segoe UI";
-	font-size: 17px;
-	padding-left: 17px;
-	padding-top: 12px;
-	padding-bottom: 12px;
+	font-size: 18px;
+	padding: 12px 0 15px 17px;
 	border-right: 1px solid #303E4D;
 	background-color: #6584A3;
 }
@@ -147,6 +139,7 @@ a:active{
 	font-size: 17px;
 	padding: 7px 0 7px 10px;
 	cursor: pointer;
+	font-size: 18px;
 }
 
 input[type="button"]:hover{
@@ -219,4 +212,54 @@ input[type="button"]:hover{
 
 .post:hover{
 	background-color: #F0F0F0;
+}
+
+.stockDivLight{
+	height: 185px;
+	background-color: #F9F9F9;
+	display: grid;
+	grid-template: "stockImage linhaVertical stockTexto";
+	grid-auto-columns: 50% 1px 50%;
+	vertical-align: middle;
+	line-height: 180px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.stockDivDark{
+	height: 185px;
+	background-color: #F0F0F0;
+	display: grid;
+	grid-template: "stockTexto linhaVertical stockimage";
+	grid-auto-columns: 50% 1px 50%;
+	vertical-align: middle;
+	line-height: 180px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+#home{
+	margin-right: -300px;/*gambiarra, desculpa(n mexe)*/
+}
+
+.stockimage{
+	margin: 50px;
+}
+
+.stockTexto{
+	font-family: "segoe UI";
+	color: #657493;
+	font-size: 25px;
+	margin: 0 45px;
+}
+
+.linhaVertical{
+	margin: 20px 0;
+	border-left: 1px solid #dedede;
+}
+
+#corpoTexto{
+	background-color:#F6F6F6;
+	height: auto;
+	margin: 15px 40px;
 }

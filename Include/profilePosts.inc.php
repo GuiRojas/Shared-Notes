@@ -6,7 +6,7 @@
 				<p class="nomeProj">. . .</p>
 			</div>
 			<div class="projDesc">
-				<p>aaaa</p>
+				
 			</div>
 		</div>
 	</div>	
