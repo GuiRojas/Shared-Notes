@@ -7,7 +7,7 @@
 
 	<form action="cadastrar.php" method="POST">
 		Nome de Usuario:
-		<input type="text" name="username" maxlength="15" ><br>
+		<input type="text" name="username" maxlength="25" ><br>
 		Senha:
 		<input type="password" name="senha" ><br>
 		Confirmar Senha:
