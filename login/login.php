@@ -31,7 +31,6 @@
 			$pass_verf=$dados[3];
 			if(password_verify($senha,$pass_verf)){
 				session_start();
-				$_SESSION['user'];
 				$_SESSION['user']=$username;
 				header('Location:../Home/index.php');
 			}else{

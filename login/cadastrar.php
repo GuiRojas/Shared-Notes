@@ -29,20 +29,9 @@
 				$status2=sqlsrv_query($conexao,$sql2);
 				
 				if($status&&$status2){
-					//TENTAREI fazer um sistema de criar paginas aqui no cadastro 
-					//Se der merda, desculpe 
-
-					$sql = "SELECT username FROM pagUsuario WHERE username = '$username';";
-					$status=sqlsrv_query($conexao,$sql);
-
-					$filename="Perfis/$username.php";
-					$fp=fopen($filename,'w');
-
-					fwrite($fp,'aaa teste');
-
-					fclose($fp);
-
-				header('Location:login.php');
+					session_start();
+					$_SESSION['user']=$username;
+					header('Location:../Home/index.php');
 				}else{
 					$status=sqlsrv_query($conexao,$sql);
 					echo "Não foi possivel realizar a inclusão";
