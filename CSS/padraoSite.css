@@ -23,8 +23,9 @@ body{
 	grid-area: top;
 	display: grid;
 	grid-template-rows: auto 40px;
-	box-shadow: 0px 2px 15px #3a4c60;
+	box-shadow: 0px 1px 10px #3a4c60;
 	z-index: 11;
+
 }
 
 #tituloSite{ 
@@ -67,6 +68,10 @@ a:hover{
 a:active{
 	background-color: #D3D3D3;
 	color: #303E4D;
+}
+
+.btnLogin{
+	padding: 0;
 }
 
 .aAtivo{

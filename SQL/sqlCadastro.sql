@@ -80,6 +80,7 @@ select * from projUsu;
 insert into usuario values ('user','email','nome','espec');
 INSERT INTO pagUsuario values ('user','Sem status','null.png');
 
+select * from pagUsuario where username = 'nodoya';
 
 /*
 --deleta toda a info da tabela + reseta identity

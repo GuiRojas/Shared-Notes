@@ -29,10 +29,21 @@
 				$status2=sqlsrv_query($conexao,$sql2);
 				
 				if($status&&$status2){
-					/*TENTAREI fazer um sistema de criar paginas aqui no cadastro*/
-					/*Se der merda, desculpe*/
+					//TENTAREI fazer um sistema de criar paginas aqui no cadastro 
+					//Se der merda, desculpe 
 
-					header('Location:login.php');
+					$sql = "SELECT username FROM pagUsuario WHERE username = '$username';";
+					$status=sqlsrv_query($conexao,$sql);
+
+					$filename="../Perfis/$username.php";
+					echo "$filename";
+					$fp=fopen($filename,'w');
+
+					fwrite($fp,'aaa teste');
+
+					fclose($fp);
+
+	//				header('Location:login.php');
 				}else{
 					echo "Não foi possivel realizar a inclusão";
 					echo "<a href='cadastro.php'>";
