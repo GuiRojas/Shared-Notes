@@ -38,7 +38,6 @@ select * from comentario
 select * from pagina
 select * from pagUsuario
 select * from usuario
-select * from projUsuario
 
 
 /*
@@ -46,7 +45,6 @@ drop table comentario
 drop table pagina
 drop table pagUsuario
 drop table usuario
-drop table projUsuario
 */
 
 insert into usuario values ('user','email','nome','espec');
