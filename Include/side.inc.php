@@ -10,7 +10,7 @@
 			<!--usuario apenas acessa seu perfil se estiver logado-->
 			<?php
 			if(isset($_SESSION['user'])){
-				echo "<a href='../perfis/".$_SESSION['user'].".php' class='btnLogin'>";
+				echo "<a href='../login/perfis/".$_SESSION['user'].".php' class='btnLogin'>";
 				echo "<input type='button' class='subgrupo' value='Seu perfil'>";
 				echo "</a>";
 			}

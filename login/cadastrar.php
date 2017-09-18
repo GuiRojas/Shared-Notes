@@ -35,16 +35,16 @@
 					$sql = "SELECT username FROM pagUsuario WHERE username = '$username';";
 					$status=sqlsrv_query($conexao,$sql);
 
-					$filename="../Perfis/$username.php";
-					echo "$filename";
+					$filename="Perfis/$username.php";
 					$fp=fopen($filename,'w');
 
 					fwrite($fp,'aaa teste');
 
 					fclose($fp);
 
-	//				header('Location:login.php');
+				header('Location:login.php');
 				}else{
+					$status=sqlsrv_query($conexao,$sql);
 					echo "Não foi possivel realizar a inclusão";
 					echo "<a href='cadastro.php'>";
 					echo "<input type='button' class='retornar' value='Retornar'> </a>";
