@@ -2,6 +2,13 @@
 	<img src="../imagens/fotoPerfil.jpg" class="img">
 	<div id="informacoes">
 		<span>
+			<?php
+			if(isset($_SESSION['user'])&& isset($_SESSION['perfilVisitando'])){
+				if($_SESSION['perfilVisitando']==$_SESSION['user']){
+					echo "<a href='editarPerfil.php'>Editar Perfil</a>";
+				}	
+			}		
+			?>
 			Status:<br>
 			<i>"gosto de bacalhau e comer café depois da janta"</i><br><br>
 			Especialidade: <br>
