@@ -6,7 +6,7 @@
 <body>
 
 <?php
-		include("../inc/connect.inc.php");
+		include("../Include/connect.inc.php");
 		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
 
 			if($_POST['senha']===$_POST['senha_conf']){
@@ -29,9 +29,14 @@
 				$status2=sqlsrv_query($conexao,$sql2);
 				
 				if($status&&$status2){
-					echo "Inclusão realizada perfeitamente bem";
+					/*TENTAREI fazer um sistema de criar paginas aqui no cadastro*/
+					/*Se der merda, desculpe*/
+
+					header('Location:login.php');
 				}else{
 					echo "Não foi possivel realizar a inclusão";
+					echo "<a href='cadastro.php'>";
+					echo "<input type='button' class='retornar' value='Retornar'> </a>";
 				}
 
 			}else{
