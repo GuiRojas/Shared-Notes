@@ -2,17 +2,24 @@
 <html>
 <head>
 	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/cadastro.css">
 </head>
 <body>
-	<form>
-		Nome de Usuario:
-		<input type="text" name="username" maxlength="15"><br>
-		Senha:
-		<input type="password" name="senha"><br>
-
-		<input type="submit" name="Logar">		
-
-	</form>
+	<?php
+		include '../include/tituloCadastro.inc.php'
+	?>
+		<h1>Login</h1>
+	<div id="cadastro">
+		<form action="cadastrar.php" method="POST">
+			<span class="campos">Nome de Usuario:</span><br>
+			<input type="text" class="camposInput" name="username" maxlength="25" ><br>
+			<span class="campos" type="password">Senha:</span><br>
+			<input type="text" class="camposInput" name="senha" maxlength="25" ><br>
+			<span class="campos"><a href="#">Esqueceu sua senha?</a></span><br>
+			<span class="campos"><a href="cadastro.php">Não tem uma conta? cadastre-se aqui.</a></span><br><br>
+			<input type="submit" name="Logar" id="enviar">
+		</form>
+	</div>
 
 	<?php
 
