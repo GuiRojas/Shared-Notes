@@ -4,10 +4,10 @@
 <div id="side">
 	<div id="side">
 		<div id="contentSide">
-			<a href="../home">Home</a>
-			<a href="../Perfis/diferenciar.php">Perfis</a> <!--class="aAtivo"-->
-			<a href="../Perguntas">Perguntas</a>
-			<a href="../Enciclopedia">Enciclopédia</a>
+			<a href="../home" class="a">Home</a>
+			<a href="../Perfis/perfilMenu.php" class="a">Perfis</a> <!--class="aAtivo"-->
+			<a href="../Perguntas" class="a">Perguntas</a>
+			<a href="../Enciclopedia" class="a">Enciclopédia</a>
 
 			<!--usuario apenas acessa seu perfil se estiver logado-->
 			<?php
