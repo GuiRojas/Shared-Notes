@@ -272,3 +272,7 @@ input[type="button"]:hover{
 	height: auto;
 	margin: 15px 40px;
 }
+
+#btnEditar{
+	text-decoration: none;
+}

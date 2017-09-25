@@ -5,7 +5,7 @@
 			<?php
 			if(isset($_SESSION['user'])&& isset($_SESSION['perfilVisitando'])){
 				if($_SESSION['perfilVisitando']==$_SESSION['user']){
-					echo "<a href='editarPerfil.php'>Editar Perfil</a>";
+					echo "<a href='editarPerfil.php id='btnEditar'>Editar Perfil</a>";
 				}	
 			}		
 			?>
