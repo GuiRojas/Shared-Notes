@@ -1,5 +1,5 @@
 <div id="top">
-	<div><span id="tituloSite">Saitopia</span></div>
+	<div><span id="tituloSite">SiTope</span></div>
 	<div>
 		<div id="titulo">
 			<div id="menu">
