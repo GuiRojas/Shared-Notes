@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
 <body>
-	<?php
+	<?php	
 		$titulo= "Procurar perfis";
 		include '../Include/top.inc.php';
 		include '../Include/side.inc.php';
@@ -17,13 +17,24 @@
 			<div>
 				<input type="text" id="procuraInput">
 			</div>
-			<div>
-				<input id="btnInput" type="button">
-			</div>
+			<div>				
+				<input id="btnInput" type="button" onclick="pesquisar()">	
+			</div>	
+			
 		</div>
 		
 		<?php
-			include '../Include/usuario.inc.php';
+			//aqui jaz tudo
+			//se der ruim, ta aqui
+			include("../Include/connect.inc.php");
+
+
+
+
+
+
+
+			//include '../Include/usuario.inc.php';
 		?>
 	</div>
 	

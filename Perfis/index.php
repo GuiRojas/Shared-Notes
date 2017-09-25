@@ -6,6 +6,10 @@
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
 <body>
+	
+
+
+	
 	<?php
 		$titulo= "Perfil Aleatorio No.1";
 		include '../Include/top.inc.php';
