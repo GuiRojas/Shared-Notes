@@ -52,6 +52,8 @@ INSERT INTO pagUsuario values ('user','Sem status','null.png');
 
 
 --deleta toda a info da tabela + reseta identity
-          --   \/       \/
-delete from usuario;
-
+       --   \/       \/
+/*
+delete from usuario
+delete from pagUsuario
+*/
