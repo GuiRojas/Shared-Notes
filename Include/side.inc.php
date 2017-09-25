@@ -12,8 +12,9 @@
 			<!--usuario apenas acessa seu perfil se estiver logado-->
 			<?php
 			if(isset($_SESSION['user'])){
+				$user = $_SESSION['user'];
 				echo "<a href='../Perfis/igualar.php' class='btnLogin'>";
-				echo "<input type='button' class='subgrupo' value='Seu perfil'>";
+				echo "<input type='button' class='subgrupo' value='$user'>";
 				echo "</a>";
 			}
 			?>		

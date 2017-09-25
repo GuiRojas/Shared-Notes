@@ -35,8 +35,6 @@
 				}else{
 					$status=sqlsrv_query($conexao,$sql);
 					echo "Não foi possivel realizar a inclusão";
-					echo "<a href='cadastro.php'>";
-					echo "<input type='button' class='retornar' value='Retornar'> </a>";
 				}
 
 			}else{
@@ -46,6 +44,10 @@
 		}else{
 			echo "Preencha o formulário inteiro";
 		}
+		echo "<hr>";
+		echo "<a href='cadastro.php'>";
+		echo "<input type='button' class='retornar' value='Retornar'> </a>";
+				
 
 	?>
 
