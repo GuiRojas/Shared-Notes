@@ -79,3 +79,8 @@ create proc criarUsu_sp
 as
 insert into usuario values(@username, @email, @nome, @senha);
 insert into pagUsuario values(@username, 'sem status', 'nada', 0, 0, 'null.png', 0);
+
+
+
+select * from usuario
+select * from pagUsuario
