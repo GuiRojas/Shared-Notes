@@ -83,3 +83,7 @@ a{
 	margin-left: 40px;
 	margin: 15px;
 }
+
+#msgErro{
+	color: red;
+}
