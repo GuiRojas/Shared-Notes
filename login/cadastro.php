@@ -23,6 +23,8 @@
 			<span class="campos">Nome:</span><br>
 			<input class="camposInput" type="text" name="nome" maxlength="50" ><br>
 
+			<span class="campos"><a href="login.php">Já tem uma conta? Entre aqui.</a></span><br><br>	
+
 				<?php 
 		include("../Include/connect.inc.php");
 		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
@@ -63,8 +65,6 @@
 			echo '<span class="campos" id="msgErro">Preencha o formulário inteiro</span>';
 
 		?> <br>
-
-			<span class="campos"><a href="login.php">Já tem uma conta? Entre aqui.</a></span><br><br>
 
 			<input type="submit" name="Cadastrar" id="enviar">
 		</form>
