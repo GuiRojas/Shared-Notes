@@ -57,3 +57,25 @@ INSERT INTO pagUsuario values ('user','Sem status','null.png');
 delete from usuario
 delete from pagUsuario
 */
+
+
+create proc pesquisaUsu_sp
+@palavra varchar(30) = null
+as
+select username, nome from usuario where
+  username like '%'+@palavra+'%';
+
+create proc login_sp
+@usuario varchar(30) = null
+as
+select * from usuario where
+  username = @usuario;
+
+create proc criarUsu_sp
+@username varchar(30) = null,
+@email varchar(100) = null,
+@nome varchar(50) = null,
+@senha varchar(60) = null
+as
+insert into usuario values(@username, @email, @nome, @senha);
+insert into pagUsuario values(@username, 'sem status', 'nada', 0, 0, 'null.png', 0);
