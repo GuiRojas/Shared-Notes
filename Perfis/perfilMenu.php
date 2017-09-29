@@ -47,7 +47,7 @@
 		        // makes sure nobody uses SQL injection
 		        //n funfando por hora, implemento dps
 
-		        $sql=("SELECT username,nome from usuario where username like '%'+'$query'+'%'");
+		        $sql=("pesquisaUsu_sp '".$query."'");
 		        $status=sqlsrv_query($conexao,$sql) or die(mysql_error());		         
 
 		        //$raw_results = mysql_query("SELECT * FROM usuario

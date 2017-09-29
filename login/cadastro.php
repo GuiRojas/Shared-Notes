@@ -40,15 +40,11 @@
 								'cost'=>10
 							 ));
 
-				$sql = "INSERT INTO usuario values ('$username','$email','$nome','$stored_pass')";
+				$sql = ("criarUsu_sp '".$username."','".$email."','".$nome."','".$stored_pass."'");
 
 				$status=sqlsrv_query($conexao,$sql);
-
-				$sql2 = "INSERT INTO pagUsuario values ('$username','Sem status','nada',0,0,'null.png',0)";
-
-				$status2=sqlsrv_query($conexao,$sql2);
 				
-				if($status&&$status2){
+				if($status){
 					session_start();
 					$_SESSION['user']=$username;
 					header('Location:../Home/index.php');

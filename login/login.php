@@ -25,7 +25,7 @@
 		$username=$_POST['username'];
 		$senha=$_POST['senha'];
 
-		$sql="SELECT * from usuario where username='$username'";
+		$sql=("login_sp '".$username."'");
 
 		$status=sqlsrv_query($conexao,$sql);
 
