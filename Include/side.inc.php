@@ -29,16 +29,11 @@
 			<!--Controle de login e sessão-->
 			<?php
 				if(!isset($_SESSION['user'])){
-					echo "<a href='../login/login.php' class='btnLogin'>";
-					echo "<input type='button' class='subgrupo' value='Entrar'>";
-					echo "</a>";
-					echo "<a href='../login/cadastro.php' class='btnLogin'>";
-					echo "<input type='button' class='subgrupo' value='Cadastrar'>";
+					echo "<a href='../login/login.php' class='subgrupo'>Entrar</a>";
+					echo "<a href='../login/cadastro.php' class='subgrupo'>Cadastrar</a>";
 				}else{
-					echo "<a href='../login/doLogout.php' class='btnLogin'>";
-					echo "<input type='button' class='subgrupo' value='Sair'>";
+					echo "<a href='../login/doLogout.php' class='btnLogin' class='subgrupo'>Sair</a>";
 				}		
-				echo "</a>"	
 			?>			 
 		</div>
 	</div>

@@ -139,6 +139,7 @@ body{
 
 .subgrupo{
 	display: block;
+	text-decoration: none;
 	background-color: #3a4c60;
 	color: white;
 	width: 100%;
