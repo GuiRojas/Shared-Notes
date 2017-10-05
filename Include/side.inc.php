@@ -20,8 +20,9 @@
 			?>		
 
 			<!--Redireciona pro sobre nós-->
+			<a href="../Sobre/index.php">
 			<input type="button" class="subgrupo" value="Sobre">
-			
+			</a>
 			<!-- Como fariamos as config. ? De vdd n sei :p
 			<input type="button" class="subgrupo" value="Configurações">
 			-->
