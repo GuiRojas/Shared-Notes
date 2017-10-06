@@ -13,7 +13,25 @@
 	?>
 		
 	<div id="container">
-		
+		<div id="perguntainer">
+			<div class="perg">
+				<a href="">
+					Fazer uma pergunta
+				</a>	
+			</div>	
+			<div class="perg">
+				<a href="">
+					Pesquisar uma pergunta
+				</a>		
+			</div>
+			<div class="perg">
+				<a href="">
+					Pesquisar uma Linguagem
+				</a>	
+			</div>	
+
+			
+		</div>		
 	</div>
 	
 	<?php
