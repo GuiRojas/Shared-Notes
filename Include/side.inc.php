@@ -7,7 +7,6 @@
 			<a href="../home" class="a">Home</a>
 			<a href="../Perfis/perfilMenu.php" class="a">Perfis</a> <!--class="aAtivo"-->
 			<a href="../Perguntas" class="a">Perguntas</a>
-			<a href="../Enciclopedia" class="a">Enciclopédia</a>
 
 			<!--usuario apenas acessa seu perfil se estiver logado-->
 			<?php
@@ -33,7 +32,7 @@
 					echo "<a href='../login/login.php' class='subgrupo'>Entrar</a>";
 					echo "<a href='../login/cadastro.php' class='subgrupo'>Cadastrar</a>";
 				}else{
-					echo "<a href='../login/doLogout.php' class='btnLogin' class='subgrupo'>Sair</a>";
+					echo "<a href='../login/doLogout.php' class='btnLogin subgrupo'>Sair</a>";
 				}		
 			?>			 
 		</div>

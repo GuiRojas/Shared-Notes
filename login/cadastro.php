@@ -6,8 +6,7 @@
 </head>
 <body>
 	<?php
-		include '../include/tituloCadastro.inc.php';
-		$entrouAgr = 0;
+		include '../include/tituloCadastro.inc.php'; 
 	?>
 	
 	<h1>Cadastro</h1>
@@ -32,37 +31,128 @@
 
 			if($_POST['senha']===$_POST['senha_conf']){
 
-				$username=$_POST['username'];
-				$senha=$_POST['senha'];
-				$email=$_POST['email'];
-				$nome=$_POST['nome'];
 
-				$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
-								'cost'=>10
-							 ));
 
-				$sql = ("criarUsu_sp '".$username."','".$email."','".$nome."','".$stored_pass."'");
-
-				$status=sqlsrv_query($conexao,$sql);
-				
-				if($status){
-					session_start();
-					$_SESSION['user']=$username;
-					header('Location:../Home/index.php');
-				}else{
-					$status=sqlsrv_query($conexao,$sql);
-					echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão</span>';
+							
+					 
+				/**
+				 *
+				 * @simple function to test password strength
+				 *
+				 * @param string $password
+				 *
+				 * @return int 
+				 *
+				 */
+				function testPassword($password)
+				{
+				    if ( strlen( $password ) == 0 )
+				    {
+				        return 1;
+				    }
+				 
+				    $strength = 0;
+				 
+				    /*** get the length of the password ***/
+				    $length = strlen($password);
+				 
+				    /*** check if password is not all lower case ***/
+				    if(strtolower($password) != $password)
+				    {
+				        $strength += 1;
+				    }
+				 
+				    /*** check if password is not all upper case ***/
+				    if(strtoupper($password) == $password)
+				    {
+				        $strength += 1;
+				    }
+				 
+				    /*** check string length is 8 -15 chars ***/
+				    if($length >= 8 && $length <= 15)
+				    {
+				        $strength += 1;
+				    }
+				 
+				    /*** check if lenth is 16 - 35 chars ***/
+				    if($length >= 16 && $length <=35)
+				    {
+				        $strength += 2;
+				    }
+				 
+				    /*** check if length greater than 35 chars ***/
+				    if($length > 35)
+				    {
+				        $strength += 3;
+				    }
+				 
+				    /*** get the numbers in the password ***/
+				    preg_match_all('/[0-9]/', $password, $numbers);
+				    $strength += count($numbers[0]);
+				 
+				    /*** check for special chars ***/
+				    preg_match_all('/[|!@#$%&*\/=?,;.:\-_+~^\\\]/ ', $password, $specialchars);
+				    $strength += sizeof($specialchars[0]);
+				 
+				    /*** get the number of unique chars ***/
+				    $chars = str_split($password);
+				    $num_unique_chars = sizeof( array_unique($chars) );
+				    $strength += $num_unique_chars * 2;
+				 
+				    /*** strength is a number 1-10; ***/
+				    $strength = $strength > 99 ? 99 : $strength;
+				    $strength = floor($strength / 10 + 1);
+				 
+				    return $strength;
 				}
+				function validate_email($email){
+				    if(!preg_match ("/^[\w\.-]{1,}\@([\da-zA-Z-]{1,}\.){1,}[\da-zA-Z-]+$/", $email))
+				        return false;
+				    list($prefix, $domain) = explode("@",$email);
+				    if(function_exists("getmxrr") && getmxrr($domain, $mxhosts))
+				        return true;
+				    elseif (@fsockopen($domain, 25, $errno, $errstr, 5))
+				        return true;
+				    else
+				        return false;
+				}
+
+				 
+				if(testPassword(mysql_escape_string($_POST['senha']))>1){
+					if (!validate_email(mysql_escape_string($_POST['email']))){
+    					echo '<span class="campos" id="msgErro">Email Inválido!</span>';
+					}else{
+						$username=mysql_escape_string($_POST['username']);
+						$senha=mysql_escape_string($_POST['senha']);
+						$email=mysql_escape_string($_POST['email']);
+						$nome=mysql_escape_string($_POST['nome']);
+
+						$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
+										'cost'=>10
+									 ));
+
+						$sql = ("criarUsu_sp '".$username."','".$email."','".$nome."','".$stored_pass."'");
+
+						$status=sqlsrv_query($conexao,$sql);
+						
+						if($status){
+							session_start();
+							$_SESSION['user']=$username;
+							header('Location:../Home/index.php');
+						}else{
+							$status=sqlsrv_query($conexao,$sql);
+							echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão</span>';
+						}		
+					}					
+				}else{
+					echo '<span class="campos" id="msgErro">Senha não é forte o suficiente!<span>';
+				}		
 
 			}else{
 				echo '<span class="campos" id="msgErro">Senha difere da confirmação</span>'; 
 			}
 
-		}elseif ($entrouAgr != 0) {
-			echo '<span class="campos" id="msgErro">Preencha o formulário inteiro</span>';
 		}
-		else
-			$entrouAgr = 1;
 
 		?> <br>
 
