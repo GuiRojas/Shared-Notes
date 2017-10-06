@@ -30,11 +30,8 @@ body{
 
 #textoTitulo{
 	text-align: center;
-	margin-right: 230px; 
-}
-
-#title{
-	height: 35px;
+	margin-left: 200px;
+	text-align: center;
 }
 
 #titulo{
@@ -85,6 +82,7 @@ body{
 }
 
 #container{
+	grid-template-columns: auto 300px;
 	display: grid;
 	grid-area: container;
 	background-color: white;

@@ -150,6 +150,10 @@ body{
 	font-size: 18px;
 }
 
+input[type="button"]:hover{
+	background-color: #303E4D;
+}
+
 .stockimage{
 	margin: 50px;
 }
