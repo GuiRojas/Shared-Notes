@@ -14,54 +14,18 @@
 		
 	<div id="container">
 
-		<header id="tituloSobre">Feito com carinho pelos doentes locais</header>
+		<header id="tituloSobre">Sobre o site</header>
 		<br>
-		<div id="fotinho">
-			<!--
-			foto
-			-->	
-		</div>		
 		<div>
-			Guilherme "Rorraz" Ribeiro	
-		</div>
-		<br>		
-		<div id="desc">
-			Gosta de café e php
-		</div>
-		<br>
-		<div id="fotinho">
-			<!--
-			foto
-			-->	
-		</div>		
-		<div>
-			Francisco "maiaN" Maian	
-		</div>
-		<br>		
-		<div id="desc">
-			Fez as tabela show
-		</div>
-		<br>
-		<div id="fotinho">
-			<!--
-			foto
-			-->	
-		</div>		
-		<div>
-			João Lucas "Visual" "Johnny Kaparrala" Alvarez
-		</div>
-		<br>		
-		<div id="desc">
-			Gosta de café e php
-		</div>
+			Esse site foi feito por: <br><br>
 
-		<p>
-		Feito como projeto de uma matéria loca de Prática profissional,
-		Onde fizemos o projeto ao invés de ficar jogando cs como o resto da sala.
-		Deu trabalho mas foi insano.
-		</p>
-		<br><br><br>
-		Usamos cookies
+			Francisco Luiz Maian do Nascimento<br>
+			Guilherme Rojas Ribeiro<br>
+			João Lucas Conrado Alvarez<br><br>
+
+			Esse site foi desenvolvido como projeto das aulas de Prática Profissional I.
+
+		</div>
 
 	</div>
 	
