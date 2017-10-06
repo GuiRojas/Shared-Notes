@@ -15,7 +15,6 @@
 	<div id="container">
 
 		<header id="tituloSobre">Sobre o site</header>
-		<br>
 		<div>
 			Esse site foi feito por: <br><br>
 
