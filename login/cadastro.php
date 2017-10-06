@@ -6,7 +6,8 @@
 </head>
 <body>
 	<?php
-		include '../include/tituloCadastro.inc.php'
+		include '../include/tituloCadastro.inc.php';
+		$entrouAgr = 0;
 	?>
 	
 	<h1>Cadastro</h1>
@@ -57,8 +58,11 @@
 				echo '<span class="campos" id="msgErro">Senha difere da confirmação</span>'; 
 			}
 
-		}else
+		}elseif ($entrouAgr != 0) {
 			echo '<span class="campos" id="msgErro">Preencha o formulário inteiro</span>';
+		}
+		else
+			$entrouAgr = 1;
 
 		?> <br>
 
