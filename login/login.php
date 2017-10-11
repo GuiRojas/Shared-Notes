@@ -3,6 +3,8 @@
 <head>
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/cadastro.css">
+	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
 <body>
 	<?php
@@ -16,7 +18,7 @@
 			<span class="campos" type="password">Senha:</span><br/>
 			<input type="password" class="camposInput" name="senha" maxlength="25" ><br/>
 			<span class="campos"><a href="#">Esqueceu sua senha?</a></span><br/>
-			<span class="campos"><a href="cadastro.php">Não tem uma conta? cadastre-se aqui.</a></span><br/>
+			<span class="campos"><a href="cadastro.php">Não tem uma conta? cadastre-se aqui.</a></span><br>
 
 		<?php
 		if(isset($_POST['username'])&&isset($_POST['senha'])){
@@ -37,15 +39,13 @@
 				$_SESSION['user']=$username;
 				header('Location:../Home/index.php');
 			}else{
-				echo '<span class="campos" id="msgErro">Senha errada</span>';
+				echo '<span class="campos" id="msgErro">Senha errada</span><br>';
 			}
 		}else
-			echo '<span class="campos" id="msgErro">Usuario inexistente</span>';
+			echo '<span class="campos" id="msgErro">Usuario inexistente</span><br>';
 	}
 
 	?>
-
-	<br/><br/>
 
 		<input type="submit" name="Logar" id="enviar">
 		</form>

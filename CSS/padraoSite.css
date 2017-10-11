@@ -9,13 +9,17 @@ body{
 	grid-template: 	"top top"
 					"side container"
 					"bot bot";
-	grid-template-columns: 230px auto;
-	grid-template-rows: 110px auto auto;
+	grid-template-columns: 260px auto;
+	grid-template-rows: 105px auto auto;
 	background-color: #D3D3D3;
 }
 
+#tituloSite{
+	height: 70px;
+}
+
 #top{
-	background-color: #6584A3;
+	background-color: #5d7ba0;
 	font-family: "Segoe UI";
 	font-size: 46px;
 	color: #303E4D;
@@ -25,7 +29,6 @@ body{
 	grid-template-rows: auto 40px;
 	box-shadow: 0px 1px 10px #3a4c60;
 	z-index: 11;
-
 }
 
 #textoTitulo{
@@ -37,7 +40,8 @@ body{
 #titulo{
 	background-color: #303E4D;
 	font-family: "Segoe UI";
-	font-size: 30px;
+	font-size: 26px;
+	height: 35px;
 	color: white;
 	text-align: center;
 	display: grid;
@@ -56,9 +60,9 @@ body{
 	color: #303E4D;
 	font-family: "Segoe UI";
 	font-size: 18px;
-	padding: 12px 0 15px 17px;
-	border-right: 1px solid #303E4D;
-	background-color: #6584A3;
+	padding: 15px 0 15px 15px;
+	/*border-right: 1px solid #303E4D;*/
+	background-color: #5d7ba0;
 }
 
 .a:hover{
@@ -69,6 +73,29 @@ body{
 }
 
 .a:active{
+	background-color: #D3D3D3;
+	color: #303E4D;
+}
+
+.aSub{
+	display: block;
+	text-decoration: none;
+	color: #303E4D;
+	font-family: "Segoe UI";
+	font-size: 18px;
+	padding: 5px 0 5px 40px;
+	/*border-right: 1px solid #303E4D;*/
+	background-color: #5d7ba0;
+}
+
+.aSub:hover{
+	color: white;
+	transition: .25s;
+	background-color: #303E4D;
+	padding-right: 5px;
+}
+
+.aSub:active{
 	background-color: #D3D3D3;
 	color: #303E4D;
 }
@@ -147,12 +174,12 @@ body{
 	border: none;
 	font-family: "Segoe UI";
 	font-size: 17px;
-	padding: 7px 0 7px 10px;
+	padding: 12px 0 15px 17px;
 	cursor: pointer;
-	font-size: 18px;
+	font-size: 17px;
 }
 
-input[type="button"]:hover{
+.subgrupo:hover{
 	background-color: #303E4D;
 }
 
@@ -225,7 +252,7 @@ input[type="button"]:hover{
 }
 
 .stockDivLight{
-	height: 185px;
+	height: 170px;
 	background-color: #F9F9F9;
 	display: grid;
 	grid-template: "stockImage linhaVertical stockTexto";
@@ -237,7 +264,7 @@ input[type="button"]:hover{
 }
 
 .stockDivDark{
-	height: 185px;
+	height: 170px;
 	background-color: #F0F0F0;
 	display: grid;
 	grid-template: "stockTexto linhaVertical stockimage";
@@ -259,7 +286,7 @@ input[type="button"]:hover{
 .stockTexto{
 	font-family: "segoe UI";
 	color: #657493;
-	font-size: 25px;
+	font-size: 23px;
 	margin: 0 45px;
 }
 

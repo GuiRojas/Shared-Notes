@@ -3,6 +3,8 @@
 <head>
 	<title>Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/cadastro.css">
+	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
 <body>
 	<?php
@@ -23,18 +25,13 @@
 			<span class="campos">Nome:</span><br>
 			<input class="camposInput" type="text" name="nome" maxlength="50" ><br>
 
-			<span class="campos"><a href="login.php">Já tem uma conta? Entre aqui.</a></span><br><br>	
+			<span class="campos"><a href="login.php">Já tem uma conta? Entre aqui.</a></span><br>	
 
-				<?php 
-		include("../Include/connect.inc.php");
+			<?php 
 		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
+			include("../Include/connect.inc.php");
 
-			if($_POST['senha']===$_POST['senha_conf']){
-
-
-
-							
-					 
+			if($_POST['senha']===$_POST['senha_conf']){ 
 				/**
 				 *
 				 * @simple function to test password strength
@@ -145,11 +142,11 @@
 						}		
 					}					
 				}else{
-					echo '<span class="campos" id="msgErro">Senha não é forte o suficiente!<span>';
+					echo '<span class="campos" id="msgErro">Senha não é forte o suficiente!<span><br>';
 				}		
 
 			}else{
-				echo '<span class="campos" id="msgErro">Senha difere da confirmação</span>'; 
+				echo '<span class="campos" id="msgErro">Senha difere da confirmação</span><br>'; 
 			}
 
 		}

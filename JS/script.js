@@ -6,7 +6,7 @@ $(document).ready(function(){
 			$("body").css({"grid-template-columns": "0 auto"});
 			aberto =false;
 		} else{
-			$("body").css({"grid-template-columns": "210px auto"});
+			$("body").css({"grid-template-columns": "260px auto"});
 			aberto=true;
 		}		
 	})

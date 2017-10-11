@@ -22,12 +22,5 @@
 			<div class="stockimage"></div>
 		</div>
 	</a>
-	
-	<a href="../Enciclopedia/index.php" style="text-decoration:none">
-		<div class="stockDivDark">
-			<div class="stockimage"></div>
-			<div class="linhaVertical"></div>
-			<div class="stockTexto">Aprenda um pouco mais</div>
-		</div>
-	</a>
+
 </div>
