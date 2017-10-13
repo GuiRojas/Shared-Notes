@@ -10,7 +10,7 @@
 	<?php
 		include '../include/tituloCadastro.inc.php'
 	?>
-		<h1>Login</h1>
+	<h1>Login</h1>
 	<div id="cadastro">
 		<form action="login.php" method="POST">
 			<span class="campos">Nome de Usuario:</span><br/>

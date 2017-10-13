@@ -301,12 +301,38 @@ body{
 	margin: 15px 40px;
 }
 
-#btnEditar{
-	text-decoration: none;
-}
-
 #perguntainer{
 	grid-template-columns: 30% 30% 30%;
 	display:inline-block;
 	margin: 0 5%;
+}
+
+#btnEditar{
+	height: 24px;
+	width: 230px;
+	margin: 0 auto 20px auto;
+	background-color: #3a4c60;
+	border: 1px solid #303E4D;
+	cursor: pointer;
+	font-size: 17px;
+	border-radius: 1px;
+	color: white;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+#btnEditar:hover{
+	background-color: #5d7ba0;
+}
+
+#edit{
+	margin: auto 0;
+	height: 16px;
+	width: 16px;
+}
+
+#menuImg{
+	height: 35px;
+	width: 35px;
 }

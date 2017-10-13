@@ -16,7 +16,7 @@
 			<?php
 				if(isset($_SESSION['user'])){
 					$user = $_SESSION['user'];
-					echo "<a href='../Perfis/amigos.php' class='aSub'>Amigos</a>";
+					echo "<a href='../Perfis/index.php' class='aSub'>Amigos</a>";
 				}
 			?>
 			<a href="../Perguntas" class="a">Perguntas</a>			

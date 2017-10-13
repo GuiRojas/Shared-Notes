@@ -9,13 +9,17 @@ body{
 	grid-template: 	"top top"
 					"side container"
 					"bot bot";
-	grid-template-columns: 230px auto;
-	grid-template-rows: 110px auto auto;
+	grid-template-columns: 260px auto;
+	grid-template-rows: 105px auto auto;
 	background-color: #D3D3D3;
 }
 
+#tituloSite{
+	height: 70px;
+}
+
 #top{
-	background-color: #6584A3;
+	background-color: #5d7ba0;
 	font-family: "Segoe UI";
 	font-size: 46px;
 	color: #303E4D;
@@ -25,19 +29,19 @@ body{
 	grid-template-rows: auto 40px;
 	box-shadow: 0px 1px 10px #3a4c60;
 	z-index: 11;
-
 }
 
 #textoTitulo{
 	text-align: center;
-	margin-left: 35px;
+	margin-left: 200px;
 	text-align: center;
 }
 
 #titulo{
 	background-color: #303E4D;
 	font-family: "Segoe UI";
-	font-size: 30px;
+	font-size: 26px;
+	height: 35px;
 	color: white;
 	text-align: center;
 	display: grid;
@@ -56,9 +60,9 @@ body{
 	color: #303E4D;
 	font-family: "Segoe UI";
 	font-size: 18px;
-	padding: 12px 0 15px 17px;
-	border-right: 1px solid #303E4D;
-	background-color: #6584A3;
+	padding: 15px 0 15px 15px;
+	/*border-right: 1px solid #303E4D;*/
+	background-color: #5d7ba0;
 }
 
 .a:hover{
@@ -69,6 +73,29 @@ body{
 }
 
 .a:active{
+	background-color: #D3D3D3;
+	color: #303E4D;
+}
+
+.aSub{
+	display: block;
+	text-decoration: none;
+	color: #303E4D;
+	font-family: "Segoe UI";
+	font-size: 18px;
+	padding: 5px 0 5px 40px;
+	/*border-right: 1px solid #303E4D;*/
+	background-color: #5d7ba0;
+}
+
+.aSub:hover{
+	color: white;
+	transition: .25s;
+	background-color: #303E4D;
+	padding-right: 5px;
+}
+
+.aSub:active{
 	background-color: #D3D3D3;
 	color: #303E4D;
 }
@@ -136,8 +163,10 @@ body{
 	cursor: pointer;
 }
 
+
 .subgrupo{
 	display: block;
+	text-decoration: none;
 	background-color: #3a4c60;
 	color: white;
 	width: 100%;
@@ -145,9 +174,13 @@ body{
 	border: none;
 	font-family: "Segoe UI";
 	font-size: 17px;
-	padding: 7px 0 7px 10px;
+	padding: 12px 0 15px 17px;
 	cursor: pointer;
-	font-size: 18px;
+	font-size: 17px;
+}
+
+.subgrupo:hover{
+	background-color: #303E4D;
 }
 
 input[type="button"]:hover{
@@ -166,10 +199,9 @@ input[type="button"]:hover{
 	margin: 15px 20%;
 }
 
-#procuraInput{
+#query{
 	height: 25px;
 	width: 100%;
-	border-radius: 7px 0 0 7px;
 	border: 1px solid grey;
 	outline-width: 0;
 	font-size: 17px;
@@ -179,13 +211,10 @@ input[type="button"]:hover{
 #btnInput{
 	border: 1px solid grey;
 	border-left: 0;
-	border-radius: 0 7px 7px 0;
 	height: 25px;
 	width: 30px;
-	background-color: #EEE;
-	
-	background-image: url(../Imagens/procura.png);
-	background-repeat: no-repeat;
+	background: url(../Imagens/procura.png) center no-repeat;
+	background-size: 22px 22px;
 }
 
 .usuario{
