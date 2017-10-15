@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
+	<title>SN - Login</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/cadastro.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
@@ -21,31 +22,31 @@
 			<span class="campos"><a href="cadastro.php">Não tem uma conta? cadastre-se aqui.</a></span><br>
 
 		<?php
-		if(isset($_POST['username'])&&isset($_POST['senha'])){
-		include("../Include/connect.inc.php");
+			if(isset($_POST['username'])&&isset($_POST['senha'])){
+			include("../Include/connect.inc.php");
 
-		$username=$_POST['username'];
-		$senha=$_POST['senha'];
+			$username=$_POST['username'];
+			$senha=$_POST['senha'];
 
-		$sql=("login_sp '".$username."'");
+			$sql=("login_sp '".$username."'");
 
-		$status=sqlsrv_query($conexao,$sql);
+			$status=sqlsrv_query($conexao,$sql);
 
-		if($dados=sqlsrv_fetch_array($status)){
-			$pass_verf=$dados[3];
-			if(password_verify($senha,$pass_verf)){
-				session_start();
-				$_SESSION['perfilVisitando']=$username;
-				$_SESSION['user']=$username;
-				header('Location:../Home/index.php');
-			}else{
-				echo '<span class="campos" id="msgErro">Senha errada</span><br>';
+			if($dados=sqlsrv_fetch_array($status)){
+				$pass_verf=$dados[3];
+				if(password_verify($senha,$pass_verf)){
+					session_start();
+					$_SESSION['perfilVisitando'] = $username;
+					$_SESSION['u'] = $username;
+					header('Location:../Home/index.php');
+				}else{
+					echo '<span class="campos" id="msgErro">Senha errada</span><br>';
+				}
+			}else
+				echo '<span class="campos" id="msgErro">Usuario inexistente</span><br>';
 			}
-		}else
-			echo '<span class="campos" id="msgErro">Usuario inexistente</span><br>';
-	}
 
-	?>
+		?>
 
 		<input type="submit" name="Logar" id="enviar">
 		</form>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cadastro</title>
+	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
+	<title>SN - Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/cadastro.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
@@ -128,18 +129,18 @@
 										'cost'=>10
 									 ));
 
-						$sql = ("criarUsu_sp '".$username."','".$email."','".$nome."','".$stored_pass."'");
+						$sql = ( "INSERT INTO Usuario VALUES ('$username','$email','$nome','$stored_pass','',0,0,'')");
 
-						$status=sqlsrv_query($conexao,$sql);
+						$status = sqlsrv_query( $conexao, $sql);
 						
 						if($status){
 							session_start();
-							$_SESSION['user']=$username;
+							$_SESSION['u']=$username;
 							header('Location:../Home/index.php');
 						}else{
 							$status=sqlsrv_query($conexao,$sql);
 							echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão</span>';
-						}		
+						}
 					}					
 				}else{
 					echo '<span class="campos" id="msgErro">Senha não é forte o suficiente!<span><br>';

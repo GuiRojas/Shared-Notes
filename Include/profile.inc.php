@@ -4,9 +4,9 @@ echo"
 	<img src='$urlFoto' class='img'>
 	<div id='informacoes'>
 		<span>";
-			if(isset($_SESSION['user']) && isset($_SESSION['perfilVisitando'])){
-				if($_SESSION['perfilVisitando']==$_SESSION['user']){
-					echo "<a href='editarPerfil.php' id='btnEditar'> <img id='edit' src='../imagens/edit.png'>Editar Perfil</a>";
+			if(isset($_SESSION['u'])){
+				if($_SESSION['u'] == $_GET['query']){
+					echo "<a href='../Perfis/editar.php?pe=$_SESSION[u]' id='btnEditar'> <img id='edit' src='../imagens/edit.png'>Editar Perfil</a>";
 				}	
 			}		
 

@@ -33,7 +33,7 @@ body{
 
 #textoTitulo{
 	text-align: center;
-	margin-left: 200px;
+	margin-left: 225px;
 	text-align: center;
 }
 
@@ -194,9 +194,9 @@ input[type="button"]:hover{
 #procuraUsuario{
 	display: grid;
 	grid-template-columns: auto 30px;
-	width: 60%;
+	width: 70%;
 	height: 25px;
-	margin: 15px 20%;
+	margin: 15px 15%;
 }
 
 #query{
@@ -233,3 +233,49 @@ input[type="button"]:hover{
 	height: 90px;
 	margin: 0 22.5%;
 }
+
+.usuDataA{
+	text-decoration: none;
+	width: 60%;
+	height: 90px;
+	background-color: #F9F9F9;
+	margin: 20px 20%;
+	color: #6584a3;
+}
+
+.usuData{
+	height: 90px;
+	background-color: #F9F9F9;
+	display: grid;
+	grid-template: "nomeEFoto linhaVertical info";
+	grid-auto-columns: 60% 1px 40%;
+	vertical-align: middle;
+	line-height: 90px;
+	cursor: pointer;
+	margin: 5px;
+	margin: 0;
+}
+
+.usuData:hover{
+	background-color: #F0F0F0;
+}
+
+.linhaVertical{
+	margin: 10px 0;
+	border-left: 1px solid #dedede;
+	line-height: 90px;
+}
+
+ .info{
+ 	grid-area: info;
+ }
+
+ .nomeEFoto{
+ 	grid-area: nomeEFoto;
+ }
+
+ .msgErro{
+ 	text-align: center;
+ 	color: #3a4c60;
+ 	margin-top: 35px; 
+ }

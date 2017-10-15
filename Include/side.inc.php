@@ -6,26 +6,25 @@
 		<div id="contentSide">
 			<a href="../home" class="a">Home</a> <!--class="aAtivo"-->
 			<?php
-				if(isset($_SESSION['user'])){
-					$user = $_SESSION['user'];
-					echo "<a href='projetos.php' class='a'>Projetos</a>";
+				if(isset($_SESSION['u'])){
+					$user = $_SESSION['u'];
+					echo "<a href='#' class='a'>Projetos</a>";
 				}
 			?>
 
 			<a href="../Perfis/perfilMenu.php" class="a">Perfis</a>
 			<?php
-				if(isset($_SESSION['user'])){
-					$user = $_SESSION['user'];
-					echo "<a href='../Perfis/index.php' class='aSub'>Amigos</a>";
+				if(isset($_SESSION['u'])){
+					$user = $_SESSION['u'];
+					echo "<a href='#' class='aSub'>Amigos</a>";
 				}
 			?>
 			<a href="../Perguntas" class="a">Perguntas</a>			
 
 			<!--usuario apenas acessa seu perfil se estiver logado-->
 			<?php
-			if(isset($_SESSION['user'])){
-				$user = $_SESSION['user'];
-				echo "<a href='../Perfis/igualar.php' class='btnLogin subgrupo'>$user</a>";
+			if(isset($_SESSION['u'])){
+				echo "<a href='../Perfis/index.php?query=$_SESSION[u]' class='btnLogin subgrupo'>$_SESSION[u]</a>";
 			}
 			?>		
 
@@ -37,7 +36,7 @@
 
 			<!--Controle de login e sessão-->
 			<?php
-				if(!isset($_SESSION['user'])){
+				if(!isset($_SESSION['u'])){
 					echo "<a href='../login/login.php' class='subgrupo'>Entrar</a>";
 					echo "<a href='../login/cadastro.php' class='subgrupo'>Cadastrar</a>";
 				}else{

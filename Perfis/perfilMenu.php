@@ -1,6 +1,7 @@
 <html>
 <head>
-	<title></title>
+	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
+	<title>Procurar Perfis</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
@@ -30,13 +31,26 @@
 			if(isset($_GET['query'])){
 
 				$query = $_GET['query'];
+				$_SESSION['query'] = $query;
+				if( $query != null or $query != ""){
+			        $status = sqlsrv_query( $conexao, "SELECT username FROM usuario WHERE username = '$query'", array(), array("Scrollable"=>"buffered"));
 
-		        $status = sqlsrv_query( $conexao, "SELECT username FROM usuario WHERE username = '$query'") or die();
-				
-				if ( $status) {
-		        	$nomeUsuario = "$query";
-					include '../Include/getUserData.inc.php';
-		        	echo "<a href='index.php?u=$query'> $username </a>";
+			        $rowCount= sqlsrv_num_rows($status);
+
+					if ( $rowCount >=1) { 
+			        	$nomeUsuario = "$query";
+						include '../Include/getUserData.inc.php';
+			        	echo "<a class='usuDataA' href='index.php?query=$query'>
+
+				        	<div class='usuData'>
+								<div class='nomeEFoto'>$query</div>
+								<div class='linhaVertical'></div>
+								<div class='info'></div>
+							</div>
+			        	</a>";
+			        } else {
+				        echo "<span class='msgErro'> Usuário não encontrado.</span>";
+				    }
 		        }
 			}
 		?>
