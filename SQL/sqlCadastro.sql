@@ -37,6 +37,8 @@ select * from pagina
 select * from usuario
 select * from seguir
 
+delete from usuario where username = 'Visual'
+
 
 /*
 drop table comentario
