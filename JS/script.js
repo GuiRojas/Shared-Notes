@@ -10,14 +10,12 @@ $(document).ready(function(){
 			aberto=true;
 		}		
 	})
-})
 
-//*/
-/*
-$(document).ready(function(){
-	var aberto = false;
-		$("#menu").click(function(){
-			$('#contentSide').animate({width: 'toggle'});		
-		})
-});
-*/
+	$('.btnEditar').click(function(){
+		document.getElementById('editPage').style.display = 'block';
+	})
+
+	$('.btnCancelar').click(function(){
+		document.getElementById('editPage').style.display = 'none';
+	})
+})

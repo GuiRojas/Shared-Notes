@@ -125,14 +125,10 @@ body{
 
 .img{
 	margin-top: 20px;
+	margin: 0 auto;
 	width:200px;
 	height:200px;
-	border-bottom:1px;
-	border-top:1px;
-	border-right:1px;
-	border-left:1px;
-	border-style: solid;
-	border-color: #717A83;
+	display: block;
 }
 
 #informacoes{
@@ -307,7 +303,7 @@ body{
 	margin: 0 5%;
 }
 
-#btnEditar{
+.btnEditar{
 	height: 24px;
 	width: 230px;
 	margin: 0 auto 20px auto;
@@ -322,7 +318,7 @@ body{
 	text-decoration: none;
 }
 
-#btnEditar:hover{
+.btnEditar:hover{
 	background-color: #5d7ba0;
 }
 
@@ -335,4 +331,84 @@ body{
 #menuImg{
 	height: 35px;
 	width: 35px;
+}
+
+#editPage{
+	background: rgba(0,0,0,0.7);
+	position:fixed;
+    padding:0;
+    margin:0;
+    display:none;
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+	z-index: 1000;
+}
+
+#editForm{
+	width: 700px;
+	height: 900px;
+	margin: 20px auto;
+	background-color: white;
+	box-shadow: 0px 0px 30px #666;
+}
+
+.campo{
+	display: block;
+	margin: 0 15%;
+	width: 70%;
+}
+
+.campoSpan{
+	display: block;
+	margin: 0 15%;
+	margin-top:30px;
+}
+
+#editForm h1{
+	margin-left: 30px;
+	color:#303E4D;
+}
+
+#chngStatus{
+	font-size: 16px;
+}
+
+#chngEspecialidade{
+	width: 15em;
+}
+
+.btnCancelar{
+	background-color: #EDEDED; 
+	border:1px solid #303E4D;
+	font-family: "segoe UI"
+	color:#303E4D;
+	margin-left: 15%;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.btnCancelar:hover{
+	background-color: #E5E5E5; 
+}
+
+.btnSalvar{
+	border:1px solid #303E4D;
+	background-color: #3a4c60;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.btnSalvar:hover{
+	background-color: #5d7ba0;
+}
+
+#btns{
+	margin: 0 20%;
+	margin-top: 50px; 
+	display: grid;
+	grid-template-columns: 55% 45%;
 }

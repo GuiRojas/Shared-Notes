@@ -6,7 +6,7 @@ echo"
 		<span>";
 			if(isset($_SESSION['u'])){
 				if($_SESSION['u'] == $_GET['query']){
-					echo "<a href='../Perfis/editar.php?pe=$_SESSION[u]' id='btnEditar'> <img id='edit' src='../imagens/edit.png'>Editar Perfil</a>";
+					echo "<button class='btnEditar'> <img id='edit' src='../imagens/edit.png'>Editar Perfil</button>";
 				}	
 			}		
 
