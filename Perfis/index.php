@@ -28,11 +28,7 @@
 			<img src='$urlFoto' class='img'>
 			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"><?php echo"$status"?></textarea>
 			<span class="campoSpan">Especialidade:</span> <input name="especialidade" id="chngEspecialidade" maxlength="50" type="text" class="campo" <?php echo" value='$especialidade' "?> >
-			<span class="campoSpan">Email:</span> <input name="email" maxlength="100" type="text" class="campo" <?php echo" value='$email' "?> >
-
-			<span class="campoSpan">Senha antiga:</span> <input name="senha_antiga" maxlength="100" type="text" class="campo">
-			<span class="campoSpan">Nova senha:</span> <input name="senha_nova" maxlength="100" type="text" class="campo">
-
+			
 			<div id="btns">
 				<input type="submit" class="btnSalvar" value="Salvar alterações">
 				<input type="button" class="btnCancelar" value="Cancelar">
@@ -42,16 +38,22 @@
 	</div>
 
 	<?php
+		/*
 		if( isset($_POST['status']))
 			$status = $_POST['status'];
+
 		if( isset($_POST['Especialidade']))
 			$especialidade = $_POST['especialidade'];
+
 		if( isset($_POST['senha_nova']))
 			$nova_senha= $_POST['senha_nova'];
+
 		if( isset($_POST['senha_antiga']))
 			$senha_antiga= $_POST['senha_antiga'];
+
 		if( isset($_POST['email']))
 			$email= $_POST['email'];
+		*/
 			}
 		} // fim do if
 	?>
