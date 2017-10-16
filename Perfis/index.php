@@ -18,7 +18,10 @@
 			include '../Include/top.inc.php';
 			include '../Include/side.inc.php';
 
-			if( isset($_SESSION['u']) && ($_SESSION['u']) == isset($_GET['query'])){ //verifica se é o perfil do visitante
+			
+			if( isset($_SESSION['u'])){ //verifica se está logado
+				if (($_SESSION['u']) == isset($_GET['query'])) {			
+			 	//verifica se é o perfil do visitante
 	?> 
 
 	<div id="editPage">
@@ -38,22 +41,20 @@
 	</div>
 
 	<?php
-		/*
-		if( isset($_POST['status']))
-			$status = $_POST['status'];
+		
+				}else{//se não, permite a opção de seguir
+				?>
+				<div id="seguir">
+					<span id="seguindo">
+						<?php
+						//sql bla bla bla
+						?>
+					</span>
+				</div>
 
-		if( isset($_POST['Especialidade']))
-			$especialidade = $_POST['especialidade'];
 
-		if( isset($_POST['senha_nova']))
-			$nova_senha= $_POST['senha_nova'];
-
-		if( isset($_POST['senha_antiga']))
-			$senha_antiga= $_POST['senha_antiga'];
-
-		if( isset($_POST['email']))
-			$email= $_POST['email'];
-		*/
+				<?php
+				}
 			}
 		} // fim do if
 	?>

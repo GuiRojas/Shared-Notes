@@ -1,4 +1,4 @@
-<html>
+<html>A
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
 	<title>SN - Perguntas</title>

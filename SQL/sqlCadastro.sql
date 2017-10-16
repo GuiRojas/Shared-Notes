@@ -23,10 +23,19 @@ create table comentario(
 	constraint fkUsername foreign key (username) references usuario (username)
 )
 
+create table seguir(
+	codSeguidor int identity(1,1) primary key,
+	uSeguidor varchar(25) not null,
+	uSeguindo varchar(25) not null
+	constraint fkUsgr foreign key (uSeguidor) references usuario(username),
+	constraint fkUsgn foreign key (uSeguindo) references usuario(username)	
+)
+
 
 select * from comentario
 select * from pagina
 select * from usuario
+select * from seguir
 
 
 /*
