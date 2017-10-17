@@ -10,11 +10,19 @@ echo"
 				}	
 			}		
 
+			$status = '"'.$status.'"';
+
 			echo "
 			Status:<br>
-			<i>'$status'</i><br><br>
+			<div class='campoPerfil'>
+				<i>$status</i>
+			</div>
+			<br><br>
 			Especialidade:<br>
-			$especialidade<br><br>
+			<div class='campoPerfil'>
+				$especialidade
+			</div>
+			<br><br>
 			<hr>
 			Perguntas respondidas:<br>
 			$perguntasRespondidas<br>

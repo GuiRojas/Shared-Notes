@@ -348,9 +348,9 @@ body{
 }
 
 #editForm{
-	width: 700px;
-	height: 900px;
-	margin: 20px auto;
+	width: 500px;
+	height: 600px;
+	margin: 40px auto;
 	background-color: white;
 	box-shadow: 0px 0px 30px #666;
 }
@@ -368,6 +368,7 @@ body{
 }
 
 #editForm h1{
+	margin: 0;
 	margin-left: 30px;
 	color:#303E4D;
 }
@@ -408,7 +409,11 @@ body{
 
 #btns{
 	margin: 0 20%;
-	margin-top: 50px; 
+	margin-top: 60px; 
 	display: grid;
 	grid-template-columns: 55% 45%;
+}
+
+.campoPerfil{
+	word-wrap: break-word;
 }

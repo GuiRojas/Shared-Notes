@@ -30,7 +30,14 @@
 
 			<?php 
 		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
+			
 			include("../Include/connect.inc.php");
+
+			$_POST['username'] = mysql_escape_string($_POST['username']);
+			$_POST['senha'] = mysql_escape_string($_POST['senha']);
+			$_POST['senha_conf'] = mysql_escape_string($_POST['senha_conf']);
+			$_POST['email'] = mysql_escape_string($_POST['email']);
+			$_POST['nome'] = mysql_escape_string($_POST['nome']);
 
 			if($_POST['senha']===$_POST['senha_conf']){ 
 				/**
