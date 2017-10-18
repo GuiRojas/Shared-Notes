@@ -33,11 +33,11 @@
 			
 			include("../Include/connect.inc.php");
 
-			$_POST['username'] = mysql_escape_string($_POST['username']);
-			$_POST['senha'] = mysql_escape_string($_POST['senha']);
-			$_POST['senha_conf'] = mysql_escape_string($_POST['senha_conf']);
-			$_POST['email'] = mysql_escape_string($_POST['email']);
-			$_POST['nome'] = mysql_escape_string($_POST['nome']);
+			$_POST['username'] = mysql_real_escape_string($_POST['username'],$conexao);
+			$_POST['senha'] = mysql_real_escape_string($_POST['senha'],$conexao);
+			$_POST['senha_conf'] = mysql_real_escape_string($_POST['senha_conf'],$conexao);
+			$_POST['email'] = mysql_real_escape_string($_POST['email'],$conexao);
+			$_POST['nome'] = mysql_real_escape_string($_POST['nome'],$conexaos);
 
 			if($_POST['senha']===$_POST['senha_conf']){ 
 				/**
