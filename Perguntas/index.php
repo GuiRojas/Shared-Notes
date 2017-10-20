@@ -15,11 +15,17 @@
 		
 	<div id="container">
 		<div id="perguntainer">
+			<?php
+				if(isset($_SESSION['u'])){
+			?>
 			<div class="perg">
 				<a href="prg_new.php">
 					Fazer uma pergunta
 				</a>	
-			</div>	
+			</div>
+			<?php
+				}
+			?>	
 			<div class="perg">
 				<a href="">
 					Pesquisar uma pergunta

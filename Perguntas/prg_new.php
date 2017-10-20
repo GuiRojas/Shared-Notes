@@ -19,15 +19,41 @@
 </head>
 <body>
 	<?php
-		$titulo= "Perguntas";
-		include '../Include/top.inc.php';
-		include '../Include/side.inc.php';
+	$titulo= "Perguntas";
+	include '../Include/top.inc.php';
+	include '../Include/side.inc.php';
+		
+
+
+	if((isset($_POST['titulo']))&&(isset($_POST['cat']))&&(isset($_POST['perg']))){
+
+		$titulo = htmlspecialchars($_POST['titulo']);
+		$cat = htmlspecialchars($_POST['cat']);
+		$perg = htmlspecialchars($_POST['perg']);
+
+		$user = $_SESSION['u'];
+
+		include '../include/connect.inc.php';
+
+		$sql = ("addPerg_sp '$titulo','$perg','$cat','$user'");
+
+		$status = sqlsrv_query($conexao,$sql);
+
+		if($status){
+			echo "Pergunta feita com sucesso";
+			//no futuro, redirecionar à pag da pergunta
+		}else{
+			echo '<span class="campos" id="msgErro">Não foi possível incluir a pergunta</span><br>';
+		}
+
+	}
+
 	?>
 		
 	<div id="container">
 		
-		<form method="POST" action="new.php" id="formPerg">
-			Título:<br><input type="text" name="titulo" maxlength="100"><br>
+		<form method="POST" id="formPerg">
+			Título:<br><input type="text" name="titulo" maxlength="30"><br>
 			Categoria:<input type="text" name="cat"><br><br>
 			Pergunta:<br><input type="text" name="perg" id="perg"><br>
 			<br><br>

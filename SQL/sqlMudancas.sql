@@ -29,3 +29,15 @@ create proc pesquisaUsu_sp
 @palavra varchar(30) = null
 as
 select username from usuario where username = @palavra
+
+create proc addPerg_sp
+@titulo varchar(30) = null,
+@text ntext = null,
+@cat varchar(30) = null,
+@criador varchar(25) = null
+as
+insert into pergunta values(@titulo,@text,@cat,@criador)
+
+
+
+select * from pergunta
