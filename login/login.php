@@ -25,8 +25,8 @@
 			if(isset($_POST['username'])&&isset($_POST['senha'])){
 			include("../Include/connect.inc.php");
 
-			$username=mysql_escape_string($_POST['username']);
-			$senha=mysql_escape_string($_POST['senha']);
+			$username=$_POST['username'];
+			$senha=$_POST['senha'];
 
 			$sql=("login_sp '".$username."'");
 
