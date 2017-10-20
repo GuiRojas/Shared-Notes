@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+'<!DOCTYPE html>
 <html>
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
@@ -23,27 +23,27 @@
 
 		<?php
 			if(isset($_POST['username'])&&isset($_POST['senha'])){
-			include("../Include/connect.inc.php");
+				include("../Include/connect.inc.php");
 
-			$username=htmlspecialchars($_POST['username']);
-			$senha=htmlspecialchars($_POST['senha']);
+				$username=htmlspecialchars($_POST['username']);
+				$senha=htmlspecialchars($_POST['senha']);
 
-			$sql=("login_sp '".$username."'");
+				$sql=("login_sp '".$username."'");
 
-			$status=sqlsrv_query($conexao,$sql);
+				$status=sqlsrv_query($conexao,$sql);
 
-			if($dados=sqlsrv_fetch_array($status)){
-				$pass_verf=$dados[3];
-				if(password_verify($senha,$pass_verf)){
-					session_start();
-					$_SESSION['perfilVisitando'] = $username;
-					$_SESSION['u'] = $username;
-					header('Location:../Home/index.php');
-				}else{
-					echo '<span class="campos" id="msgErro">Senha errada</span><br>';
-				}
-			}else
-				echo '<span class="campos" id="msgErro">Usuario inexistente</span><br>';
+				if($dados=sqlsrv_fetch_array($status)){
+					$pass_verf=$dados[3];
+					if(password_verify($senha,$pass_verf)){
+						session_start();
+						$_SESSION['perfilVisitando'] = $username;
+						$_SESSION['u'] = $username;
+						header('Location:../Home/index.php');
+					}else{
+						echo '<span class="campos" id="msgErro">Senha errada</span><br>';
+					}
+				}else
+					echo '<span class="campos" id="msgErro">Usuario inexistente</span><br>';
 			}
 
 		?>

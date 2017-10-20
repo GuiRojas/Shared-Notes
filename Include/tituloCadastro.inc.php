@@ -1,1 +1,1 @@
-<p id="titulo"><a href="../home/">Shared Notes</a></p>
+<p id="titulo">Shared Notes</p>
