@@ -4,9 +4,22 @@ alter table usuario add perguntas_respondidas int
 alter table usuario add perguntas_feitas int
 alter table usuario add especialidade varchar(15)
 
-update usuario set user_status = 'allahu a kibar' where username = 'JohnnyKaparrala'
-
 select * from usuario
 
 alter table usuario alter column user_status ntext
 alter table usuario alter column especialidade ntext
+
+
+create proc login_sp
+@usuario varchar(25) = null,
+@email varchar(100) = null,
+@nome varchar(50)= null,
+@senha varchar(60) = null
+as
+insert into usuario values(@usuario,@email,@nome,@senha,'Sem status','',0,0)
+
+
+create proc pesquisaUsu_sp
+@palavra varchar(30) = null
+as
+select username from usuario where username = @palavra
