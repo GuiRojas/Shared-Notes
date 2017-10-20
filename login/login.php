@@ -15,9 +15,9 @@
 	<div id="cadastro">
 		<form action="login.php" method="POST">
 			<span class="campos">Nome de Usuario:</span><br/>
-			<input type="text" class="camposInput" name="username" maxlength="25" ><br/>
+			<input type="text" class="camposInput" name="username" maxlength="25" ><br/><br>
 			<span class="campos" type="password">Senha:</span><br/>
-			<input type="password" class="camposInput" name="senha" maxlength="25" ><br/>
+			<input type="password" class="camposInput" name="senha" maxlength="25" ><br/><br>
 			<span class="campos"><a href="#">Esqueceu sua senha?</a></span><br/>
 			<span class="campos"><a href="cadastro.php">Não tem uma conta? cadastre-se aqui.</a></span><br>
 
