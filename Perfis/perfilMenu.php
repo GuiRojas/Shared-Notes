@@ -30,7 +30,7 @@
 
 			if(isset($_GET['query'])){
 
-				$query = $_GET['query'];
+				$query = htmlspecialchars($_GET['query']);
 				$_SESSION['query'] = $query;
 				if( $query != null or $query != ""){
 			        $status = sqlsrv_query( $conexao, "SELECT username FROM usuario WHERE username = '$query'", array(), array("Scrollable"=>"buffered"));

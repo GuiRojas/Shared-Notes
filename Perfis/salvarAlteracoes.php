@@ -76,8 +76,8 @@
 
 	include '../Include/connect.inc.php';
 
-	$_POST['status'] = mysql_real_escape_string($_POST['status'],$conexao);
-	$_POST['especialidade'] = mysql_real_escape_string($_POST['especialidade'],$conexao);
+	$_POST['status'] = htmlspecialchars($_POST['status']);
+	$_POST['especialidade'] = htmlspecialchars($_POST['especialidade']);
 
 	$sql = ("UPDATE usuario SET user_status = '".$_POST['status']."' WHERE username= '".$_SESSION['u']."';
 				UPDATE usuario SET especialidade = '".$_POST['especialidade']." 'WHERE username= '".$_SESSION['u']."'");

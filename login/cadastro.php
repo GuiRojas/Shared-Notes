@@ -33,22 +33,8 @@
 			
 			include("../Include/connect.inc.php");
 
-			$_POST['username'] = mysql_real_escape_string($_POST['username'],$conexao);
-			$_POST['senha'] = mysql_real_escape_string($_POST['senha'],$conexao);
-			$_POST['senha_conf'] = mysql_real_escape_string($_POST['senha_conf'],$conexao);
-			$_POST['email'] = mysql_real_escape_string($_POST['email'],$conexao);
-			$_POST['nome'] = mysql_real_escape_string($_POST['nome'],$conexaos);
+			if(htmlspecialchars($_POST['senha'])===htmlspecialchars($_POST['senha_conf'])){ 
 
-			if($_POST['senha']===$_POST['senha_conf']){ 
-				/**
-				 *
-				 * @simple function to test password strength
-				 *
-				 * @param string $password
-				 *
-				 * @return int 
-				 *
-				 */
 				function testPassword($password)
 				{
 				    if ( strlen( $password ) == 0 )
@@ -124,30 +110,34 @@
 				}
 
 				 
-				if(testPassword(mysql_escape_string($_POST['senha']))>1){
-					if (!validate_email(mysql_escape_string($_POST['email']))){
+				if(testPassword(htmlspecialchars($_POST['senha']))>1){
+					if (!validate_email(htmlspecialchars($_POST['email']))){
     					echo '<span class="campos" id="msgErro">Email Inválido!</span>';
 					}else{
-						$username=mysql_escape_string($_POST['username']);
-						$senha=mysql_escape_string($_POST['senha']);
-						$email=mysql_escape_string($_POST['email']);
-						$nome=mysql_escape_string($_POST['nome']);
+						$username=htmlspecialchars($_POST['username']);							
+						$senha=htmlspecialchars($_POST['senha']);
+						$email=htmlspecialchars($_POST['email']);
+						$nome=htmlspecialchars($_POST['nome']);
 
-						$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
-										'cost'=>10
-									 ));
+						if((strpos(';',$username)!==false)||(strpos(';',$senha)!==false)||(strpos(';',$nome)!==false)){
+							$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
+											'cost'=>10
+										 ));
 
-						$sql = ( "INSERT INTO Usuario VALUES ('$username','$email','$nome','$stored_pass','',0,0,'')");
+							$sql = ( "INSERT INTO Usuario VALUES ('$username','$email','$nome','$stored_pass','Sem status',' ',0,0)");
 
-						$status = sqlsrv_query( $conexao, $sql);
-						
-						if($status){
-							session_start();
-							$_SESSION['u']=$username;
-							header('Location:../Home/index.php');
+							$status = sqlsrv_query( $conexao, $sql);
+							
+							if($status){
+								session_start();
+								$_SESSION['u']=$username;
+								header('Location:../Home/index.php');
+							}else{
+								$status=sqlsrv_query($conexao,$sql);
+								echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão</span>';
+							}
 						}else{
-							$status=sqlsrv_query($conexao,$sql);
-							echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão</span>';
+							echo '<span class="campos" id="msgErro">Caracteres inválidos!</span>';
 						}
 					}					
 				}else{

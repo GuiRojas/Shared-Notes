@@ -1,5 +1,5 @@
 <?php
- include 'getUserData.inc.php';
+include 'getUserData.inc.php';
 echo "
 <div id='profilePosts'>
 	<div class='info'>
