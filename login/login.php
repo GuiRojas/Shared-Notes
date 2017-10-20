@@ -28,7 +28,7 @@
 				$username=htmlspecialchars($_POST['username']);
 				$senha=htmlspecialchars($_POST['senha']);
 
-				$sql=("select * from Usuario where username=$username");
+				$sql=("select * from Usuario where username='$username'");
 
 				$status=sqlsrv_query($conexao,$sql);
 
