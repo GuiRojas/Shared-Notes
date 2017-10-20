@@ -124,7 +124,7 @@
 											'cost'=>10
 										 ));
 
-							$sql = ( "INSERT INTO Usuario VALUES ('$username','$email','$nome','$stored_pass','Sem status',' ',0,0)");
+							$sql = ("cadastro_sp '$username','$email','$nome','$stored_pass'");
 
 							$status = sqlsrv_query( $conexao, $sql);
 							

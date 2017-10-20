@@ -13,8 +13,6 @@
 	?>
 		
 	<div id="container">
-
-		<header id="tituloSobre">Sobre o site</header>
 		<div>
 			Esse site foi feito por: <br><br>
 

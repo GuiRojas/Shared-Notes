@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
-	<title>SN - Login</title>
+	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/cadastro.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
@@ -28,7 +28,7 @@
 				$username=htmlspecialchars($_POST['username']);
 				$senha=htmlspecialchars($_POST['senha']);
 
-				$sql=("select * from Usuario where username='$username'");
+				$sql=("login_sp '$username'");
 
 				$status=sqlsrv_query($conexao,$sql);
 
@@ -51,7 +51,5 @@
 		<input type="submit" name="Logar" id="enviar">
 		</form>
 	</div>
-
-
 </body>
 </html>

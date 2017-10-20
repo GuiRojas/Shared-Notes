@@ -5,6 +5,17 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/padraoSite.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
+	<style type="text/css">
+		#perg
+		{
+		height:200px;
+		width: 500px;
+		}
+		#formPerg
+		{
+		margin-left: 20px;
+		}
+	</style>
 </head>
 <body>
 	<?php
@@ -14,25 +25,16 @@
 	?>
 		
 	<div id="container">
-		<div id="perguntainer">
-			<div class="perg">
-				<a href="prg_new.php">
-					Fazer uma pergunta
-				</a>	
-			</div>	
-			<div class="perg">
-				<a href="">
-					Pesquisar uma pergunta
-				</a>		
-			</div>
-			<div class="perg">
-				<a href="">
-					Pesquisar uma Linguagem
-				</a>	
-			</div>	
+		
+		<form method="POST" action="new.php" id="formPerg">
+			Título:<br><input type="text" name="titulo" maxlength="100"><br>
+			Categoria:<input type="text" name="cat"><br><br>
+			Pergunta:<br><input type="text" name="perg" id="perg"><br>
+			<br><br>
+			<input type="submit" name="Logar" id="enviar">	
+						
+		</form>
 
-			
-		</div>		
 	</div>
 	
 	<?php
