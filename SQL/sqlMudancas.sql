@@ -9,8 +9,14 @@ select * from usuario
 alter table usuario alter column user_status ntext
 alter table usuario alter column especialidade ntext
 
+-----------------------PROCEDURES---------------------------
 
 create proc login_sp
+@usuario varchar(20) = null
+as
+select * from usuario where username = @usuario
+
+create proc cadastro_sp
 @usuario varchar(25) = null,
 @email varchar(100) = null,
 @nome varchar(50)= null,
