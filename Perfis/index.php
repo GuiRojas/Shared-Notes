@@ -29,7 +29,7 @@
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
 			<img src='$urlFoto' class='img'>
-			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"> <?php echo"$status"?> </textarea>
+			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"><?php echo"$status"?></textarea>
 			<span class="campoSpan">Especialidade:</span> <input name="especialidade" id="chngEspecialidade" maxlength="50" type="text" class="campo" <?php echo" value='$especialidade' "?> >
 			
 			<div id="btns">
@@ -61,55 +61,9 @@
 
 	<div id="container">
 		<?php
-			include '../Include/getUserData.inc.php';
+			include '../Include/profilePosts.inc.php';
+			include '../Include/profile.inc.php';
 		?>
-			<div id='profilePosts'>
-
-				<div class='info'>
-					<div class='postTitle'><p class='txtPostTitle'>Projetos postados(<?php echo "$projPostado" ?>)</p> 
-						<?php 
-							if(isset($_SESSION['u'])){
-								if($_SESSION['u'] == $_GET['query'])
-						?>
-						<div class="link"><a href="../Perguntas/index.php"> Postar um projeto</a></div> 
-						<?php
-							};
-						?>
-					</div>
-					<div class='postArea'>
-						<div class='postsFechados'>
-							<p class='nomeProj'>. . .</p>
-						</div>
-						<div class='projDesc'>
-							
-						</div>
-					</div>
-				</div>
-
-				<div class='info'>
-					<div class='postTitle'><p class='txtPostTitle'>Perguntas feitas(<?php echo"$perguntasFeitas" ?>)</p></div>
-					<div class='postArea'>
-						<div class='postsFechados'>
-							<p class='nomeProj'>. . .</p>
-						</div>
-						<div class='projDesc'>
-							
-						</div>
-					</div>
-				</div>	
-
-				<div class='info'>
-					<div class='postTitle'><p class='txtPostTitle'>Perguntas respondidas(<?php echo"$perguntasRespondidas" ?>)</p></div>
-					<div class='postArea'>	
-						<div class='postsFechados'>
-							<p class='nomeProj'>. . .</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<?php include '../Include/profile.inc.php';?>
-
 	</div>
 	
 	<?php
