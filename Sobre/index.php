@@ -19,7 +19,6 @@
 			<b>-></b>Francisco Luiz Maian do Nascimento <br>
 			<b>-></b>Guilherme Rojas Ribeiro  <br>
 			<b>-></b>João Lucas Conrado Alvarez
-
 		</div>
 
 		<div id="RAs">
@@ -28,7 +27,7 @@
 		RA:17186
 		</div>
 
-		<br><br>Esse site foi desenvolvido como projeto das aulas de Prática Profissional I.
+		Esse site foi desenvolvido como projeto das aulas de Prática Profissional I.
 
 	</div>
 	
