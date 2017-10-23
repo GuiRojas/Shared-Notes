@@ -34,10 +34,12 @@
 
 				if($dados=sqlsrv_fetch_array($status)){
 					$pass_verf=$dados[3];
+					$email=$dados[1];
 					if(password_verify($senha,$pass_verf)){
 						session_start();
 						$_SESSION['perfilVisitando'] = $username;
 						$_SESSION['u'] = $username;
+						$_SESSION['email'] = $email;
 						header('Location:../Home/index.php');
 					}else{
 						echo '<span class="campos" id="msgErro">Senha errada</span><br>';

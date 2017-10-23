@@ -134,6 +134,7 @@
 							if($status){
 								session_start();
 								$_SESSION['u']=$username;
+								$_SESSION['email']=$email;
 								header('Location:../Perfis/index.php?query='.$username);
 							}else{
 								$status=sqlsrv_query($conexao,$sql);

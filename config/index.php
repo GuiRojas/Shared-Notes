@@ -16,8 +16,115 @@
 	<div id="container">
 		<div id="configainer">
 
-			<br><br>
-			Mudar nome:<input type="text" name="nome" <?php echo "value"    >
+			<form method="POST">
+				<br>
+				Mudar email:<input type="text" name="email" <?php echo " value=".$_SESSION['email']; ?> >
+				<br><br>
+				Senha Antiga:<input type="text" name="senha_ant">
+				<br>
+				Senha nova:<input type="text" name="senha_nova">
+				<br>
+				Confirmar senha:<input type="text" name="senha_verf">
+				<br><br>
+
+				<input type="submit" name="vai" value="mudar">
+			</form>
+
+			<?php
+			include '../Include/connect.inc.php';
+
+			function testPassword($password){
+			    if ( strlen( $password ) == 0 )
+			    
+			        return 1;
+			    
+			 
+			    $strength = 0;
+			 
+			    /*** get the length of the password ***/
+			    $length = strlen($password);
+			 
+			    /*** check if password is not all lower case ***/
+			    if(strtolower($password) != $password)
+			    {
+			        $strength += 1;
+			    }
+			 
+			    /*** check if password is not all upper case ***/
+			    if(strtoupper($password) == $password)
+			    {
+			        $strength += 1;
+			    }
+			 
+			    /*** check string length is 8 -15 chars ***/
+			    if($length >= 8 && $length <= 15)
+			    {
+			        $strength += 1;
+			    }
+			 
+			    /*** check if lenth is 16 - 35 chars ***/
+			    if($length >= 16 && $length <=35)
+			    {
+			        $strength += 2;
+			    }
+			 
+			    /*** check if length greater than 35 chars ***/
+			    if($length > 35)
+			    {
+			        $strength += 3;
+			    }
+			 
+			    /*** get the numbers in the password ***/
+			    preg_match_all('/[0-9]/', $password, $numbers);
+			    $strength += count($numbers[0]);
+			 
+			    /*** check for special chars ***/
+			    preg_match_all('/[|!@#$%&*\/=?,;.:\-_+~^\\\]/ ', $password, $specialchars);
+			    $strength += sizeof($specialchars[0]);
+			 
+			    /*** get the number of unique chars ***/
+			    $chars = str_split($password);
+			    $num_unique_chars = sizeof( array_unique($chars) );
+			    $strength += $num_unique_chars * 2;
+			 
+			    /*** strength is a number 1-10; ***/
+			    $strength = $strength > 99 ? 99 : $strength;
+			    $strength = floor($strength / 10 + 1);
+			 
+			    return $strength;
+			}
+
+			function validate_email($email){
+			    if(!preg_match ("/^[\w\.-]{1,}\@([\da-zA-Z-]{1,}\.){1,}[\da-zA-Z-]+$/", $email))
+			        return false;
+			    list($prefix, $domain) = explode("@",$email);
+			    if(function_exists("getmxrr") && getmxrr($domain, $mxhosts))
+			        return true;
+			    elseif (@fsockopen($domain, 25, $errno, $errstr, 5))
+			        return true;
+			    else
+			        return false;
+			}
+
+			if(isset($_POST['email'])){
+				if(!(validate_email($_POST['email'])))
+					echo "Email inválido!";
+
+				$sql = ("UPDATE usuario SET email = '".$_POST['email']."' WHERE username='".$_SESSION['U']."'");
+
+				$status = sqlsrv_query($conexao,$sql);
+				if($status){
+					header("Location: ../perfis/index.php?query=$_SESSION[u]");
+				}
+				//francisco ta mt puto q eu to ouvindo musica de otako
+			}
+
+			if((isset($_POST['senha_ant']))&&(isset($_POST['senha_nova']))&&(isset($_POST['senha_verf'])){
+
+
+			}
+
+			?>
 
 
 		</div>			
