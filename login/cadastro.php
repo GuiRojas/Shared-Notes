@@ -120,7 +120,7 @@
 
 							$username=htmlspecialchars($_POST['username']);							
 							$senha=htmlspecialchars($_POST['senha']);
-							$email=validate_email($_POST['email']);
+							$email=htmlspecialchars($_POST['email']);
 							$nome=htmlspecialchars($_POST['nome']);
 
 							$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
