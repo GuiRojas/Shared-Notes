@@ -15,7 +15,9 @@
 		
 	<div id="container">
 		<div id="configainer">
-			<br><br>aa
+
+			<br><br>
+			Mudar nome:<input type="text" name="nome" <?php echo "value"    >
 
 
 		</div>			
