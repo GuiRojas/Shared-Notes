@@ -279,3 +279,16 @@ input[type="button"]:hover{
  	color: #3a4c60;
  	margin-top: 35px; 
  }
+
+ 
+#RAs{
+	margin-top: 2px;
+	margin-left: 350px;
+	width: 150px;
+	height: 100px;
+}
+
+#criadores{
+	width: 350px;
+	height: 150px;
+}

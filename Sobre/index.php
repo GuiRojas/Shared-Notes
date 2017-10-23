@@ -13,16 +13,22 @@
 	?>
 		
 	<div id="container">
-		<div>
+		<div id="criadores">
 			Esse site foi feito por: <br><br>
 
-			<b>-></b>Francisco Luiz Maian do Nascimento <b>RA:</b>17178 <br>
-			<b>-></b>Guilherme Rojas Ribeiro <b>RA:</b>17182 <br>
-			<b>-></b>João Lucas Conrado Alvarez <b>RA:</b>17186<br><br>
-
-			Esse site foi desenvolvido como projeto das aulas de Prática Profissional I.
+			<b>-></b>Francisco Luiz Maian do Nascimento <br>
+			<b>-></b>Guilherme Rojas Ribeiro  <br>
+			<b>-></b>João Lucas Conrado Alvarez
 
 		</div>
+
+		<div id="RAs">
+		RA:17178 <br>
+		RA:17182 <br>
+		RA:17186
+		</div>
+
+		<br><br>Esse site foi desenvolvido como projeto das aulas de Prática Profissional I.
 
 	</div>
 	
