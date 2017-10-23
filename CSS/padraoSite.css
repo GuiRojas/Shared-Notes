@@ -417,3 +417,11 @@ body{
 .campoPerfil{
 	word-wrap: break-word;
 }
+
+.link{
+	float: right;
+}
+
+.link a{
+
+}
