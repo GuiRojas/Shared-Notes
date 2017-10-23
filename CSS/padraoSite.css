@@ -417,3 +417,7 @@ body{
 .campoPerfil{
 	word-wrap: break-word;
 }
+
+.configainer{
+	margin-left: 25px;
+}

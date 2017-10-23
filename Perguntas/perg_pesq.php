@@ -15,28 +15,7 @@
 		
 	<div id="container">
 		<div id="perguntainer">
-			<?php
-				if(isset($_SESSION['u'])){
-			?>
-			<div class="perg">
-				<a href="prg_new.php">
-					Fazer uma pergunta
-				</a>	
-			</div>
-			<?php
-				}
-			?>	
-			<div class="perg">
-				<a href="perg_pesq.php">
-					Pesquisar uma pergunta
-				</a>		
-			</div>
-			<div class="perg">
-				<a href="">
-					Pesquisar uma Categoria
-				</a>	
-			</div>	
-
+			aa
 			
 		</div>		
 	</div>
