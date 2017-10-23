@@ -16,9 +16,9 @@
 		<div>
 			Esse site foi feito por: <br><br>
 
-			Francisco Luiz Maian do Nascimento<br>
-			Guilherme Rojas Ribeiro<br>
-			João Lucas Conrado Alvarez<br><br>
+			<b>-></b>Francisco Luiz Maian do Nascimento <b>RA:</b>17178 <br>
+			<b>-></b>Guilherme Rojas Ribeiro <b>RA:</b>17182 <br>
+			<b>-></b>João Lucas Conrado Alvarez <b>RA:</b>17186<br><br>
 
 			Esse site foi desenvolvido como projeto das aulas de Prática Profissional I.
 
