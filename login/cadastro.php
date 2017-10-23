@@ -134,7 +134,7 @@
 							if($status){
 								session_start();
 								$_SESSION['u']=$username;
-								header('Location:../Home/index.php');
+								header('Location:../Perfis/index.php?query='.$username);
 							}else{
 								$status=sqlsrv_query($conexao,$sql);
 								echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão</span>';
