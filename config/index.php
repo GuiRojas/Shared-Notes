@@ -119,9 +119,11 @@
 				//francisco ta mt puto q eu to ouvindo musica de otako
 			}
 
-			if((isset($_POST['senha_ant']))&&(isset($_POST['senha_nova']))&&(isset($_POST['senha_verf'])){
+			if((isset($_POST['senha_ant']))&&(isset($_POST['senha_nova']))&&(isset($_POST['senha_verf']))){
 
 
+				//visual pode fazer isso? to com preguiça '~'
+				
 			}
 
 			?>
