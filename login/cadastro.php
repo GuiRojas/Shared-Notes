@@ -111,15 +111,18 @@
 
 				 
 				if(testPassword(htmlspecialchars($_POST['senha']))>1){
-					if (!validate_email(htmlspecialchars($_POST['email']))){
+					if (!validate_email($_POST['email'])){
     					echo '<span class="campos" id="msgErro">Email Inválido!</span>';
 					}else{
-						$username=htmlspecialchars($_POST['username']);							
-						$senha=htmlspecialchars($_POST['senha']);
-						$email=htmlspecialchars($_POST['email']);
-						$nome=htmlspecialchars($_POST['nome']);
+						
 
-						if((strpos(';',$username)!==false)||(strpos(';',$senha)!==false)||(strpos(';',$nome)!==false)){
+						if((!(strpos($_POST['username'],';')))&&(!(strpos($_POST['senha'],';')))&&(!(strpos($_POST['nome'],';')))){
+
+							$username=htmlspecialchars($_POST['username']);							
+							$senha=htmlspecialchars($_POST['senha']);
+							$email=validate_email($_POST['email']);
+							$nome=htmlspecialchars($_POST['nome']);
+
 							$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
 											'cost'=>10
 										 ));
