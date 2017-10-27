@@ -2,7 +2,7 @@
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
 	<title>Perguntas</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/padraoSite.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
@@ -16,16 +16,17 @@
 	<div id="container">
 		<div id="perguntainer">
 
-			<div id="procuraPerfil">
+			
 				<form method="GET">
+					<div id="procuraUsuario">
 					<div>
 						<input type="text" id="query" name="query">
 					</div>
 					<div>
 						<input type="submit" id="btnInput" value="">	
-									
+					</div>				
 				</form>
-			</div>	
+			
 				
 			<?php
 			include("../Include/connect.inc.php");
@@ -57,8 +58,10 @@
 			}
 			?>
 
-			
-		</div>		
+				
+		
+		</div>
+
 	</div>
 	
 	<?php
