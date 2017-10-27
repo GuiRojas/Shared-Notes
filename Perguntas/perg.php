@@ -24,9 +24,7 @@
 		}
 	?> 
 	<div id="container">
-		
-			<div id='profilePosts'>
-			</div>
+
 	</div>
 	
 	<?php
