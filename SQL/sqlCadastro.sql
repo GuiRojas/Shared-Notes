@@ -31,11 +31,20 @@ create table seguir(
 	constraint fkUsgn foreign key (uSeguindo) references usuario(username)	
 )
 
+create table projeto(
+	codProjeto int identity(1,1) primary key,
+	titulo varchar(54) not null,
+	descricao ntext not null,
+	nota ntext not null,
+	criador varchar(25) not null
+	constraint fkCri foreign key(criador) references usuario(username)
+)
 
 select * from comentario
 select * from pergunta
 select * from usuario
 select * from seguir
+select * from projeto
 
 /*
 drop table comentario

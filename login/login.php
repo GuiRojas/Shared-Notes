@@ -37,7 +37,6 @@
 					$email=$dados[1];
 					if(password_verify($senha,$pass_verf)){
 						session_start();
-						$_SESSION['perfilVisitando'] = $username;
 						$_SESSION['u'] = $username;
 						$_SESSION['email'] = $email;
 						header('Location:../Home/index.php');
