@@ -11,6 +11,7 @@
 		$titulo= "Configurações";
 		include '../Include/top.inc.php';
 		include '../Include/side.inc.php';
+
 	?>
 		
 	<div id="container">
@@ -18,13 +19,20 @@
 
 			<form method="POST">
 				<br>
-				Mudar email:<input type="text" name="email" <?php echo " value=".$_SESSION['email']; ?> >
+				Mudar email:<input type="text" name="email"
+				<?php
+					if(isset($_POST['email']))
+						echo "value=".$_POST['email']; 
+					else{
+						echo "value=".$_SESSION['email']; 
+					}
+				?> >
 				<br><br>
 				Senha Antiga:<input type="text" name="senha_ant">
 				<br>
-				Senha nova:<input type="text" name="senha_nova">
-				<br>
 				Confirmar senha:<input type="text" name="senha_verf">
+				<br>
+				Senha nova:<input type="text" name="senha_nova">
 				<br><br>
 
 				<input type="submit" name="vai" value="mudar">
@@ -109,56 +117,70 @@
 			if(isset($_POST['email'])){
 				if(!(validate_email($_POST['email'])))
 					echo "Email inválido!";
+				else{
+					$sql = ("UPDATE usuario SET email = '".$_POST['email']."' WHERE username= '".$_SESSION['u']."'");
 
-				$sql = ("UPDATE usuario SET email = '".$_POST['email']."' WHERE username='".$_SESSION['U']."'");
-
-				$status = sqlsrv_query($conexao,$sql);
-				if($status){
-					header("Location: ../perfis/index.php?query=$_SESSION[u]");
+					$status = sqlsrv_query($conexao,$sql);
+					if($status){
+						$_SESSION['email']=$_POST['email'];
+					}
+	
 				}
+
 			}
 
 			if((isset($_POST['senha_ant']))&&(isset($_POST['senha_nova']))&&(isset($_POST['senha_verf']))){
-				if($_POST['senha_nova'] == $_POST['senha_verf']){
 
-					if(testPassword(htmlspecialchars($_POST['senha']))>1){
+				if(($_POST['senha_ant']=='')&&($_POST['senha_nova']=='')&&($_POST['senha_verf']=='')){
+					//  :)
+				}else{
+					if($_POST['senha_ant'] == $_POST['senha_verf']){
 
-						$sql=("login_sp '$username'");
-						$status=sqlsrv_query($conexao,$sql);
+						if(testPassword(htmlspecialchars($_POST['senha_nova']))>1){
+
+							$sql=("login_sp '".$_SESSION['u']."'");
+							$status=sqlsrv_query($conexao,$sql);
 
 							if($dados=sqlsrv_fetch_array($status)){
 
 								$pass_verf=$dados[3];	
 
-								if(password_verify($_POST['senha_nova'],$pass_verf){
+								if(password_verify($_POST['senha_ant'],$pass_verf)){
 
-								$stored_pass=password_hash($_POST['senha_nova'],PASSWORD_BCRYPT,array(
-												'cost'=>10
-											 ));
+									$stored_pass=password_hash(htmlspecialchars($_POST['senha_nova']),PASSWORD_BCRYPT,array(
+													'cost'=>10
+												 ));
 
-								$sql = "UPDATE usuario SET senha = $stored_pass WHERE username = '$_SESSION['u']'";
-								$status=sqlsrv_query($conexao,$sql);
+									$sql = "UPDATE usuario SET senha = '$stored_pass'
+									        WHERE  username = '".$_SESSION['u']."'";
+									$status=sqlsrv_query($conexao,$sql);
+			
+									if($status){
+										echo "Senha mudada";
+									}else{
+										echo "não foi possível mudar a senha";
+									}
 
-								if($status){
-									echo "Senha mudada";
+
 								}else{
-									echo "não foi possível mudar a senha";
+									echo "senha incorreta!";
 								}
 
-							}			
+							}
+
+						}else{
+							echo "senha muito fraca!";
+						}	
 
 					}else{
-						echo "senha incorreta!";
+						echo "senhas diferem!";
 					}
-
-				}else{
-					echo "senha muito fraca!";
 				}
-			}else{
-				echo "senhas diferem!";
-			}				
+
+
 			}
 
+			
 			?>
 
 
