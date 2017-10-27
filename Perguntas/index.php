@@ -31,12 +31,7 @@
 					Pesquisar uma pergunta
 				</a>		
 			</div>
-			<div class="perg">
-				<a href="">
-					Pesquisar uma Categoria
-				</a>	
-			</div>	
-
+			
 			
 		</div>		
 	</div>

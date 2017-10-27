@@ -116,14 +116,47 @@
 				if($status){
 					header("Location: ../perfis/index.php?query=$_SESSION[u]");
 				}
-				//francisco ta mt puto q eu to ouvindo musica de otako
 			}
 
 			if((isset($_POST['senha_ant']))&&(isset($_POST['senha_nova']))&&(isset($_POST['senha_verf']))){
+				if($_POST['senha_nova'] == $_POST['senha_verf']){
 
+					if(testPassword(htmlspecialchars($_POST['senha']))>1){
 
-				//visual pode fazer isso? to com preguiça '~'
-				
+						$sql=("login_sp '$username'");
+						$status=sqlsrv_query($conexao,$sql);
+
+							if($dados=sqlsrv_fetch_array($status)){
+
+								$pass_verf=$dados[3];	
+
+								if(password_verify($_POST['senha_nova'],$pass_verf){
+
+								$stored_pass=password_hash($_POST['senha_nova'],PASSWORD_BCRYPT,array(
+												'cost'=>10
+											 ));
+
+								$sql = "UPDATE usuario SET senha = $stored_pass WHERE username = '$_SESSION['u']'";
+								$status=sqlsrv_query($conexao,$sql);
+
+								if($status){
+									echo "Senha mudada";
+								}else{
+									echo "não foi possível mudar a senha";
+								}
+
+							}			
+
+					}else{
+						echo "senha incorreta!";
+					}
+
+				}else{
+					echo "senha muito fraca!";
+				}
+			}else{
+				echo "senhas diferem!";
+			}				
 			}
 
 			?>
