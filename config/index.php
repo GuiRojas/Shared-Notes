@@ -28,11 +28,11 @@
 					}
 				?> >
 				<br><br>
-				Senha Antiga:<input type="text" name="senha_ant">
+				Senha Antiga:<input type="password" name="senha_ant">
 				<br>
-				Confirmar senha:<input type="text" name="senha_verf">
+				Confirmar senha:<input type="password" name="senha_verf">
 				<br>
-				Senha nova:<input type="text" name="senha_nova">
+				Senha nova:<input type="password" name="senha_nova">
 				<br><br>
 
 				<input type="submit" name="vai" value="mudar">
