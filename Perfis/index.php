@@ -31,6 +31,7 @@
 			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"> <?php echo"$status"?> </textarea>
 			<span class="campoSpan">Especialidade:</span> 
 			<select name="especialidade" id="chngEspecialidade" class="campo">
+				<option>Nada</option>
 				<option>Tudo sobre front end</option>
 				<option>Tudo sobre back end</option>
 				<option>PHP</option>
@@ -42,7 +43,6 @@
 				<option>C</option>
 				<option>C#</option>
 				<option>C++</option>
-				<option>Nada</option>
 			</select>
 			
 			<div id="btns">
