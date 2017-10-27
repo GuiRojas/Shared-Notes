@@ -20,7 +20,7 @@
 
 			
 			if( isset($_SESSION['u'])){ //verifica se está logado
-				if (($_SESSION['u']) == isset($_GET['query'])) {			
+				if ($_SESSION['u'] == $_GET['query']) {			
 			 	//verifica se é o perfil do visitante
 	?> 
 
@@ -66,16 +66,16 @@
 			<div id='profilePosts'>
 
 				<div class='info'>
-					<div class='postTitle'><p class='txtPostTitle'>Projetos postados(<?php echo "$projPostado" ?>)</p> 
-						<?php 
+					<div class='postTitle'><p class='txtPostTitle'>Projetos postados(<?php echo "$projPostado" ?>)
+						<?php
 							if(isset($_SESSION['u'])){
 								if($_SESSION['u'] == $_GET['query'])
 						?>
-						<div class="link"><a href="../Perguntas/index.php"> Postar um projeto</a></div> 
+						<div class="link"><a href="../Projetos/index.php"> Postar um projeto</a></div> 
 						<?php
 							};
 						?>
-					</div>
+					</p> </div>
 					<div class='postArea'>
 						<div class='postsFechados'>
 							<p class='nomeProj'>. . .</p>
@@ -87,7 +87,16 @@
 				</div>
 
 				<div class='info'>
-					<div class='postTitle'><p class='txtPostTitle'>Perguntas feitas(<?php echo"$perguntasFeitas" ?>)</p></div>
+					<div class='postTitle'><p class='txtPostTitle'>Perguntas feitas(<?php echo"$perguntasFeitas" ?>)
+						<?php 
+							if(isset($_SESSION['u'])){
+								if($_SESSION['u'] == $_GET['query'])
+						?>
+						<div class="link"><a href="../Perguntas/prg_new.php"> Fazer uma pregunta</a></div> 
+						<?php
+							};
+						?>
+					</p></div>
 					<div class='postArea'>
 						<div class='postsFechados'>
 							<p class='nomeProj'>. . .</p>
@@ -99,7 +108,16 @@
 				</div>	
 
 				<div class='info'>
-					<div class='postTitle'><p class='txtPostTitle'>Perguntas respondidas(<?php echo"$perguntasRespondidas" ?>)</p></div>
+					<div class='postTitle'><p class='txtPostTitle'>Perguntas respondidas(<?php echo"$perguntasRespondidas" ?>)
+						<?php 
+							if(isset($_SESSION['u'])){
+								if($_SESSION['u'] == $_GET['query'])
+						?>
+						<div class="link"><a href="../Perguntas/index.php"> Responder uma pergunta</a></div> 
+						<?php
+							};
+						?>
+					</p></div>
 					<div class='postArea'>	
 						<div class='postsFechados'>
 							<p class='nomeProj'>. . .</p>

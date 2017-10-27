@@ -421,3 +421,11 @@ body{
 .configainer{
 	margin-left: 25px;
 }
+
+.link{
+	float: right;
+}
+
+.link a{
+	color: #6584A3;
+}
