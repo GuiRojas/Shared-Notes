@@ -81,8 +81,7 @@
 				<div class='info'>
 					<div class='postTitle'><p class='txtPostTitle'>Projetos postados(<?php echo "$projPostado" ?>)
 						<?php
-							if(isset($_SESSION['u'])){
-								if($_SESSION['u'] == $_GET['query'])
+								if($_SESSION['u'] == $_GET['query']){
 						?>
 						<div class="link"><a href="../Projetos/index.php"> Postar um projeto</a></div> 
 						<?php
@@ -102,8 +101,7 @@
 				<div class='info'>
 					<div class='postTitle'><p class='txtPostTitle'>Perguntas feitas(<?php echo"$perguntasFeitas" ?>)
 						<?php 
-							if(isset($_SESSION['u'])){
-								if($_SESSION['u'] == $_GET['query'])
+								if($_SESSION['u'] == $_GET['query']){
 						?>
 						<div class="link"><a href="../Perguntas/prg_new.php"> Fazer uma pregunta</a></div> 
 						<?php
@@ -122,9 +120,8 @@
 
 				<div class='info'>
 					<div class='postTitle'><p class='txtPostTitle'>Perguntas respondidas(<?php echo"$perguntasRespondidas" ?>)
-						<?php 
-							if(isset($_SESSION['u'])){
-								if($_SESSION['u'] == $_GET['query'])
+						<?php
+							if($_SESSION['u'] == $_GET['query']){
 						?>
 						<div class="link"><a href="../Perguntas/index.php"> Responder uma pergunta</a></div> 
 						<?php
