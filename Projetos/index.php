@@ -30,7 +30,7 @@
 				</a>		
 			</div>
 	</div>
-	
+
 	<?php
 		include '../Include/bot.inc.php';
 	?>

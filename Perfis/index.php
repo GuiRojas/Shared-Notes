@@ -29,7 +29,21 @@
 			<hr>
 			<img src='$urlFoto' class='img'>
 			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"> <?php echo"$status"?> </textarea>
-			<span class="campoSpan">Especialidade:</span> <input name="especialidade" id="chngEspecialidade" maxlength="50" type="text" class="campo" <?php echo" value='$especialidade' "?> >
+			<span class="campoSpan">Especialidade:</span> 
+			<select name="especialidade" id="chngEspecialidade" class="campo">
+				<option>Tudo sobre front end</option>
+				<option>Tudo sobre back end</option>
+				<option>PHP</option>
+				<option>JavaScript</option>
+				<option>SQL Server</option>
+				<option>MySQL</option>
+				<option>Java</option>
+				<option>Pascal</option>
+				<option>C</option>
+				<option>C#</option>
+				<option>C++</option>
+				<option>Nada</option>
+			</select>
 			
 			<div id="btns">
 				<input type="submit" class="btnSalvar" value="Salvar alterações">
