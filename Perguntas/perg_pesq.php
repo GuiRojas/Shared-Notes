@@ -15,7 +15,48 @@
 		
 	<div id="container">
 		<div id="perguntainer">
-			aa
+
+			<div id="procuraPerfil">
+				<form method="GET">
+					<div>
+						<input type="text" id="query" name="query">
+					</div>
+					<div>
+						<input type="submit" id="btnInput" value="">	
+									
+				</form>
+			</div>	
+				
+			<?php
+			include("../Include/connect.inc.php");
+
+			if(isset($_GET['query'])){
+
+				$query = htmlspecialchars($_GET['query']);
+				$_SESSION['query'] = $query;
+				if( $query != null or $query != ""){
+			        $status = sqlsrv_query( $conexao, "SELECT titulo FROM pergunta WHERE titulo = '$query'", array(), array("Scrollable"=>"buffered"));
+
+			        $rowCount= sqlsrv_num_rows($status);
+
+					if ( $rowCount >=1) { 
+			        	$nomePerg = "$query";
+						include '../Include/getPergData.inc.php';
+			        	echo "<a class='usuDataA' href='perg.php?query=$query'>
+
+				        	<div class='usuData'>
+								<div class='nomeEFoto'>$query</div>
+								<div class='linhaVertical'></div>
+								<div class='info'></div>
+							</div>
+			        	</a>";
+			        } else {
+				        echo "<span class='msgErro'> Usuário não encontrado.</span>";
+				    }
+		        }
+			}
+			?>
+
 			
 		</div>		
 	</div>
