@@ -291,3 +291,10 @@ input[type="button"]:hover{
 	width: 350px;
 	height: 150px;
 }
+
+.tituloProjNew{
+	background-color: #F7F7F7;
+	height: 45px;
+	display: grid;
+	font-size: 20px;
+}
