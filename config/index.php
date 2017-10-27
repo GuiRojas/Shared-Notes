@@ -134,43 +134,49 @@
 				if(($_POST['senha_ant']=='')&&($_POST['senha_nova']=='')&&($_POST['senha_verf']=='')){
 					//  :)
 				}else{
-					if($_POST['senha_ant'] == $_POST['senha_verf']){
+					if($_POST['senha_nova'] == $_POST['senha_verf']){
 
-						if(testPassword(htmlspecialchars($_POST['senha_nova']))>1){
+						if($_POST['senha_ant'] == $_POST['senha_novaf']){
 
-							$sql=("login_sp '".$_SESSION['u']."'");
-							$status=sqlsrv_query($conexao,$sql);
+							if(testPassword(htmlspecialchars($_POST['senha_nova']))>1){
 
-							if($dados=sqlsrv_fetch_array($status)){
+								$sql=("login_sp '".$_SESSION['u']."'");
+								$status=sqlsrv_query($conexao,$sql);
 
-								$pass_verf=$dados[3];	
+								if($dados=sqlsrv_fetch_array($status)){
 
-								if(password_verify($_POST['senha_ant'],$pass_verf)){
+									$pass_verf=$dados[3];	
 
-									$stored_pass=password_hash(htmlspecialchars($_POST['senha_nova']),PASSWORD_BCRYPT,array(
-													'cost'=>10
-												 ));
+									if(password_verify($_POST['senha_ant'],$pass_verf)){
 
-									$sql = "UPDATE usuario SET senha = '$stored_pass'
-									        WHERE  username = '".$_SESSION['u']."'";
-									$status=sqlsrv_query($conexao,$sql);
-			
-									if($status){
-										echo "Senha mudada";
+										$stored_pass=password_hash(htmlspecialchars($_POST['senha_nova']),PASSWORD_BCRYPT,array(
+														'cost'=>10
+													 ));
+
+										$sql = "UPDATE usuario SET senha = '$stored_pass'
+										        WHERE  username = '".$_SESSION['u']."'";
+										$status=sqlsrv_query($conexao,$sql);
+				
+										if($status){
+											echo "Senha mudada";
+										}else{
+											echo "não foi possível mudar a senha";
+										}
+
+
 									}else{
-										echo "não foi possível mudar a senha";
+										echo "senha incorreta!";
 									}
 
-
-								}else{
-									echo "senha incorreta!";
 								}
 
-							}
+							}else{
+								echo "senha muito fraca!";
+							}	
 
 						}else{
-							echo "senha muito fraca!";
-						}	
+							echo "Senha nova não pode ser a senha antiga"
+						}
 
 					}else{
 						echo "senhas diferem!";

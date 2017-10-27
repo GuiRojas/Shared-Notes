@@ -3,3 +3,6 @@ UsuarioPadrao
 
 admin
 --JKSopq5621
+
+mrteste
+1234qwerQWER
