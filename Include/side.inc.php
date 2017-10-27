@@ -5,10 +5,12 @@
 	<div id="side">
 		<div id="contentSide">
 			<a href="../home" class="a">Home</a> <!--class="aAtivo"-->
+			<a href='../Projetos/index.php' class='a'>Projetos</a>
 			<?php
+
 				if(isset($_SESSION['u'])){
 					$user = $_SESSION['u'];
-					echo "<a href='#' class='a'>Projetos</a>";
+					echo "<a href='../Projetos/projNew.php' class='aSub'>Postar um projeto</a>";
 				}
 			?>
 

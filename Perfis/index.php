@@ -18,12 +18,11 @@
 			include '../Include/top.inc.php';
 			include '../Include/side.inc.php';
 
-			
 			if( isset($_SESSION['u'])){ //verifica se está logado
 				if ($_SESSION['u'] == $_GET['query']) {			
 			 	//verifica se é o perfil do visitante
-	?> 
-
+	?>
+	
 	<div id="editPage">
 		<form id="editForm" action='<?php echo "salvarAlteracoes.php" ?>' method="POST">
 			<h1> <?php echo "$username";?> </h1>
@@ -78,7 +77,7 @@
 					</p> </div>
 					<div class='postArea'>
 						<div class='postsFechados'>
-							<p class='nomeProj'>. . .</p>
+							<p class='nomeProj'>▼</p>
 						</div>
 						<div class='projDesc'>
 							
@@ -99,7 +98,7 @@
 					</p></div>
 					<div class='postArea'>
 						<div class='postsFechados'>
-							<p class='nomeProj'>. . .</p>
+							<p class='nomeProj'>▼</p>
 						</div>
 						<div class='projDesc'>
 							
@@ -120,7 +119,7 @@
 					</p></div>
 					<div class='postArea'>	
 						<div class='postsFechados'>
-							<p class='nomeProj'>. . .</p>
+							<p class='nomeProj'>▼</p>
 						</div>
 					</div>
 				</div>
