@@ -424,8 +424,15 @@ body{
 
 .link{
 	float: right;
+	color: #3a4c60;
+	margin-top: -25px;
 }
 
 .link a{
-	color: #6584A3;
+	color :#5d7ba0;
+}
+
+.selectEspec{
+	margin: 0 20%;
+	width: 60%;
 }
