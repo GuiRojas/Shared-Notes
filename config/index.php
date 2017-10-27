@@ -175,7 +175,7 @@
 							}	
 
 						}else{
-							echo "Senha nova não pode ser a senha antiga"
+							echo "Senha nova não pode ser a senha antiga";
 						}
 
 					}else{
