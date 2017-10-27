@@ -136,7 +136,7 @@
 				}else{
 					if($_POST['senha_nova'] == $_POST['senha_verf']){
 
-						if($_POST['senha_ant'] == $_POST['senha_novaf']){
+						if($_POST['senha_ant'] == $_POST['senha_nova']){
 
 							if(testPassword(htmlspecialchars($_POST['senha_nova']))>1){
 
