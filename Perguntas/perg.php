@@ -19,7 +19,7 @@
 		<div id="container">
 			<h3><i><?php echo "$cat"; ?></i></h3> <br>
 
-			<img src='$urlFoto' class='img'>
+			<!--<img src='$urlFoto' class='img'> -->
 			<div id="pergunta">
 			<?php
 				echo "<form align = 'center'> $manchete </form><br> $texto";
