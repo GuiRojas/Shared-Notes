@@ -55,7 +55,7 @@
 		<form method="POST" id="formPerg">
 			Título:<br><input type="text" name="titulo" maxlength="30"><br>
 			Categoria:<input type="text" name="cat"><br><br>
-			Pergunta:<br><input type="text" name="perg" id="perg"><br>
+			Pergunta:<br><textarea name="perg" id="perg"></textarea><br>
 			<br><br>
 			<input type="submit" name="Logar" id="enviar">	
 						
