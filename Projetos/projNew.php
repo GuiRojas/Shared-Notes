@@ -17,7 +17,7 @@
 			<p class="tituloProjNew">Título:</p><input class="respProjNew" type="text" name="titulo" maxlength="30"><br>
 			<p class="tituloProjNew">Descrição:</p><textarea class="respProjNew" type="text" name="descricao"></textarea><br>
 			<p class="tituloProjNew">Nota do criador:</p> <input class="respProjNew" type="text" name="perg" id="perg"><br><br>
-			<input type="button" name="" value="escolher arquivo"><br><br>
+			<input type="file" name="" value="escolher arquivo"><br><br>
 			<input type="submit" name="Logar" id="enviar">
 		</form>
 	</div>

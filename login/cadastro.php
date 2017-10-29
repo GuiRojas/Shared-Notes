@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
-	<title>SN - Cadastro</title>
+	<title>Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/cadastro.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
@@ -29,9 +29,9 @@
 			<span class="campos"><a href="login.php">Já tem uma conta? Entre aqui.</a></span><br>	
 
 			<?php 
+		include("../Include/connect.inc.php");
 		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
 			
-			include("../Include/connect.inc.php");
 
 			if(htmlspecialchars($_POST['senha'])===htmlspecialchars($_POST['senha_conf'])){ 
 
@@ -127,18 +127,18 @@
 											'cost'=>10
 										 ));
 
-							$sql = ("cadastro_sp '$username','$email','$nome','$stored_pass'");
+							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'sem status','', '', 0, 0)";
 
 							$status = sqlsrv_query( $conexao, $sql);
-							
+
 							if($status){
 								session_start();
 								$_SESSION['u']=$username;
 								$_SESSION['email']=$email;
 								header('Location:../Perfis/index.php?query='.$username);
 							}else{
-								$status=sqlsrv_query($conexao,$sql);
-								echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão</span>';
+
+								echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão' . print_r( sqlsrv_errors(), true) . '<p>' . $sql . '</p> </span>';
 							}
 						}else{
 							echo '<span class="campos" id="msgErro">Caracteres inválidos!</span>';
