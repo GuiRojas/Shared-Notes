@@ -7,6 +7,11 @@
 			$texto = $linha['texto'];
 			$cat = $linha['categoria'];
 			$criador = $linha['criador'];
+			$dia = $linha[''];
+			$mes = $linha[''];
+			$ano = $linha[''];
+			$hora = $linha[''];
+			$minutos = $linha[''];
 		}
 	}
 ?>
