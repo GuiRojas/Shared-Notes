@@ -1,6 +1,5 @@
 <html>
 <head>
-
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
 	<title><?php echo "Perfis"; ?></title>
 	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
