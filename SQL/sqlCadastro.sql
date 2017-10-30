@@ -10,7 +10,8 @@ create table pergunta(
 	titulo varchar(30) not null,
 	texto ntext,
 	categoria varchar(30) not null,
-	criador varchar(25) not null
+	criador varchar(25) not null,
+	data datetime not null,
 	constraint fkUUUsername foreign key (criador) references usuario (username)
 )
 

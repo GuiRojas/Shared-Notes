@@ -4,8 +4,6 @@ alter table usuario add perguntas_respondidas int
 alter table usuario add perguntas_feitas int
 alter table usuario add especialidade varchar(15)
 
-select * from usuario
-
 alter table usuario alter column user_status ntext
 alter table usuario alter column especialidade ntext
 
@@ -30,14 +28,14 @@ create proc pesquisaUsu_sp
 as
 select username from usuario where username = @palavra
 
-create proc addPerg_sp
+alter proc addPerg_sp
 @titulo varchar(30) = null,
 @text ntext = null,
 @cat varchar(30) = null,
 @criador varchar(25) = null
 as
-insert into pergunta values(@titulo,@text,@cat,@criador)
-
-
-
-select * from pergunta
+begin
+declare @data datetime
+set @data = getDate()
+insert into pergunta values(@titulo,@text,@cat,@criador,@data)
+end
