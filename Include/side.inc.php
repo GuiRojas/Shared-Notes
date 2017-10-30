@@ -7,14 +7,14 @@
 		<a href="../home" class="a"
 		<?php
 			if (strpos($url,'home') !== false) {
-				echo " id='atual'";
+				echo " class='atual'";
 			}	
 		?>
 		>Home</a> <!--class="aAtivo"-->
 		<a href='../Projetos' class='a'
 		<?php
 		if (strpos($url,'Projetos') !== false) {
-			echo " id='atual'";
+			echo " class='atual'";
 		}
 		?>
 		>Projetos</a>
@@ -24,7 +24,7 @@
 				$user = $_SESSION['u'];
 				echo "<a href='../Projetos/projNew.php' class='aSub' ";
 				if (strpos($url,'projNew') !== false) {
-					echo "id='atual'";
+					echo "class='atual'";
 				}
 				echo ">Postar um projeto</a>";
 			}
@@ -40,7 +40,7 @@
 		<a href="../Perguntas" class="a"
 		<?php
 		if (strpos($url,'Perguntas') !== false) {
-			echo " id='atual'";
+			echo " class='atual'";
 		}
 		?>
 		>Perguntas</a>			

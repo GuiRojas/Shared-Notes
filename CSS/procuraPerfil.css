@@ -297,6 +297,6 @@ input[type="button"]:hover{
 	font-size: 20px;
 }
 
-#atual{
+.atual{
 	background-color: #d3d3d3;
 }
