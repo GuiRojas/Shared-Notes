@@ -113,7 +113,6 @@ body{
 	grid-area: container;
 	background-color: white;
 	z-index: 10;
-	border-bottom: 1px solid #303E4D;
 	grid-template-rows: 50px auto;
 }
 
@@ -299,5 +298,5 @@ input[type="button"]:hover{
 }
 
 #atual{
-	background-color: #97a9c6;
+	background-color: #d3d3d3;
 }

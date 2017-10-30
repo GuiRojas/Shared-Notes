@@ -27,7 +27,7 @@
 		<form id="editForm" action='<?php echo "salvarAlteracoes.php" ?>' method="POST">
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
-			<img src='$urlFoto' class='imgPerg'>
+			<img <?php echo"src='$urlFoto'" ?> class='img'>
 			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"> <?php echo"$status"?> </textarea>
 			<span class="campoSpan">Especialidade:</span> 
 			<select name="especialidade" id="chngEspecialidade" class="campo">
