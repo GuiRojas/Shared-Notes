@@ -28,7 +28,7 @@ create proc pesquisaUsu_sp
 as
 select username from usuario where username = @palavra
 
-alter proc addPerg_sp
+create proc addPerg_sp
 @titulo varchar(30) = null,
 @text ntext = null,
 @cat varchar(30) = null,
@@ -39,3 +39,8 @@ declare @data datetime
 set @data = getDate()
 insert into pergunta values(@titulo,@text,@cat,@criador,@data)
 end
+
+create proc pesqPerg_sp
+@palavra varchar(30) = null
+as
+select titulo from pergunta where titulo = @palavra
