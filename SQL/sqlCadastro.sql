@@ -46,11 +46,3 @@ select * from pergunta
 select * from usuario
 select * from seguir
 select * from projeto
-
-/*
-drop table comentario
-drop table pergunta
-drop table usuario
-drop table seguir
-*/
-
