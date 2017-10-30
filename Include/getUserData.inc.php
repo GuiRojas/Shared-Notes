@@ -12,7 +12,7 @@
 			$perguntasFeitas = $linha['perguntas_feitas'];
 			$perguntasRespondidas = $linha['perguntas_respondidas'];
 			$projPostado = 0; 
-			$urlFoto = 0;
+			$urlFoto = "img/".$linha['foto'];
 		}
 	}
 ?>
