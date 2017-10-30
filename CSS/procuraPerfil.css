@@ -297,3 +297,7 @@ input[type="button"]:hover{
 	display: grid;
 	font-size: 20px;
 }
+
+#atual{
+	background-color: #97a9c6;
+}

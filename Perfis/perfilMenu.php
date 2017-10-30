@@ -43,7 +43,7 @@
 			        	echo "<a class='usuDataA' href='index.php?query=$query'>
 
 				        	<div class='usuData'>
-								<div class='nomeEFoto'>$query</div>
+								<div class='nomeEFoto'>$username</div>
 								<div class='linhaVertical'></div>
 								<div class='info'></div>
 							</div>
