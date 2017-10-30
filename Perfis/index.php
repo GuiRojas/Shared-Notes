@@ -69,6 +69,8 @@
 				<?php
 				}
 			}
+		}else{
+			header('Location:../Login/login.php');
 		} // fim do if
 	?>
 
