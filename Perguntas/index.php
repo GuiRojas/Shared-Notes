@@ -35,6 +35,11 @@
 				<a href="">
 					Pesquisar uma Categoria
 				</a>	
+			</div>
+			<div class="perg">
+				<a href="pergRecente.php">
+					Perguntas mais recentes
+				</a>	
 			</div>			
 		</div>		
 	</div>

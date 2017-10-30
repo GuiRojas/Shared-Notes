@@ -23,8 +23,6 @@
 	include '../Include/top.inc.php';
 	include '../Include/side.inc.php';
 		
-
-
 	if((isset($_POST['titulo']))&&(isset($_POST['cat']))&&(isset($_POST['perg']))){
 
 		$titulo = htmlspecialchars($_POST['titulo']);
@@ -40,7 +38,7 @@
 		$status = sqlsrv_query($conexao,$sql);
 
 		if($status){
-			echo "Pergunta feita com sucesso";
+			header("Location:perg.php?query=$titulo");
 			//no futuro, redirecionar à pag da pergunta
 		}else{
 			echo '<span class="campos" id="msgErro">Não foi possível incluir a pergunta</span><br>';
@@ -54,9 +52,20 @@
 		
 		<form method="POST" id="formPerg">
 			Título:<br><input type="text" name="titulo" maxlength="30"><br>
-			Categoria:<input type="text" name="cat"><br><br>
 			Pergunta:<br><textarea name="perg" id="perg"></textarea><br>
-			<br><br>
+			<span class="campoSpan">Categoria:</span> 
+			<select name="cat" id="cat" class="campo">
+				<option>Conceitual</option>
+				<option>PHP</option>
+				<option>JavaScript</option>
+				<option>SQL Server</option>
+				<option>MySQL</option>
+				<option>Java</option>
+				<option>Pascal</option>
+				<option>C</option>
+				<option>C#</option>
+				<option>C++</option>
+			</select>
 			<input type="submit" name="Logar" id="enviar">	
 						
 		</form>
