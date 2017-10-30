@@ -22,7 +22,6 @@
 			<div id="pergunta">
 			<?php
 				echo "<form align = 'center'> $manchete </form><br> $texto";
-
 			?>
 				
 			</div>
