@@ -28,9 +28,12 @@
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
 			<img <?php echo"src='$urlFoto'" ?> class='img'>
-			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"> <?php echo"$status"?> </textarea>
+			<input type="button" id="carregarFoto" class="btnSalvar" value="Mudar a foto" onclick="document.getElementById('mudarFoto').click();" />
+			<input type="file" style="display:none;" id="mudarFoto" name="file" accept="image/*">
+
+			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"><?php echo"$status"?></textarea>
 			<span class="campoSpan">Especialidade:</span> 
-			<select name="especialidade" id="chngEspecialidade" class="campo">
+			<select name="especialidade" id="chngEspecialidade" class="campo" value='<?php echo"$especialidade" ?>' >
 				<option>Nada</option>
 				<option>Tudo sobre front end</option>
 				<option>Tudo sobre back end</option>
@@ -85,7 +88,7 @@
 						<?php
 								if((isset($_SESSION['u']))&&($_SESSION['u'] == $_GET['query'])){
 						?>
-						<div class="link"><a href="../Projetos/index.php"> Postar um projeto</a></div> 
+						<div class="link"><a href="../Projetos/projNew.php"> Postar um projeto</a></div> 
 						<?php
 							};
 						?>

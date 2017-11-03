@@ -13,13 +13,17 @@
 		include '../Include/side.inc.php';
 	?>
 	<div id="container">
-		<form method="POST" id="formProj">
-			<p class="tituloProjNew">Título:</p><input class="respProjNew" type="text" name="titulo" maxlength="30"><br>
-			<p class="tituloProjNew">Descrição:</p><textarea class="respProjNew" type="text" name="descricao"></textarea><br>
-			<p class="tituloProjNew">Nota do criador:</p> <input class="respProjNew" type="text" name="perg" id="perg"><br><br>
-			<input type="file" name="" value="escolher arquivo"><br><br>
-			<input type="submit" name="Logar" id="enviar">
-		</form>
+		<div id="areaFrm">
+			<form method="POST" id="formProj">
+				<div class="tituloProjNew"> <p class="tlt">Título:</p></div><input class="respProjNew" type="text" name="titulo" maxlength="30" autofocus="true"><br><br>
+				<div class="tituloProjNew"> <p class="tlt">Descrição:</p></div><textarea class="respProjNew" type="text" name="descricao"></textarea><br><br>
+				<div class="tituloProjNew"> <p class="tlt">Nota do criador:</p></div> <input class="respProjNew" type="text" name="perg" id="perg"><br><br>
+				<div class="tituloProjNew"> <p class="tlt">Arquivo:</p></div>
+				<input style="margin-left: 10px;" type="file" accept=".txt, .zip, .rar, .js, .html, .php" name="" value="escolher arquivo"><br><br>
+
+				<input type="submit" name="Postar" id="env">
+			</form>
+		</div>
 	</div>
 
 	<?php

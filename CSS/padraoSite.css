@@ -138,6 +138,7 @@ body{
 #bot{
 	background-color: #D3D3D3;
 	grid-area: bot;
+	border-top: 1px solid black;
 }
 
 #conteudo{
@@ -258,6 +259,10 @@ body{
 	margin: 5px;
 }
 
+.stockDivLight:hover{
+	background-color: #e3e3e3;
+}
+
 .stockDivDark{
 	height: 170px;
 	background-color: #F0F0F0;
@@ -270,8 +275,16 @@ body{
 	margin: 5px;
 }
 
+.stockDivDark:hover{
+	background-color: #e3e3e3;
+}
+
 #home{
 	margin-right: -300px;/*gambiarra, desculpa(n mexe)*/
+}
+
+#home a{
+	text-decoration: none;
 }
 
 .stockimage{
@@ -439,3 +452,16 @@ body{
 .atual{
 	background-color: #d3d3d3;
 }
+
+.btnFile{
+	width: 60%;
+	margin: 0 20%;
+	margin-top: 30px;
+}
+
+#carregarFoto{
+	width: 50%;
+	margin: 0 25%;
+	margin-top: 30px;
+}
+

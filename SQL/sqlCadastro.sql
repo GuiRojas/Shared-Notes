@@ -27,17 +27,16 @@ create table comentario(
 create table seguir(
 	codSeguidor int identity(1,1) primary key,
 	uSeguidor varchar(25) not null,
-	uSeguindo varchar(25) not null
+	uSeguindo varchar(25) not null,
 	constraint fkUsgr foreign key (uSeguidor) references usuario(username),
 	constraint fkUsgn foreign key (uSeguindo) references usuario(username)	
 )
 
 create table projeto(
-	codProjeto int identity(1,1) primary key,
-	titulo varchar(54) not null,
+	titulo varchar(54) primary key,
 	descricao ntext not null,
 	nota ntext not null,
-	criador varchar(25) not null
+	criador varchar(25) not null,
 	constraint fkCri foreign key(criador) references usuario(username)
 )
 
@@ -46,3 +45,5 @@ select * from pergunta
 select * from usuario
 select * from seguir
 select * from projeto
+
+use BDPPI17182

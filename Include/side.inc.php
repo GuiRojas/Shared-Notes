@@ -30,6 +30,25 @@
 			}
 		?>
 
+		<a href="../Perguntas" class="a"
+		<?php
+		if (strpos($url,'Perguntas') !== false) {
+			echo " class='atual'";
+		}
+		?>
+		>Perguntas</a>		
+		<?php
+
+			if(isset($_SESSION['u'])){
+				$user = $_SESSION['u'];
+				echo "<a href='../Perguntas/prg_new.php' class='aSub' ";
+				if (strpos($url,'proj_new') !== false) {
+					echo "class='atual'";
+				}
+				echo ">Fazer uma pergunta</a>";
+			}
+		?>	
+
 		<a href="../Perfis/perfilMenu.php" class="a"
 		<?php
 		if (strpos($url,'Perfis') !== false) {
@@ -37,13 +56,6 @@
 		}
 		?>
 		>Perfis</a>
-		<a href="../Perguntas" class="a"
-		<?php
-		if (strpos($url,'Perguntas') !== false) {
-			echo " class='atual'";
-		}
-		?>
-		>Perguntas</a>			
 
 		<!--usuario apenas acessa seu perfil se estiver logado-->
 		<?php

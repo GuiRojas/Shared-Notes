@@ -14,36 +14,54 @@
 	?>
 		
 	<div id="container">
-		<div id="perguntainer">
-			<?php
-				if(isset($_SESSION['u'])){
+		<div id="home">
+			<?php 
+			if( isset($_SESSION['u'])){
 			?>
-			<div class="perg">
-				<a href="prg_new.php">
-					Fazer uma pergunta
+				<a href="perg_new.php">
+					<div class="stockDivLight">
+						<div class="stockTexto">Perguntar</div>
+						<div class="linhaVertical"></div>
+						<div class="stockimage"></div>
+					</div>
+				</a> <!-- codigo em php pra verificar se esta logado se n mandar uma mensagem bonitnha falando pra se logar-->
+			<?php 
+			}else{
+			?> 
+				<div class="stockDivLight trapPerg">
+					<div class="stockTexto">Perguntar</div>
+					<div class="linhaVertical"></div>
+					<div class="stockimage"></div>
+				</div>
+			<?php
+			}
+			?>
+
+				<a href="perg_pesq.php">
+					<div class="stockDivDark">
+						<div class="stockimage"></div>
+						<div class="linhaVertical"></div>
+						<div class="stockTexto">Pesquisar</div>
+					</div>
+				</a>
+			
+				<a href="perg.php">
+					<div class="stockDivLight">
+						<div class="stockTexto">Pesquisar uma categoria</div>
+						<div class="linhaVertical"></div>
+						<div class="stockimage"></div>
+					</div>
+				</a>
+
+				<a href="perg.php">
+					<div class="stockDivDark">
+						<div class="stockimage"></div>
+						<div class="linhaVertical"></div>
+						<div class="stockTexto">Mais recentes</div>
+					</div>
 				</a>
 			</div>
-			<?php
-				}
-			?>	
-			<div class="perg">
-				<a href="perg_pesq.php">
-					Pesquisar uma pergunta
-				</a>		
-			</div>
-			<div class="perg">
-				<a href="">
-					Pesquisar uma Categoria
-				</a>	
-			</div>
-			<div class="perg">
-				<a href="pergRecente.php">
-					Perguntas mais recentes
-				</a>	
-			</div>			
-		</div>		
-	</div>
-	
+		</div>	
 	<?php
 		include '../Include/bot.inc.php';
 	?>

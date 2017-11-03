@@ -8,7 +8,6 @@
 			$username = $linha['username'];
 			$status = $linha['user_status'];
 			$especialidade = $linha['especialidade'];
-			$especialidade2 = $linha['especialidade2'];
 			$perguntasFeitas = $linha['perguntas_feitas'];
 			$perguntasRespondidas = $linha['perguntas_respondidas'];
 			$projPostado = 0; 

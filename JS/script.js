@@ -18,4 +18,21 @@ $(document).ready(function(){
 	$('.btnCancelar').click(function(){
 		document.getElementById('editPage').style.display = 'none';
 	})
+
+	$(".trapProj").click(function(){
+		if (confirm("Para postar um projeto voce precisa estar logdo no site. Deseja fazer o login?")) {
+		    window.location.replace("../Login/login.php");
+		} else {
+		    
+		}
+	})
+
+	$(".trapPerg").click(function(){
+		if (confirm("Para fazer uma pergunta voce precisa estar logdo no site. Deseja fazer o login?")) {
+		    window.location.replace("../Login/login.php");
+		} else {
+		    
+		}
+	})
+
 })
