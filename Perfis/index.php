@@ -94,11 +94,24 @@
 						?>
 					</p> </div>
 					<div class='postArea'>
-						<div class='postsFechados'>
-							<p class='nomeProj'>▼</p>
+						<div class='postsFechados' id="postsFechados1">
+							<p class='nomeProj' id="nomeProj1">▶</p>
 						</div>
-						<div class='projDesc'>
-							
+						<div class='projDesc' id="projDesc1">
+							<?php
+								if (  $projPostado > 0){
+									$consulta = (sqlsrv_query($conexao,"SELECT * FROM projeto WHERE criador = '". $_SESSION['u'] ."'"));
+									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+										echo"
+										<div class='post'>
+											<p class='nomeProj'>".$dados['titulo']."</p>
+											<p class='txtDescricao'>Descição:</p>
+											<p class='descricao'><i>". '"' . $dados['descricao']. '"' ."</i></p>
+										</div>
+										";
+									}
+								}
+							?>
 						</div>
 					</div>
 				</div>
@@ -115,7 +128,7 @@
 					</p></div>
 					<div class='postArea'>
 						<div class='postsFechados'>
-							<p class='nomeProj'>▼</p>
+							<p class='nomeProj'>▶</p>
 						</div>
 						<div class='projDesc'>
 							
@@ -135,7 +148,7 @@
 					</p></div>
 					<div class='postArea'>	
 						<div class='postsFechados'>
-							<p class='nomeProj'>▼</p>
+							<p class='nomeProj'>▶</p>
 						</div>
 					</div>
 				</div>

@@ -51,4 +51,22 @@ $(document).ready(function(){
 		readURL(this);
 	})
 
+	$("#postsFechados1").click(function(){
+		var obj = document.getElementById("nomeProj1");
+		    if ( obj.innerHTML == "▶")
+		    {
+		    	obj.innerHTML = "▼";
+		    }else{
+		    	obj.innerHTML = "▶"	;
+		    }
+		$('#projDesc1').slideToggle("300", function() {
+
+		});
+	})
 })
+
+function onloadPage(){
+	document.getElementById('postsFechados1').click();
+//	document.getElementById('postsFechados2').click();
+//	document.getElementById('postsFechados3').click();
+}

@@ -11,7 +11,7 @@ body{
 					"bot bot";
 	grid-template-columns: 260px auto;
 	grid-template-rows: 105px auto auto;
-	background-color: #D3D3D3;
+	background-color: #babbbc;
 }
 
 #tituloSite{
@@ -135,12 +135,6 @@ body{
 	padding: 30px;
 }
 
-#bot{
-	background-color: #D3D3D3;
-	grid-area: bot;
-	border-top: 1px solid black;
-}
-
 #conteudo{
 	width: auto;
 }
@@ -219,6 +213,8 @@ body{
 
 .descricao{
 	margin-left: 40px;
+	word-wrap: break-word;
+	max-width: 1000px;
 }
 
 .nomeProj{
@@ -470,4 +466,28 @@ body{
 .topico{
 	margin:0;
 	padding: 0;
+}
+
+.projDesc{
+	display: none; 
+}
+
+#bot{
+	background-color: #babbbc;
+	grid-area: bot;
+	border-top: 1px solid black;
+	width: 70%;
+	margin: 0 10%;
+	display: grid;
+	grid-template-columns: 33.3% 33.3% 33.3%;
+	margin-left: 300px;
+	z-index: 100000;
+}
+
+#sobreBot{
+
+}
+
+#sSobreBot{
+
 }

@@ -14,14 +14,15 @@
 	?>
 	<div id="container">
 		<div id="areaFrm">
-			<form method="POST" id="formProj">
-				<div class="tituloProjNew"> <p class="tlt">Título:</p></div><input class="respProjNew" type="text" name="titulo" maxlength="30" autofocus="true"><br><br>
-				<div class="tituloProjNew"> <p class="tlt">Descrição:</p></div><textarea class="respProjNew" type="text" name="descricao"></textarea><br><br>
-				<div class="tituloProjNew"> <p class="tlt">Nota do criador:</p></div> <input class="respProjNew" type="text" name="perg" id="perg"><br><br>
+			<form method="POST" id="formProj" action="salvarProj.php" enctype="multipart/form-data">
+				<div class="tituloProjNew"> <p class="tlt">Título:</p></div><input class="respProjNew" type="text" name="titulo" maxlength="30" autofocus="true" style="width: 60%;"><br><br>
+				<div class="tituloProjNew"> <p class="tlt">Descrição:</p></div><textarea class="respProjNew" type="text" name="descricao" style="max-height: 150px; max-width: 70%; width: 60%; height: 150;"></textarea><br><br>
+				<div class="tituloProjNew"> <p class="tlt">Nota do criador:</p></div> <input class="respProjNew" type="text" name="nota" id="nota" style="width: 60%;"><br><br>
 				<div class="tituloProjNew"> <p class="tlt">Arquivo:</p></div>
-				<input style="margin-left: 10px;" type="file" accept=".txt, .zip, .rar, .js, .html, .php" name="" value="escolher arquivo"><br><br>
+				<input style="margin-left: 10px;" type="file" accept=".txt, .zip, .rar, .js, .html, .php" name="file" value="escolher arquivo"><br><br>
 
 				<input type="submit" name="Postar" id="env">
+
 			</form>
 		</div>
 	</div>

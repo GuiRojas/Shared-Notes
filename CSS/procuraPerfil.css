@@ -1,6 +1,6 @@
 body{
 	margin: 0;	
-	border-color: #303E4D;
+	border-color: #4e5156;
 	font-family: "Segoe UI";
 	font-size: 19px;
 	grid-template: none;
@@ -11,7 +11,7 @@ body{
 					"bot bot";
 	grid-template-columns: 260px auto;
 	grid-template-rows: 105px auto auto;
-	background-color: #D3D3D3;
+	background-color: #babbbc;
 }
 
 #tituloSite{
@@ -136,12 +136,6 @@ body{
 #informacoes{
 	text-align: left;
 	padding: 30px;
-}
-
-#bot{
-	background-color: #D3D3D3;
-	grid-area: bot;
-	border-top: 1px solid black;
 }
 
 #conteudo{
@@ -322,3 +316,24 @@ input[type="button"]:hover{
 	width: 200px;
 	margin-left: 10px;
 }
+
+#bot{
+	background-color: #babbbc;
+	grid-area: bot;
+	border-top: 1px solid black;
+	width: 70%;
+	margin: 0 10%;
+	margin-left: 300px;
+	display: grid;
+	grid-template-columns: 33.3% 33.3% 33.3%;
+	z-index: 100000000;
+}
+
+#sobreBot{
+
+}
+
+#sSobreBot{
+
+}
+

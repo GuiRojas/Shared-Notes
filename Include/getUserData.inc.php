@@ -10,8 +10,10 @@
 			$especialidade = $linha['especialidade'];
 			$perguntasFeitas = $linha['perguntas_feitas'];
 			$perguntasRespondidas = $linha['perguntas_respondidas'];
-			$projPostado = 0; 
+			$projPostado = $linha['projetos_postados'];
 			$urlFoto = $linha['foto'];
 		}
 	}
+
+	//alter table usuario add projetos_postados int
 ?>
