@@ -24,10 +24,10 @@
 	?>
 	
 	<div id="editPage">
-		<form id="editForm" action='<?php echo "salvarAlteracoes.php" ?>' method="POST">
+		<form id="editForm" action='<?php echo "salvarAlteracoes.php" ?>' method="POST" enctype="multipart/form-data">
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
-			<img <?php echo"src='$urlFoto'" ?> class='img'>
+			<img <?php echo"src='$urlFoto'" ?> id="preview" class='img'>
 			<input type="button" id="carregarFoto" class="btnSalvar" value="Mudar a foto" onclick="document.getElementById('mudarFoto').click();" />
 			<input type="file" style="display:none;" id="mudarFoto" name="file" accept="image/*">
 

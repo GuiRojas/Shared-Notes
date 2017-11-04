@@ -20,7 +20,7 @@ $(document).ready(function(){
 	})
 
 	$(".trapProj").click(function(){
-		if (confirm("Para postar um projeto voce precisa estar logdo no site. Deseja fazer o login?")) {
+		if (confirm("Para postar um projeto voce precisa estar logado no site. Deseja fazer o login?")) {
 		    window.location.replace("../Login/login.php");
 		} else {
 		    
@@ -28,11 +28,27 @@ $(document).ready(function(){
 	})
 
 	$(".trapPerg").click(function(){
-		if (confirm("Para fazer uma pergunta voce precisa estar logdo no site. Deseja fazer o login?")) {
+		if (confirm("Para fazer uma pergunta voce precisa estar logado no site. Deseja fazer o login?")) {
 		    window.location.replace("../Login/login.php");
 		} else {
 		    
 		}
+	})
+
+	function readURL(input) {
+	  if (input.files && input.files[0]) {
+	    var reader = new FileReader();
+
+	    reader.onload = function(e) {
+	      $('#preview').attr('src', e.target.result);
+	    }
+
+	    reader.readAsDataURL(input.files[0]);
+	  }
+	}
+
+	$("#mudarFoto").change(function(){
+		readURL(this);
 	})
 
 })

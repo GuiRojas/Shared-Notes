@@ -254,7 +254,6 @@ body{
 	grid-template: "stockImage linhaVertical stockTexto";
 	grid-auto-columns: 50% 1px 50%;
 	vertical-align: middle;
-	line-height: 180px;
 	cursor: pointer;
 	margin: 5px;
 }
@@ -269,10 +268,13 @@ body{
 	display: grid;
 	grid-template: "stockTexto linhaVertical stockimage";
 	grid-auto-columns: 50% 1px 50%;
-	vertical-align: middle;
-	line-height: 180px;
 	cursor: pointer;
 	margin: 5px;
+}
+
+.mainStuff{
+	vertical-align: middle;
+	display: table-cell;
 }
 
 .stockDivDark:hover{
@@ -288,7 +290,7 @@ body{
 }
 
 .stockimage{
-	margin: 50px;
+
 }
 
 .stockTexto{
@@ -465,3 +467,7 @@ body{
 	margin-top: 30px;
 }
 
+.topico{
+	margin:0;
+	padding: 0;
+}

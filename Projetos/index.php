@@ -29,9 +29,12 @@
 			} else{
 			?>
 				<div class="stockDivDark trapProj">
-					<div class="stockTexto">Postar um projeto</div>
+					<div class="stockTexto"><span class="mainStuff">Postar um projeto</span></div>
 					<div class="linhaVertical"></div>
-					<div class="stockimage"></div>
+					<div class="stockimage">
+						<sapn class="topico">•Seu projeto pode ser avaliado por curtidas</sapn><br>
+						<span class="topico">•Dependendo do numero de curtidas ele pode ir aos relevantes</span>
+					</div>
 				</div>
 			<?php
 			}
