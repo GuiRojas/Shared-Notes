@@ -182,13 +182,9 @@
 						echo "senhas diferem!";
 					}
 				}
-
-
 			}
-
 			
 			?>
-
 
 		</div>			
 	</div>

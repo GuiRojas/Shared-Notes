@@ -492,16 +492,34 @@ body{
 }
 
 .closebtn {
-    margin-left: 15px;
+    margin-right: 15px;
     color: white;
     font-weight: bold;
     float: right;
-    font-size: 22px;
-    line-height: 20px;
+    font-size: 30px;
     cursor: pointer;
     transition: 0.3s;
+    margin-left : 30px; 
+    vertical-align:middle; 
+    line-height:55px
 }
 
 .closebtn:hover {
-    color: black;
+    color: #5D7BA0;
+}
+
+.msgConfirm{
+	margin-left: 10px;
+	margin-right: 3px;
+	text-decoration: none;
+	float: right;
+	color: white;
+    font-weight: bold;
+	cursor: pointer;
+	line-height: 60px;
+	vertical-align: middle;
+}
+
+.msgConfirm:hover{
+	color: #5d7ba0;
 }

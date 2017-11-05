@@ -138,18 +138,18 @@
 								header('Location:../Perfis/index.php?query='.$username);
 							}else{
 
-								echo '<span class="campos" id="msgErro">Não foi possivel realizar a inclusão' . print_r( sqlsrv_errors(), true) . '<p>' . $sql . '</p> </span>';
+								?> <script>myAlertLogin("Não foi possível realizar a inclusão)</script> <?php
 							}
 						}else{
-							echo '<span class="campos" id="msgErro">Caracteres inválidos!</span>';
+							?> <script>myAlertLogin("Caracteres inválidos")</script> <?php
 						}
 					}					
 				}else{
-					echo '<span class="campos" id="msgErro">Senha não é forte o suficiente!<span><br>';
+					?> <script>myAlertLogin("A senha não é forte o suficiente")</script> <?php
 				}		
 
 			}else{
-				echo '<span class="campos" id="msgErro">Senha difere da confirmação</span><br>'; 
+				?> <script>myAlertLogin("A senha difere da confirmação")</script> <?php
 			}
 
 		}
@@ -159,13 +159,6 @@
 			<input type="submit" name="Cadastrar" id="enviar">
 		</form>
 	</div>
-	
-
-	<?php
-
-
-		include '../Include/bot.inc.php';
-	?>
 
 </body>
 </html>

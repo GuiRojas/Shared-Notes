@@ -40,16 +40,22 @@
 					if ( $rowCount >=1) { 
 			        	$nomeUsuario = "$query";
 						include '../Include/getUserData.inc.php';
-			        	echo "<a class='usuDataA' href='index.php?query=$query'>
-
+			        	echo "
+			        	<a class='usuDataA' href='index.php?query=$query'>
 				        	<div class='usuData'>
-								<div class='nomeEFoto'>$username</div>
+								<div class='nomeEFoto'>
+										<img class='imgProfilePreview' src='$urlFoto'>
+										<span style='display:inline-block; margin: 0;'>$username</span>
+								</div>
 								<div class='linhaVertical'></div>
-								<div class='info'></div>
+								<div class='info'>
+									<div style='height:45px'>especialidade : $especialidade</div>
+									<div style='height:45px'>Projetos postados : $projPostado</div>
+								</div>
 							</div>
 			        	</a>";
 			        } else {
-				        echo "<span class='msgErro'> Usuário não encontrado.</span>";
+				        ?> <script>myAlert("Usuario \"<?php  echo"$query"  ?>\" não encontrado.")</script> <?php
 				    }
 		        }
 			}

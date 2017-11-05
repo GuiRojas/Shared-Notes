@@ -64,13 +64,6 @@
 			echo "<a href='../config/' class='btnLogin subgrupo'>Configurações</a>";
 		}
 		?>		
-
-		<!--Redireciona pro sobre nós-->
-		<a href="../Sobre/index.php" class="subgrupo">Sobre</a>			
-		<!-- Como fariamos as config. ? De vdd n sei :p
-		<input type="button" class="subgrupo" value="Configurações">
-		-->
-
 		<!--Controle de login e sessão-->
 		<?php
 			if(!isset($_SESSION['u'])){

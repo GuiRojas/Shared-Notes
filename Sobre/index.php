@@ -13,22 +13,14 @@
 	?>
 		
 	<div id="container">
-		<div id="criadores">
-			Esse site foi feito por: <br><br>
-
-			<b>-></b>Francisco Luiz Maian do Nascimento <br>
-			<b>-></b>Guilherme Rojas Ribeiro  <br>
-			<b>-></b>João Lucas Conrado Alvarez
+		Créditos do site para:<br>
+		João Lucas Conrado Alvarez<br>
+		Guilherme Rojas Ribeiro<br>
+		Francisco Luiz Maian do Nascimento<br><br>
+		<div></div>
+		<div>
+		Esse site foi desenvolvido como projeto das aulas de Prática Profissional. A ideia é que, nele, fosse possível compartilhar conhecimentos sobre programação, respondendo perguntas e colocando projetos em perfis de usuarios cadastrados.
 		</div>
-
-		<div id="RAs">
-		RA:17178 <br>
-		RA:17182 <br>
-		RA:17186
-		</div>
-
-		Esse site foi desenvolvido como projeto das aulas de Prática Profissional I.
-
 	</div>
 	
 	<?php

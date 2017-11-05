@@ -237,7 +237,7 @@ input[type="button"]:hover{
 }
 
 .usuData{
-	height: 90px;
+	height: 120px;
 	background-color: #F9F9F9;
 	display: grid;
 	grid-template: "nomeEFoto linhaVertical info";
@@ -261,10 +261,12 @@ input[type="button"]:hover{
 
  .info{
  	grid-area: info;
+ 	display: block;
  }
 
  .nomeEFoto{
  	grid-area: nomeEFoto;
+ 	display: inline-flex;
  }
 
  .msgErro{
@@ -408,4 +410,27 @@ input[type="button"]:hover{
 
 #fakeEnviar:hover{
 	background-color: #303E4D;
+}
+
+.msgConfirm{
+	margin-left: 10px;
+	margin-right: 3px;
+	text-decoration: none;
+	float: right;
+	color: white;
+    font-weight: bold;
+	cursor: pointer;
+	line-height: 60px;
+	vertical-align: middle;
+}
+
+.msgConfirm:hover{
+	color: #5d7ba0;
+}
+
+.imgProfilePreview{
+	height:100px;
+	width:100px; 
+	display : inline-block; 
+	margin: 10px;
 }

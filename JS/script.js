@@ -20,19 +20,11 @@ $(document).ready(function(){
 	})
 
 	$(".trapProj").click(function(){
-		if (confirm("Para postar um projeto voce precisa estar logado no site. Deseja fazer o login?")) {
-		    window.location.replace("../Login/login.php");
-		} else {
-		    
-		}
+		myAlertConfirm("Para postar um projeto você precisa estar logado no site. Deseja fazer o login?", "../Login/login.php") ;
 	})
 
 	$(".trapPerg").click(function(){
-		if (confirm("Para fazer uma pergunta voce precisa estar logado no site. Deseja fazer o login?")) {
-		    window.location.replace("../Login/login.php");
-		} else {
-		    
-		}
+		myAlertConfirm("Para fazer uma pergunta você precisa estar logado no site. Deseja fazer o login?", "../Login/login.php") ;
 	})
 
 	function readURL(input) {
@@ -87,6 +79,43 @@ function myAlert( texto ){
 	document.getElementById("container").appendChild(div);
 }
 
+function myAlertLogin( texto ){
+	var div = document.createElement("div");
+	div.style.width = "50%";
+	div.style.height = "60px";
+	div.style.background = "rgba(0,0,0,0.8)";
+	div.style.color = "white";
+	div.style.transition = "opacity 0.6s";
+	div.style.position = "absolute";
+	div.style.zIndex =  "15";
+	div.style.borderRadius = "5px";
+	div.style.top = "50px";
+	div.style.margin = "0 25%";
+	div.innerHTML += "<span class='closebtn' onclick='displayNoneParent(this)'>×</span>";
+	div.innerHTML += "<span style='margin-left : 30px; vertical-align:middle; line-height:60px' >" + texto + "</span>";
+
+	document.body.appendChild(div);
+}
+
+function myAlertConfirm( texto, pagina ){
+	var div = document.createElement("div");
+	div.style.width = "70%";
+	div.style.height = "60px";
+	div.style.background = "rgba(0,0,0,0.8)";
+	div.style.color = "white";
+	div.style.transition = "opacity 0.6s";
+	div.style.position = "absolute";
+	div.style.zIndex =  "15";
+	div.style.borderRadius = "5px";
+	div.style.top = "50px";
+	div.style.margin = "0 15%";
+	div.innerHTML += "<span class='msgConfirm'><a class='msgConfirm' href='"+ pagina +"'>Confirmar</a></span>";
+	div.innerHTML += "<span class='msgConfirm' onclick='displayNoneParent(this)'>Cancelar</span>";
+	div.innerHTML += "<span style='margin-left : 30px; vertical-align:middle; line-height:60px' >" + texto + "</span>";
+
+	document.body.appendChild(div);
+}
+
 function checarCamposProj(){
 	var t = document.getElementById("tituloProj").value;
 	var d = document.getElementById("descProj").value;
@@ -103,6 +132,22 @@ function checarCamposProj(){
 	}
 
 	document.getElementById("env").click();
+}
+
+function checarCamposLogin(){
+	var t = document.getElementById("tituloProj").value;
+	var d = document.getElementById("descProj").value;
+	var f = document.getElementById("arqProj").value;
+
+	var fields = [t, d, f];
+	var l = fields.length;
+
+	for (i = 0; i < l-1; i++) {
+		if (fields[i] == "") {
+		  myAlert("Preencha todos os campos obrigatórios.");
+		  return;
+		}
+	}
 }
 
 function onloadPage(){
