@@ -7,9 +7,6 @@
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
 <body>
-
-
-	
 	<?php
 		if ( isset($_GET['query'])){ // inicio do if
 			$nomeUsuario = $_GET['query'];

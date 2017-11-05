@@ -66,6 +66,45 @@ $(document).ready(function(){
 	})
 })
 
+function displayNoneParent( param){
+	param.parentElement.style.display='none';
+}
+
+function myAlert( texto ){
+	var div = document.createElement("div");
+	div.style.width = "50%";
+	div.style.height = "60px";
+	div.style.background = "rgba(0,0,0,0.8)";
+	div.style.color = "white";
+	div.style.transition = "opacity 0.6s";
+	div.style.position = "absolute";
+	div.style.zIndex =  "15";
+	div.style.borderRadius = "5px";
+	div.style.margin = "20px 20%";
+	div.innerHTML += "<span class='closebtn' onclick='displayNoneParent(this)'>×</span>";
+	div.innerHTML += "<span style='margin-left : 30px; vertical-align:middle; line-height:60px' >" + texto + "</span>";
+
+	document.getElementById("container").appendChild(div);
+}
+
+function checarCamposProj(){
+	var t = document.getElementById("tituloProj").value;
+	var d = document.getElementById("descProj").value;
+	var f = document.getElementById("arqProj").value;
+
+	var fields = [t, d, f];
+	var l = fields.length;
+
+	for (i = 0; i < l-1; i++) {
+		if (fields[i] == "") {
+		  myAlert("Preencha todos os campos obrigatórios.");
+		  return;
+		}
+	}
+
+	document.getElementById("env").click();
+}
+
 function onloadPage(){
 	document.getElementById('postsFechados1').click();
 //	document.getElementById('postsFechados2').click();

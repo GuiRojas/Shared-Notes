@@ -3,7 +3,7 @@
 	if ( $conexao){
 		$consultaProj = sqlsrv_query($conexao,"SELECT * FROM projeto WHERE titulo = '$titulo_proj'");
 		while ( $linha = sqlsrv_fetch_array( $consultaProj, SQLSRV_FETCH_ASSOC)){
-			$titulo = $linha['titulo'];
+			$tituloProj = $linha['titulo'];
 			$criador = $linha['criador'];
 			$descricao = $linha['descricao'];
 			$nota = $linha['nota'];

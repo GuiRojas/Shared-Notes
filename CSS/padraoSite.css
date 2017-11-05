@@ -481,7 +481,6 @@ body{
 	display: grid;
 	grid-template-columns: 33.3% 33.3% 33.3%;
 	margin-left: 300px;
-	z-index: 100000;
 }
 
 #sobreBot{
@@ -490,4 +489,19 @@ body{
 
 #sSobreBot{
 
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
 }
