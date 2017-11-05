@@ -100,7 +100,7 @@
 						<div class='projDesc' id="projDesc1">
 							<?php
 								if (  $projPostado > 0){
-									$consulta = (sqlsrv_query($conexao,"SELECT * FROM projeto WHERE criador = '". $_SESSION['u'] ."'"));
+									$consulta = (sqlsrv_query($conexao,"SELECT * FROM projeto WHERE criador = '". $_GET['query'] ."'"));
 									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 										echo"
 										<div class='post'>

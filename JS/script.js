@@ -53,12 +53,13 @@ $(document).ready(function(){
 
 	$("#postsFechados1").click(function(){
 		var obj = document.getElementById("nomeProj1");
-		    if ( obj.innerHTML == "▶")
-		    {
-		    	obj.innerHTML = "▼";
-		    }else{
-		    	obj.innerHTML = "▶"	;
-		    }
+	    if ( obj.innerHTML == "▶")
+	    {
+	    	obj.innerHTML = "▼";
+	    }else{
+	    	obj.innerHTML = "▶"	;
+	    }
+
 		$('#projDesc1').slideToggle("300", function() {
 
 		});
