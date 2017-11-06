@@ -523,3 +523,19 @@ body{
 .msgConfirm:hover{
 	color: #5d7ba0;
 }
+
+.download{
+	height: 70000px;
+	width: 30%;
+	line-height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #5d7ba0;
+	color: white;
+	border: 1px solid #303E4D;
+}
+
+.infProj{
+	color: #303E4D;
+	font-size: 30px;
+}

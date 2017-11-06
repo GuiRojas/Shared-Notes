@@ -3,7 +3,7 @@
 
 	include '../Include/connect.inc.php';
 
-	if ( isset($_POST['titulo']) && isset($_POST['descricao']) && isset($_FILES['file_upload']))
+	if ( isset($_POST['titulo']) && isset($_POST['descricao']) && isset($_FILES['file']))
 	{
 		$_POST['titulo'] = htmlspecialchars($_POST['titulo']);
 		$_POST['descricao'] = htmlspecialchars($_POST['descricao']);

@@ -9,17 +9,35 @@
 <body>
 	<?php
 		if ( isset($_GET['query'])){ // inicio do if
-			$nomeProj = $_GET['query'];
-			include '../Include/getUserData.inc.php';
+			$tituloProj = $_GET['query'];
+			include '../Include/getProjData.inc.php';
 			$titulo= "$tituloProj";
 			include '../Include/top.inc.php';
 			include '../Include/side.inc.php';
 		}
 	?>
 
-
 	<div id="container">
+		<div id="home">
+			<div style="margin:50px;">
+				<h1 class="infProj">Descrição:</h1>
+				<div>
+					<span><?php echo "$descricao"; ?></span>
+				</div>
 
+				<h1 class="infProj">Notas do criador:</h1>
+				<div>
+					<span><?php
+					if( trim($nota) != ""){
+						echo "$nota.";
+					}else{
+						echo "Sem notas do criador.";
+					}
+					?></span>
+				</div>
+				<a class="download" href='<?php echo"$nomeArquivo" ?>' download> Baixar</a>
+			</div>
+		</div>
 	</div>
 	<?php
 		include '../Include/bot.inc.php';

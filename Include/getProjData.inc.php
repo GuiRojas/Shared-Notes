@@ -1,12 +1,12 @@
 <?php 
 	include 'connect.inc.php';
 	if ( $conexao){
-		$consultaProj = sqlsrv_query($conexao,"SELECT * FROM projeto WHERE titulo = '$titulo_proj'");
+		$consultaProj = sqlsrv_query($conexao,"SELECT * FROM projeto WHERE titulo = '$tituloProj'");
 		while ( $linha = sqlsrv_fetch_array( $consultaProj, SQLSRV_FETCH_ASSOC)){
-			$tituloProj = $linha['titulo'];
 			$criador = $linha['criador'];
 			$descricao = $linha['descricao'];
 			$nota = $linha['nota'];
+			$nomeArquivo = $linha['proj'];
 		}
 	}
 ?>

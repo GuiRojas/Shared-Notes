@@ -33,14 +33,14 @@
 				$query = htmlspecialchars($_GET['query']);
 				$_SESSION['query'] = $query;
 				if( $query != null or $query != ""){
-			        $status = sqlsrv_query( $conexao, "SELECT username FROM usuario WHERE username = '$query'", array(), array("Scrollable"=>"buffered"));
+			        $status = sqlsrv_query( $conexao, "SELECT titulo FROM projeto WHERE titulo = '$query'", array(), array("Scrollable"=>"buffered"));
 
 			        $rowCount= sqlsrv_num_rows($status);
 
 					if ( $rowCount >=1) { 
 			        	$nomeUsuario = "$query";
 						include '../Include/getUserData.inc.php';
-			        	echo "<a class='usuDataA' href='index.php?query=$query'>
+			        	echo "<a class='usuDataA' href='pagProj.php?query=$query'>
 
 				        	<div class='usuData'>
 								<div class='nomeEFoto'>$query</div>
@@ -49,7 +49,7 @@
 							</div>
 			        	</a>";
 			        } else {
-				        echo "<span class='msgErro'> Usuário não encontrado.</span>";
+				        ?> <script>myAlert("Projeto \"<?php  echo"$query"  ?>\" não encontrado.")</script> <?php
 				    }
 		        }
 			}
