@@ -52,16 +52,12 @@
 							</div>
 			        	</a>";
 			        } else {
-				        echo "<span class='msgErro'> Usuário não encontrado.</span>";
+				        echo "<span class='msgErro'> Pergunta não encontrada.</span>";
 				    }
 		        }
 			}
 			?>
-
-				
-		
 		</div>
-
 	</div>
 	
 	<?php

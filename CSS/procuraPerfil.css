@@ -434,3 +434,7 @@ input[type="button"]:hover{
 	display : inline-block; 
 	margin: 10px;
 }
+
+#pergunta{
+	background-color: red;
+}
