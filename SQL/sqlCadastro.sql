@@ -24,6 +24,17 @@ create table comentario(
 	constraint fkUsername foreign key (username) references usuario (username)
 )
 
+create table projComentario(
+	codProjComentario int identity(1,1) primary key,
+	Projeto varchar(50) not null,
+	codPergunta int not null, --não é chave estrangeira
+	criador varchar(25) not null,
+	texto ntext not null,
+	data datetime not null
+	constraint fkPrj foreign key (Projeto) references projeto (titulo),
+	constraint fkCrid foreign key (criador) references usuario (username)
+)
+
 create table seguir(
 	codSeguidor int identity(1,1) primary key,
 	uSeguidor varchar(25) not null,
@@ -33,7 +44,7 @@ create table seguir(
 )
 
 create table projeto(
-	titulo varchar(54) primary key,
+	titulo varchar(50) primary key,
 	descricao ntext not null,
 	nota ntext not null,
 	criador varchar(25) not null,
@@ -45,5 +56,9 @@ select * from pergunta
 select * from usuario
 select * from seguir
 select * from projeto
+select * from projComentario
+
+
+insert into projComentario values('xd',1,'nodoya','xddddd',GETDATE())
 
 use BDPPI17182
