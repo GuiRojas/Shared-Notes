@@ -33,7 +33,7 @@
 				$query = htmlspecialchars($_GET['query']);
 				$_SESSION['query'] = $query;
 				if( $query != null or $query != ""){
-			        $status = sqlsrv_query( $conexao, "SELECT username FROM usuario WHERE username = '$query'", array(), array("Scrollable"=>"buffered"));
+			        $status = sqlsrv_query( $conexao, "SELECT username FROM usuario WHERE username like '$query'", array(), array("Scrollable"=>"buffered"));
 
 			        $rowCount= sqlsrv_num_rows($status);
 

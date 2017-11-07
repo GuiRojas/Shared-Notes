@@ -41,10 +41,13 @@
 						$_SESSION['email'] = $email;
 						header('Location:../Home/index.php');
 					}else{
-						?> <script>myAlertLogin("Senha errada")</script> <?php
+						?>
+						<script>myAlertLogin("Senha errada");</script>
+						<?php
 					}
 				}else
-					?> <script>myAlertLogin("Usuario inexistente")</script>
+					?>
+					<script>myAlertLogin("Usuario inexistente")</script>
 					<?php
 			}
 
