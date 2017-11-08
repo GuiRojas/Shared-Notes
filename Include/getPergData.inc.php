@@ -7,11 +7,11 @@
 			$texto = $linha['texto'];
 			$cat = $linha['categoria'];
 			$criador = $linha['criador'];
+
+			$consultaUsuario = sqlsrv_query($conexao,"SELECT foto FROM usuario WHERE username = '$criador'");
+
+			while ( $linha = sqlsrv_fetch_array( $consultaUsuario, SQLSRV_FETCH_ASSOC))
+				$urlFoto = $linha['foto'];
 		}
-
-		$consultaUsuario = sqlsrv_query($conexao,"SELECT foto FROM usuario WHERE username = '$criador'");
-
-		while ( $linha = sqlsrv_fetch_array( $consultaUsuario, SQLSRV_FETCH_ASSOC))
-			$urlFoto = $linha['foto'];
 	}
 ?>
