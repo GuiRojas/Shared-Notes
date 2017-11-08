@@ -14,7 +14,7 @@
 			if( isset($_GET['indexCmn'])){
 				$indexCmn = $_GET['indexCmn'];
 			}else{
-				$indexCmn = 1;
+				$indexCmn = 0;
 			}
 
 			include '../Include/getProjData.inc.php';
