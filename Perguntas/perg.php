@@ -18,17 +18,18 @@
 		<div id="container">
 			<h3><i><?php echo "$cat"; ?></i></h3> <br>
 
-			<!--<img src='$urlFoto' class='img'> -->
 			<div id="pergunta">
-			<?php
-				echo "<form align = 'center'> $manchete </form><br> $texto";
-			?>
-				
+				<img src=<?php echo "$urlFoto" ?> class='img'>
+				<?php
+					echo "<form align = 'center'> $manchete </form><br>";
+				?>
+
+				<div id="textoPerg">
+					<?php
+						echo "$texto";
+					?>
+				</div>
 			</div>
-
-
-
-
 		</div>
 	<?php
 		} //fim do if
