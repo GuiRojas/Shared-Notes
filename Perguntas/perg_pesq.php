@@ -13,22 +13,19 @@
 		include '../Include/side.inc.php';
 	?>
 		
-	<div id="container">
-		<div id="perguntainer">
-
+	<div id="container">			
+		<form method="GET">
+			<div id="procuraUsuario">
+			<div>
+				<input type="text" id="query" name="query">
+			</div>
+			<div>
+				<input type="submit" id="btnInput" value="">	
+			</div>				
+		</form>
+		
 			
-				<form method="GET">
-					<div id="procuraUsuario">
-					<div>
-						<input type="text" id="query" name="query">
-					</div>
-					<div>
-						<input type="submit" id="btnInput" value="">	
-					</div>				
-				</form>
-			
-				
-			<?php
+		<?php
 			include("../Include/connect.inc.php");
 
 			if(isset($_GET['query'])){
@@ -36,30 +33,34 @@
 				$query = htmlspecialchars($_GET['query']);
 				$_SESSION['query'] = $query;
 				if( $query != null or $query != ""){
-			        $status = sqlsrv_query( $conexao, "SELECT titulo FROM pergunta WHERE titulo = '$query'", array(), array("Scrollable"=>"buffered"));
+			        $status = sqlsrv_query( $conexao, "SELECT titulo FROM projeto WHERE titulo like '$query'", array(), array("Scrollable"=>"buffered"));
 
 			        $rowCount= sqlsrv_num_rows($status);
 
 					if ( $rowCount >=1) { 
-			        	$nomePerg = "$query";
-						include '../Include/getPergData.inc.php';
-			        	echo "<a class='usuDataA' href='perg.php?query=$query'>
-
+			        	$nomeUsuario = "$query";
+						include '../Include/getUserData.inc.php';
+			        	echo "
+			        	<a class='usuDataA' href='perg.php?query=$query'>
 				        	<div class='usuData'>
-								<div class='nomeEFoto'>$query</div>
+								<div>
+									<span style='display:inline-block; margin: 0;'>$username</span>
+								</div>
 								<div class='linhaVertical'></div>
-								<div class='info'></div>
+								<div>
+									<div style='height:45px'>especialidade : $especialidade</div>
+									<div style='height:45px'>Projetos postados : $projPostado</div>
+								</div>
 							</div>
 			        	</a>";
 			        } else {
-				        echo "<span class='msgErro'> Pergunta não encontrada.</span>";
+				        ?> <script>myAlert("Usuario \"<?php  echo"$query"  ?>\" não encontrado.")</script> <?php
 				    }
 		        }
 			}
-			?>
-		</div>
+		?>
 	</div>
-	
+	</div>
 	<?php
 		include '../Include/bot.inc.php';
 	?>

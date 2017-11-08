@@ -47,14 +47,6 @@
 					<div class="stockTexto">Pesquisar um projeto</div>
 				</div>
 			</a>
-		
-			<a href="projPesq.php">
-				<div class="stockDivDark">
-					<div class="stockTexto">Mais relevantes</div>
-					<div class="linhaVertical"></div>
-					<div class="stockimage"></div>
-				</div>
-			</a>
 		</div>
 	</div>
 

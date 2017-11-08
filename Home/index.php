@@ -15,6 +15,15 @@
 		
 	<div id="container">
 		<div id="home">
+		<?php 
+			if (isset($_SESSION['firstTime']) && $_SESSION['firstTime']) {
+				?>
+					<script type="text/javascript"> myAlert("Bem-vindo(a) ao Shared Notes!");</script>
+				<?php
+				$_SESSION['firstTime'] = false;
+			}
+		?>
+
 			<a href="../Perfis/perfilMenu.php" style="text-decoration:none">
 				<div class="stockDivLight">
 					<div class="stockTexto">Procure por outras pessoas</div>

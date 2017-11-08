@@ -7,7 +7,7 @@
 	{
 		$_POST['titulo'] = htmlspecialchars($_POST['titulo']);
 		$_POST['descricao'] = htmlspecialchars($_POST['descricao']);
-		$_POST['nota'] = htmlspecialchars($_POST['descricao']);
+		$_POST['nota'] = htmlspecialchars($_POST['nota']);
 
 		$target_dir = "uploads/";
 		$target_file = $target_dir . basename($_FILES["file"]["name"]);
@@ -54,7 +54,9 @@
 
 		sqlsrv_query($conexao,$sql);
 
-		header("Location: index.php?query=$_SESSION[u]");
+		$_SESSION['projPostado'] = true;
+
+		header("Location: pagProj.php?query=$_POST[titulo]");
 	}else{
 		echo "Preencha todos os campos.";
 	}
