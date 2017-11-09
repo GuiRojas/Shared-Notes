@@ -28,22 +28,22 @@
 
 		?>
 		<div id="home">
-			<div style="margin:50px;">
+			<div style="margin:10px 90px; ">
 				<h1 class="infProj">Descrição:</h1>
 				<div>
-					<span><?php echo "$descricao"; ?></span>
+					<p class="shoBob"><?php echo "$descricao"; ?></p>
 				</div>
-
+				<hr>
 				<h1 class="infProj">Notas do criador:</h1>
 				<div>
-					<span><?php
+					<p class="shoBob"><?php
 					if( trim($nota) != ""){
 						echo "$nota.";
 					}else{
 						echo "Sem notas do criador.";
 					}
-					?></span>
-				</div>
+					?></p>
+				</div><hr><br><br>
 				<a class="download" href='<?php echo"$nomeArquivo" ?>' download> Baixar</a>
 			</div>
 		</div>

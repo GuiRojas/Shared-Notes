@@ -14,7 +14,7 @@
 	?>
 	<div id="container">
 		<div id="areaFrm">
-			<form method="POST" id="formProj" action="salvarProj.php" enctype="multipart/form-data">
+			<form method="POST" id="formProj" action="salvarProj.php" enctype="multipart/form-data" style="display: block;">
 				
 				<div class="tituloProjNew"> <p class="tlt">Título:</p>
 					<div style="display: inline-block;" id="hint1">
@@ -54,9 +54,9 @@
 						Escolha o arquivo que será o projeto. Apenas arquivos com as extensões txt, zip, rar, js, html e php serão aceitos.
 					</div>
 				</div>
-				<input id="arqProj" style="margin-left: 10px; margin-top: 5px;" type="file" accept=".txt, .zip, .rar, .js, .html, .php" name="file" value="escolher arquivo"><br><br>
+				<input id="arqProj" style="margin-left: 10px; margin-top: 5px;" type="file" accept=".txt, .zip, .rar, .js, .html, .php" name="file" value="escolher arquivo"><br>
 
-				<hr><br>
+				<hr>
 				<input type="button" name="" id="fakeEnviar" value="Enviar" onclick="checarCamposProj()">
 				<input type="submit" name="Postar" id="env" style="display: none;">
 

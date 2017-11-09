@@ -525,17 +525,29 @@ body{
 }
 
 .download{
-	height: 70000px;
-	width: 30%;
-	line-height: 70px;
+	padding: 0 60px;
+	line-height: 60px;
 	text-align: center;
 	vertical-align: middle;
 	background-color: #5d7ba0;
 	color: white;
 	border: 1px solid #303E4D;
+	display: block;
+	margin: 0 auto;
+	width: 150px;
 }
 
 .infProj{
 	color: #303E4D;
 	font-size: 30px;
+}
+
+.postArea a:visited{
+	color: black;
+}
+
+.shoBob{
+	width: 100%-15px;
+	margin-left: 15px;
+	background-color: #EDEDED;
 }
