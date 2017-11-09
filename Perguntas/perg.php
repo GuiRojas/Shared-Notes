@@ -8,7 +8,7 @@
 </head>
 <body>	
 	<?php
-		if ( isset($_GET['query'])){ // inicio do if
+		if (isset($_GET['query'])){ // inicio do if
 			$titulo = $_GET['query'];
 			include '../Include/getPergData.inc.php';
 			include '../Include/getRespData.inc.php';
@@ -54,7 +54,7 @@
 		</div>
 	<?php
 		} //fim do if
-		else {
+		else{
 			$titulo = '';
 			include '../Include/top.inc.php';
 			include '../Include/side.inc.php';
