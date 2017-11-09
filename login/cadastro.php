@@ -127,15 +127,16 @@
 											'cost'=>10
 										 ));
 
-							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'sem status','nada', 0, 0, 'null.png', 0)";
+							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'sem status','nada', 0, 0, 'img/null.png', 0)";
 
 							$status = sqlsrv_query( $conexao, $sql);
 
 							if($status){
 								session_start();
 								$_SESSION['u']=$username;
+								$_SESSION['firstTime']= true;
 								$_SESSION['email']=$email;
-								header('Location:../Perfis/index.php?query='.$username);
+								header('Location:../Home/index.php');
 							}else{
 
 								?> <script>myAlertLogin("Não foi possível realizar a inclusão)</script> <?php

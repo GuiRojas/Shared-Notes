@@ -44,22 +44,6 @@
 						<div class="stockTexto">Pesquisar</div>
 					</div>
 				</a>
-			
-				<a href="perg.php">
-					<div class="stockDivLight">
-						<div class="stockTexto">Pesquisar uma categoria</div>
-						<div class="linhaVertical"></div>
-						<div class="stockimage"></div>
-					</div>
-				</a>
-
-				<a href="perg.php">
-					<div class="stockDivDark">
-						<div class="stockimage"></div>
-						<div class="linhaVertical"></div>
-						<div class="stockTexto">Mais recentes</div>
-					</div>
-				</a>
 			</div>
 		</div>	
 	<?php
