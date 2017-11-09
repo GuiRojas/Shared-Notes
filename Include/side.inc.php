@@ -61,7 +61,7 @@
 		<?php
 		if(isset($_SESSION['u'])){
 			echo "<a href='../Perfis/index.php?query=$_SESSION[u]' class='btnLogin subgrupo'>$_SESSION[u]</a>";
-			echo "<a href='../config/' class='btnLogin subgrupo'>Configurações</a>";
+			echo "<a href='../config/' class='btnLogin subgrupo'>Configurações da conta</a>";
 		}
 		?>		
 		<!--Controle de login e sessão-->

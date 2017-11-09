@@ -2,7 +2,7 @@
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
 	<title>Configurações</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/padraoSite.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
@@ -17,23 +17,6 @@
 	<div id="container">
 		<div id="areaFrm">
 
-
-
-			<div class="tituloProjNew"> <p class="tlt">Título:</p>
-					<div style="display: inline-block;" id="hint1">
-						<img src="../Imagens/hint.png" class="hint">
-					</div>
-					<div id="hintTxt1" class="hintTxt">
-						Nome do seu projeto. Não pode ser igual ao de nenhum outro projeto registrado no site.
-					</div>
-				</div>
-
-
-
-
-
-
-
 			<form method="POST">
 				<div class="tituloProjNew"> <p class="tlt">Mudar email:</p></div>
 				<input type="text" name="email"
@@ -43,22 +26,19 @@
 					else{
 						echo "value=".$_SESSION['email']; 
 					}
-				?> >
-				
-				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p>
-					<input type="password" name="senha_ant">
-				</div>
+				?> class="respProjNew">
 
-				<div class="tituloProjNew"> <p class="tlt">Confirmar senha:</p>
-					<input type="password" name="senha_verf">
-				</div>
+				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p></div>
+				<input type="password" name="senha_ant" class="respProjNew">
 
-				<div class="tituloProjNew"> <p class="tlt">Senha nova:</p>
-					<input type="password" name="senha_nova">
-				</div>
+				<div class="tituloProjNew"> <p class="tlt">Confirmar senha:</p></div>
+				<input type="password" name="senha_verf" class="respProjNew">
 
-				<br>
-				<input type="submit" name="vai" value="mudar">
+				<div class="tituloProjNew"> <p class="tlt">Senha nova:</p></div>
+				<input type="password" name="senha_nova" class="respProjNew">
+
+				<hr>
+				<input type="submit" name="vai" value="mudar" class="btnEnviar">
 			</form>
 
 			<?php
@@ -71,10 +51,10 @@
 			    
 			 
 			    $strength = 0;
-			 
+			
 			    /*** get the length of the password ***/
 			    $length = strlen($password);
-			 
+			
 			    /*** check if password is not all lower case ***/
 			    if(strtolower($password) != $password)
 			    {
@@ -207,7 +187,7 @@
 
 						}else{
 							?>
-								<script type="text/javascript">myAlert("Senha nova invalisa")</script>
+								<script type="text/javascript">myAlert("Senha nova inválida")</script>
 							<?php
 						}
 

@@ -23,7 +23,7 @@
 	?>
 	
 	<div id="editPage">
-		<form id="editForm" action='<?php echo "salvarAlteracoes.php" ?>' method="POST" enctype="multipart/form-data">
+		<form id="editForm" action='salvarAlteracoes.php' method="POST" enctype="multipart/form-data">
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
 			<img <?php echo"src='$urlFoto'" ?> id="preview" class='img'>
