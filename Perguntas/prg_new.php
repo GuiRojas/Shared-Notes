@@ -2,7 +2,7 @@
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
 	<title>Perguntas</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/padraoSite.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
 	<style type="text/css">
@@ -49,36 +49,17 @@
 	?>
 		
 	<div id="container">
-		<form method="POST" id="formProj">
-			<div class="tituloProjNew"><p class="tlt">Título</p>
-				<div style="display: inline-block;" id="hint1">
-					<img src="../Imagens/hint.png" class="hint">
-				</div>
-				<div id="hintTxt1" class="hintTxt">
-					Título da pergunta. Não pode ser igual ao de nenhuma outra pergunta registrada no site.
-				</div>
-			</div>
-			<input class="respProjNew" type="text" name="titulo" maxlength="30"><br><br>
-
-			<div class="tituloProjNew"><p class="tlt">Pergunta:</p>
-				<div style="display: inline-block;" id="hint2">
-					<img src="../Imagens/hint.png" class="hint">
-				</div>
-				<div id="hintTxt2" class="hintTxt">
-					n sei.
-				</div>
-			</div>
-			<textarea name="perg" id="perg" class="respProjNew" style="max-height: 150px; max-width: 70%; width: 60%; height: 150;"></textarea><br><br>
-
-			<div class="tituloProjNew"><p class="tlt">Categoria:</p>
-				<div style="display: inline-block;" id="hint3">
-					<img src="../Imagens/hint.png" class="hint">
-				</div>
-				<div id="hintTxt3" class="hintTxt">
-					n sei.
-				</div>
-			</div>
-			<select name="cat" id="cat" class="campo" style="margin: 10px;">
+		<form method="POST" id="formPerg">
+		<div class="tituloProjNew"><p class="tlt">Título</p>
+			<img src="../Imagens/hint.png">
+		</div>
+		<div id="hintTxt1" class="hintTxt">
+			Título da pergunta. Não pode ser igual ao de nenhuma outra pergunta registrada no site.
+		</div>
+		<input class="respProjNew" type="text" name="titulo" maxlength="30"><br><br>
+			Pergunta:<br><textarea name="perg" id="perg"></textarea><br>
+			<span class="campoSpan">Categoria:</span> 
+			<select name="cat" id="cat" class="campo">
 				<option>Conceitual</option>
 				<option>PHP</option>
 				<option>JavaScript</option>
@@ -90,11 +71,12 @@
 				<option>C#</option>
 				<option>C++</option>
 			</select>
-
-			<hr><br>
-			<input type="submit" name="Logar" id="enviar">			
+			<input type="submit" name="Logar" id="enviar">	
+						
 		</form>
+
 	</div>
+	
 	<?php
 		include '../Include/bot.inc.php';
 	?>

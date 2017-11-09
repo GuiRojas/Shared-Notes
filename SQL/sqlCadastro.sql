@@ -19,6 +19,7 @@ create table comentario(
 	codComentario int identity(1,1) primary key,
 	codPergunta int not null,
 	username varchar(25) not null,
+	data datetime not null,
 	texto ntext not null
 	constraint fkURL foreign key (codPergunta) references pergunta (codPergunta),
 	constraint fkUsername foreign key (username) references usuario (username)
