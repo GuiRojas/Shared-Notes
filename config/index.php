@@ -15,11 +15,28 @@
 	?>
 		
 	<div id="container">
-		<div id="configainer">
+		<div id="areaFrm">
+
+
+
+			<div class="tituloProjNew"> <p class="tlt">Título:</p>
+					<div style="display: inline-block;" id="hint1">
+						<img src="../Imagens/hint.png" class="hint">
+					</div>
+					<div id="hintTxt1" class="hintTxt">
+						Nome do seu projeto. Não pode ser igual ao de nenhum outro projeto registrado no site.
+					</div>
+				</div>
+
+
+
+
+
+
 
 			<form method="POST">
-				<br>
-				Mudar email:<input type="text" name="email"
+				<div class="tituloProjNew"> <p class="tlt">Mudar email:</p></div>
+				<input type="text" name="email"
 				<?php
 					if(isset($_POST['email']))
 						echo "value=".$_POST['email']; 
@@ -27,14 +44,20 @@
 						echo "value=".$_SESSION['email']; 
 					}
 				?> >
-				<br><br>
-				Senha Antiga:<input type="password" name="senha_ant">
-				<br>
-				Confirmar senha:<input type="password" name="senha_verf">
-				<br>
-				Senha nova:<input type="password" name="senha_nova">
-				<br><br>
+				
+				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p>
+					<input type="password" name="senha_ant">
+				</div>
 
+				<div class="tituloProjNew"> <p class="tlt">Confirmar senha:</p>
+					<input type="password" name="senha_verf">
+				</div>
+
+				<div class="tituloProjNew"> <p class="tlt">Senha nova:</p>
+					<input type="password" name="senha_nova">
+				</div>
+
+				<br>
 				<input type="submit" name="vai" value="mudar">
 			</form>
 
@@ -158,28 +181,40 @@
 										$status=sqlsrv_query($conexao,$sql);
 				
 										if($status){
-											echo "Senha mudada";
+											?>
+												<script type="text/javascript">myAlert("Senha atualizada com sucesso!")</script>
+											<?php
 										}else{
-											echo "não foi possível mudar a senha";
+											?>
+												<script type="text/javascript">myAlert("Ocorreu um erro")</script>
+											<?php
 										}
 
 
 									}else{
-										echo "senha incorreta!";
+										?>
+											<script type="text/javascript">myAlert("Senha antiga invalida")</script>
+										<?php
 									}
 
 								}
 
 							}else{
-								echo "senha muito fraca!";
+								?>
+									<script type="text/javascript">myAlert("Senha nova muito fraca")</script>
+								<?php
 							}	
 
 						}else{
-							echo "Senha nova não pode ser a senha antiga";
+							?>
+								<script type="text/javascript">myAlert("Senha nova invalisa")</script>
+							<?php
 						}
 
 					}else{
-						echo "senhas diferem!";
+						?>
+							<script type="text/javascript">myAlert("Senhas diferem")</script>
+						<?php
 					}
 				}
 			}

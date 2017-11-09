@@ -1,19 +1,21 @@
 <html>
 <head>
+	<?php 
+		if ( isset($_GET['query'])){ // inicio do if
+			$tituloProj = $_GET['query'];
+			include '../Include/getProjData.inc.php';
+	?>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
-	<title><?php echo "Perfis"; ?></title>
+	<title><?php echo "$tituloProj|Projetos"; ?></title>
 	<link rel="stylesheet" type="text/css" href="../CSS/padraoSite.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
 <body>
 	<?php
-		if ( isset($_GET['query'])){ // inicio do if
-			$tituloProj = $_GET['query'];
-			include '../Include/getProjData.inc.php';
-			$titulo= "$tituloProj";
-			include '../Include/top.inc.php';
-			include '../Include/side.inc.php';
+		$titulo= "$tituloProj";
+		include '../Include/top.inc.php';
+		include '../Include/side.inc.php';
 		}
 	?>
 
