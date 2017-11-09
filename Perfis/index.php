@@ -117,11 +117,26 @@
 						?>
 					</p></div>
 					<div class='postArea'>
-						<div class='postsFechados'>
-							<p class='nomeProj'>▶</p>
+						<div class='postsFechados' id="postsFechados2">
+							<p class='nomeProj' id="nomeProj2">▶</p>
 						</div>
-						<div class='projDesc'>
-							
+						<div class='projDesc' id="projDesc2">
+							<?php
+								if (  $perguntasFeitas > 0){
+									$consulta = (sqlsrv_query($conexao,"SELECT * FROM pergunta WHERE criador = '". $_GET['query'] ."'"));
+									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+										echo"
+										<a href='../Perguntas/perg.php?query=".$dados['titulo']."'  style='text-decoration:none'> 
+											<div class='post'>
+												<p class='nomeProj'>".$dados['titulo']."</p>
+												<p class='txtDescricao'>Descição:</p>
+												<p class='categoria'><i>". '"' . $dados['categoria']. '"' ."</i></p>
+											</div>
+										</a>
+										";
+									}
+								}
+							?>
 						</div>
 					</div>
 				</div>	
