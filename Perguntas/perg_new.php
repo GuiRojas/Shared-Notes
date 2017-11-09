@@ -49,9 +49,14 @@
 	?>
 		
 	<div id="container">
-		
 		<form method="POST" id="formPerg">
-			Título:<br><input type="text" name="titulo" maxlength="30"><br>
+		<div class="tituloProjNew"><p class="tlt">Título</p>
+			<img src="../Imagens/hint.png">
+		</div>
+		<div id="hintTxt1" class="hintTxt">
+			Título da pergunta. Não pode ser igual ao de nenhuma outra pergunta registrada no site.
+		</div>
+		<input class="respProjNew" type="text" name="titulo" maxlength="30"><br><br>
 			Pergunta:<br><textarea name="perg" id="perg"></textarea><br>
 			<span class="campoSpan">Categoria:</span> 
 			<select name="cat" id="cat" class="campo">

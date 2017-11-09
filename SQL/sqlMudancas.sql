@@ -29,7 +29,7 @@ create proc pesquisaUsu_sp
 as
 select username from usuario where username = @palavra
 
-create proc addPerg_sp
+alter proc addPerg_sp
 @titulo varchar(30) = null,
 @text ntext = null,
 @cat varchar(30) = null,
@@ -37,8 +37,12 @@ create proc addPerg_sp
 as
 begin
 declare @data datetime
+declare @pergs int
 set @data = getDate()
+set @pergs = (select perguntas_feitas from usuario where username = @criador)
+set @pergs = @pergs + 1
 insert into pergunta values(@titulo,@text,@cat,@criador,@data)
+update usuario set perguntas_feitas = @pergs where username = @criador
 end
 
 create proc pesqPerg_sp
