@@ -11,10 +11,6 @@
 		height:200px;
 		width: 500px;
 		}
-		#formPerg
-		{
-		margin-left: 20px;
-		}
 	</style>
 </head>
 <body>
@@ -48,15 +44,37 @@
 		
 	<div id="container">
 		<form method="POST" id="formPerg">
-		<div class="tituloProjNew"><p class="tlt">Título</p></div>
-			<img src="../Imagens/hint.png">
-		
-		<div id="hintTxt1" class="hintTxt">
-			Título da pergunta. Não pode ser igual ao de nenhuma outra pergunta registrada no site.
-		</div>
+				<div class="tituloProjNew"> <p class="tlt">Título:</p>
+					<div style="display: inline-block;" id="hint1">
+						<img src="../Imagens/hint.png" class="hint">
+					</div>
+					<div id="hintTxt1" class="hintTxt">
+						Título da pergunta. Não pode ser igual ao de nenhuma outra pergunta registrada no site.
+					</div>
+				</div>
+
 		<input class="respProjNew" type="text" name="titulo" maxlength="30"><br><br>
-			Pergunta:<br><textarea name="perg" id="perg"></textarea><br>
-			<span class="campoSpan">Categoria:</span> 
+
+				<div class="tituloProjNew"><p class="tlt">Descrição:</p>
+					<div style="display: inline-block;" id="hint2">
+						<img src="../Imagens/hint.png" class="hint">
+					</div>
+					<div id="hintTxt2" class="hintTxt">
+						Sua pergunta. Explique o por que da dúvida.
+					</div>
+				</div>
+
+			<br><textarea name="perg" id="perg"></textarea><br><br>
+
+				<div class="tituloProjNew"><p class="tlt">Categoria:</p>
+					<div style="display: inline-block;" id="hint3">
+						<img src="../Imagens/hint.png" class="hint">
+					</div>
+					<div id="hintTxt3" class="hintTxt">
+						Selecione de qual categoria a sua pergunta mais se encaixa.
+					</div>
+				</div><br>
+
 			<select name="cat" id="cat" class="campo">
 				<option>Conceitual</option>
 				<option>PHP</option>
@@ -69,6 +87,9 @@
 				<option>C#</option>
 				<option>C++</option>
 			</select>
+			<hr>
+
+			<input type="button" name="" id="fakeEnviar" value="Enviar" onclick="checarCamposPerg()">
 			<input type="submit" name="Logar" id="enviar">	
 						
 		</form>
