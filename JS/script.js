@@ -69,6 +69,18 @@ $(document).ready(function(){
 		$('#projDesc2').slideToggle("300");
 	})
 
+	$("#postsFechados3").click(function(){
+		var obj = document.getElementById("nomeProj3");
+	    if ( obj.innerHTML == "▶")
+	    {
+	    	obj.innerHTML = "▼";
+	    }else{
+	    	obj.innerHTML = "▶"	;
+	    }
+
+		$('#projDesc3').slideToggle("300");
+	})
+
 	$("#commentTrap").click(function(){
 		myAlertConfirm("Para fazer um comentário você precisa estar logado no site. Deseja fazer o login?", "../Login/login.php") ;
 	})
@@ -204,5 +216,5 @@ function checarCamposLogin(){
 function onloadPage(){
 	document.getElementById('postsFechados1').click();
 	document.getElementById('postsFechados2').click();
-//	document.getElementById('postsFechados3').click();
+	document.getElementById('postsFechados3').click();
 }
