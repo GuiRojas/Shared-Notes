@@ -1,22 +1,19 @@
 <div id="bot">
 		<div id="logoBot">
-<<<<<<< HEAD
-			<h1 style="font-size: 20px">Luinguiçona</h1>
+			<h1 style="font-size: 20px;color: #555;margin: 0">Shared Inc.</h1>
+			<span style="color: #444">
+				<a href="../Sobre/index.php" style="color: #555";>Sobre</a><br>
+				Ajuda<br>
+				Perguntas<br>
+			</span>
 		</div>
 
-		<div id="sobreBot">
-			<h1 style="font-size: 20px">Luinguiçona</h1>
-=======
-			
-		</div>
-
-		<div id="sobreBot">
-			<!--<a href="../config/index.php">Mudar a senha</a>-->
-			
->>>>>>> c5f46d6381dcd44d4d9b29d0b827cba5f13df97a
-		</div>
-
-		<div id="sSobreBot">
-			<h1 style="font-size: 20px">Luinguiçona</h1>
+		<div id="SobreBot">
+			<h1 style="font-size: 20px;color: #555;margin: 0">Luinguiçona</h1>
+			<span style="color: #444">
+				Termos<br>
+				Política e Segurança<br>
+				@2017 Shared Notes
+			</span>
 		</div>
 </div>
