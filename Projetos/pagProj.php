@@ -50,14 +50,36 @@
 			</div>
 			<!--///////////////////////////////////////////////////////////////////////////////////-->
 
+			<?php
+			if(isset($_SESSION['u'])){
+			?>
 			<!--novo coment-->
 			<div id="newComn" style="margin-left: 9.5%">
 				<form method="POST">
 					Adicionar comentário:<br>
-					<textarea style="height: 100px;max-height: 200px;width: 97%;max-width: 97%;min-width:97%">Digite um comentário . . .</textarea><br><br>
+					<textarea style="height: 100px;max-height: 200px;width: 97%;max-width: 97%;min-width:97%" name="texto">Digite um comentário . . .</textarea><br><br>
 					<input type="submit" name="comentar" style="float: right;margin-right: 32px"><br>
 				</form>
 			</div>
+
+			<?php
+			}else{
+				echo "Logue para Comentar!";
+			}
+				if(isset($_POST['comentar'])){
+					$user  = htmlspecialchars($_SESSION['u' ]);
+					$texto = htmlspecialchars($_POST['texto']);
+
+					$sql = "insert into projComentario values('$tituloProj','$user','$texto',GETDATE())";		
+
+					$status = sqlsrv_query($conexao,$sql);
+					if($status){
+						echo "<span id='cmnAdd'>Comentário Adicionado!</span>'";
+					}else{
+						echo "<span id='erro'>Não foi possível adicionar o comentário</span>'";
+					}
+				}
+			?>
 
 			<!--///////////////////////////////////////////////////////////////////////////////////-->
 			<div id="commentContainer" style="margin-left: 7%">

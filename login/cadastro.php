@@ -123,9 +123,9 @@
 							$email=htmlspecialchars($_POST['email']);
 							$nome=htmlspecialchars($_POST['nome']);
 
-							$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array('cost'=>10));
+							$senha=password_hash($senha,PASSWORD_BCRYPT,array('cost'=>10));
 
-							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'sem status', 0, 0,'nada', 'img/null.png', 0)";
+							$sql = "insert into usuario values( '$username','$email','$nome','$senha', 'sem status', 0, 0,'nada', 'img/null.png', 0)";
 
 							$status = sqlsrv_query( $conexao, $sql);
 
