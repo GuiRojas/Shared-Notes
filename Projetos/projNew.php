@@ -34,7 +34,7 @@
 						Descrição do seu projeto. Explique como ele funciona e qual a ideia por trás dele.
 					</div>
 				</div>
-				<textarea class="respProjNew" type="text" id="descProj" name="descricao" style="max-height: 150px; max-width: 70%; width: 60%; height: 150;"></textarea><br><br>
+				<textarea class="respProjNew" type="text" id="descProj" name="descricao" style="max-height: 110px; max-width: 70%; width: 60%; height: 110px;"></textarea><br><br>
 				
 				<div class="tituloProjNew"><p class="tlt">Nota do criador:</p>
 					<div style="display: inline-block;" id="hint3">
