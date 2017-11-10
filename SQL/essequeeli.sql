@@ -1,4 +1,4 @@
-select * from comentario
+select * from resposta
 select * from pergunta
 select * from projComentario
 select * from projeto
@@ -30,3 +30,9 @@ constraint fkccrr foreign key (criador) references usuario(username)
 
 insert into projComentario values('xd','nodoya','blz',GETDATE())
 insert into Comentario values('xd','nodoya','mais um',GETDATE())
+
+select * from resposta
+
+insert into resposta values('xd','nodoya','testando',GETDATE())
+
+SELECT criador,texto FROM resposta WHERE tituloPerg = '$titulo' ORDER BY data
