@@ -44,7 +44,7 @@
 			        	<a class='usuDataA' href='perg.php?query=$query'>
 				        	<div class='usuData'>
 							
-								<div class='linhaVertical'></div>
+								<div class='linhaVertical'>$query</div>
 								
 							</div>
 			        	</a>";
