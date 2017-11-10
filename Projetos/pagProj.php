@@ -50,64 +50,73 @@
 			</div>
 			<!--///////////////////////////////////////////////////////////////////////////////////-->
 
-			<?php
-			if(isset($_SESSION['u'])){
-			?>
-			<!--novo coment-->
-			<div id="newComn" style="margin-left: 9.5%">
-				<form method="POST">
-					Adicionar comentário:<br>
-					<textarea style="height: 100px;max-height: 200px;width: 97%;max-width: 97%;min-width:97%" name="texto">Digite um comentário . . .</textarea><br><br>
-					<input type="submit" name="comentar" style="float: right;margin-right: 32px"><br>
-				</form>
-			</div>
 
-			<?php
-			}else{
-				echo "Logue para Comentar!";
-			}
-				if(isset($_POST['comentar'])){
-					$user  = htmlspecialchars($_SESSION['u' ]);
-					$texto = htmlspecialchars($_POST['texto']);
-
-					$sql = "insert into projComentario values('$tituloProj','$user','$texto',GETDATE())";		
-
-					$status = sqlsrv_query($conexao,$sql);
-					if($status){
-						echo "<span id='cmnAdd'>Comentário Adicionado!</span>'";
-					}else{
-						echo "<span id='erro'>Não foi possível adicionar o comentário</span>'";
-					}
-				}
-			?>
-
-			<!--///////////////////////////////////////////////////////////////////////////////////-->
-			<div id="commentContainer" style="margin-left: 7%">
-				<?php			
-
-				if ( $conexao){
-					$qtd = 0;
-					$consultaResposta = sqlsrv_query($conexao,"SELECT * FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data") or die(print_r(sqlsrv_errors()));
-					while ( $linha = sqlsrv_fetch_array( $consultaResposta, SQLSRV_FETCH_ASSOC)){
-						$qtd = $qtd + 1;
-					}
-
-				}//vê o n° de comentários
-
-				if (  $qtd > 0){
-					$consulta = (sqlsrv_query($conexao,"SELECT criador,texto FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data"));
-					while ( $dadosCom = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
-						echo"						
-						<div class='post'>
-							<p class='nomeProj'>".$dadosCom['criador']."</p>
-							<p class='txtDescricao'>Descição:</p>
-							<p class='descricao'><i>". '"' . $dadosCom['texto']. '"' ."</i></p>
-						</div>
-						";
-					}
-				}
-
+			<div style=" background-color: #ededed">
+				<?php
+					if(isset($_SESSION['u'])){
 				?>
+				<div id="newComn" style="margin-left: 9.5%">
+					<form method="POST">
+						Adicionar comentário:<br>
+						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto"></textarea><br><br>
+						<input type="submit" name="comentar" style="float: right;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;"><br>
+					</form>
+				</div>
+				<?php 
+					}else{
+				?>
+				<div id="newComn" style="margin-left: 9.5%">
+					<form method="POST">
+						Adicionar comentário:<br>
+						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto"></textarea><br><br>
+						<input type="button" value="Enviar" style="float: right;margin-right: 14%;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;" id="commentTrap"><br>
+					</form>
+				</div>
+				<?php
+					}
+					if(isset($_POST['comentar'])){
+						$user  = htmlspecialchars($_SESSION['u']);
+						$texto = htmlspecialchars($_POST['texto']);
+
+						$sql = "insert into projComentario values('$tituloProj','$user','$texto',GETDATE())";		
+
+						$status = sqlsrv_query($conexao,$sql);
+						if($status){
+							echo "<span id='cmnAdd'>Comentário Adicionado!</span>'";
+						}else{
+							echo "<span id='erro'>Não foi possível adicionar o comentário</span>'";
+						}
+					}
+				?>
+
+				<!--///////////////////////////////////////////////////////////////////////////////////-->
+				<div id="commentContainer" style="margin: 0 7%;">
+					<?php			
+
+					if ( $conexao){
+						$qtd = 0;
+						$consultaResposta = sqlsrv_query($conexao,"SELECT * FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data") or die(print_r(sqlsrv_errors()));
+						while ( $linha = sqlsrv_fetch_array( $consultaResposta, SQLSRV_FETCH_ASSOC)){
+							$qtd = $qtd + 1;
+						}
+
+					}//vê o n° de comentários
+
+					if (  $qtd > 0){
+						$consulta = (sqlsrv_query($conexao,"SELECT criador,texto FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data"));
+						while ( $dadosCom = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+							echo"						
+							<div class='post'>
+								<p class='nomeProj'>".$dadosCom['criador']."</p>
+								<p class='txtDescricao'>Descição:</p>
+								<p class='descricao'><i>". '"' . $dadosCom['texto']. '"' ."</i></p>
+							</div>
+							";
+						}
+					}
+
+					?>
+				</div>
 			</div>
 		</div>
 	</div>

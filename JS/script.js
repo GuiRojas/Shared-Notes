@@ -67,8 +67,12 @@ $(document).ready(function(){
 	    }
 
 		$('#projDesc1').slideToggle("300", function() {
-
+			myAlertConfirm("Para fazer uma pergunta você precisa estar logado no site. Deseja fazer o login?", "../Login/login.php") ;
 		});
+	})
+
+	$("#commentTrap").click(function(){
+		myAlertConfirm("Para fazer um comentário você precisa estar logado no site. Deseja fazer o login?", "../Login/login.php") ;
 	})
 })
 
@@ -83,7 +87,7 @@ function myAlert( texto ){
 	div.style.background = "rgba(0,0,0,0.8)";
 	div.style.color = "white";
 	div.style.transition = "opacity 0.6s";
-	div.style.position = "absolute";
+	div.style.position = "fixed";
 	div.style.zIndex =  "15";
 	div.style.borderRadius = "5px";
 	div.style.margin = "20px 20%";
@@ -100,7 +104,7 @@ function myAlertLogin( texto ){
 	div.style.background = "rgba(0,0,0,0.8)";
 	div.style.color = "white";
 	div.style.transition = "opacity 0.6s";
-	div.style.position = "absolute";
+	div.style.position = "fixed";
 	div.style.zIndex =  "15";
 	div.style.borderRadius = "5px";
 	div.style.top = "50px";
@@ -118,7 +122,7 @@ function myAlertConfirm( texto, pagina ){
 	div.style.background = "rgba(0,0,0,0.8)";
 	div.style.color = "white";
 	div.style.transition = "opacity 0.6s";
-	div.style.position = "absolute";
+	div.style.position = "fixed";
 	div.style.zIndex =  "15";
 	div.style.borderRadius = "5px";
 	div.style.top = "50px";
