@@ -16,12 +16,12 @@
 	<div id="container">
 		<form method="GET">
 			<div id="procuraUsuario">
-					<div>
-						<input type="text" id="query" name="query">
-					</div>
-					<div>
-						<input type="submit" id="btnInput" value="">	
-					</div>					
+				<div>
+					<input type="text" id="query" name="query">
+				</div>
+				<div>
+					<input type="submit" id="btnInput" value="">
+				</div>
 			</div>
 		</form>
 		
