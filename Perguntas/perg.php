@@ -2,7 +2,7 @@
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
 	<title><?php echo "Perfis"; ?></title>
-	<link rel="stylesheet" type="text/css" href="../CSS/padraoSite.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
@@ -17,23 +17,24 @@
 			
 	?>
 		<div id="container">
+
 			<h3><i><?php echo "$cat"; ?></i></h3> <br>
 
 			<div id="pergunta">
-				<div id="post">
-					<img src=<?php echo "../Perfis/" . $urlFoto ?> class='imgPergunta'>
-					<?php
-						echo "<form align = 'center'> $manchete </form><br>";
-					?>
+				
+				<img src=<?php echo "../Perfis/" . $urlFoto ?> class='imgPergunta'>
+				<?php
+					echo "<form align = 'center'><b> $manchete </b></form><br>";
+				?>
 
-					<div id="textoPerg">
-						<?php
-							echo "$texto";
-						?>
-					</div>
-					<div class="criadorPergunta"><?php echo "$criadorPerg"; ?></div>						
+				<div id="textoPerg">
+					<?php
+						echo "$texto";
+					?>
 				</div>
+				<div class="criadorPergunta"><?php echo "$criadorPerg"; ?></div>						
 			</div>
+		
 			<!--///////////////////////////////////////////////////////////////////////-->
 			<div style=" background-color: #ededed">
 				<?php
@@ -41,7 +42,7 @@
 				?>
 				<div id="newComn" style="margin-left: 9.5%">
 					<form method="POST">
-						Adicionar comentário:<br>
+						Adicionar Resposta:<br>
 						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto"></textarea><br><br>
 						<input type="submit" name="comentar" style="float: right;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;"><br>
 					</form>
@@ -51,7 +52,7 @@
 				?>
 				<div id="newComn" style="margin-left: 9.5%">
 					<form method="POST">
-						Adicionar comentário:<br>
+						Adicionar Resposta:<br>
 						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto"></textarea><br><br>
 						<input type="button" value="Enviar" style="float: right;margin-right: 14%;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;" id="commentTrap"><br>
 					</form>
@@ -66,6 +67,15 @@
 
 						$status = sqlsrv_query($conexao,$sql);
 						if($status){
+
+							$sqlA = "SELECT perguntas_respondidas FROM usuario WHERE username ='".$_SESSION['u']."'";
+							$statusA = sqlsrv_query($conexao,$sqlA);
+							while ($incCoisa = sqlsrv_fetch_array( $statusA, SQLSRV_FETCH_ASSOC)){
+								$qtdResp = $incCoisa['perguntas_respondidas'];
+								$qtdResp ++;
+								sqlsrv_query($conexao, "UPDATE usuario SET perguntas_respondidas =$qtdResp WHERE username ='".$_SESSION['u']."'");
+							}
+
 							echo "<span id='cmnAdd'>Reposta Adicionada!</span>'";
 						}else{
 							echo "<span id='erro'>Não foi possível adicionar a Resposta!</span>'";
@@ -92,7 +102,6 @@
 							echo"						
 							<div class='post'>
 								<p class='nomeProj'>".$dadosResp['username']."</p>
-								<p class='txtDescricao'>Descição:</p>
 								<p class='descricao'><i>". '"' . $dadosResp['texto']. '"' ."</i></p>
 							</div>
 							";
