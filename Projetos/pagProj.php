@@ -48,6 +48,45 @@
 				</div><hr><br><br>
 				<a class="download" href='<?php echo"$nomeArquivo" ?>' download> Baixar</a>
 			</div>
+			<!--///////////////////////////////////////////////////////////////////////////////////-->
+
+			<!--novo coment-->
+			<div id="newComn" style="margin-left: 9.5%">
+				<form method="POST">
+					Adicionar comentário:<br>
+					<textarea style="height: 100px;max-height: 200px;width: 97%;max-width: 97%;min-width:97%">Digite um comentário . . .</textarea><br><br>
+					<input type="submit" name="comentar" style="float: right;margin-right: 32px"><br>
+				</form>
+			</div>
+
+			<!--///////////////////////////////////////////////////////////////////////////////////-->
+			<div id="commentContainer" style="margin-left: 7%">
+				<?php			
+
+				if ( $conexao){
+					$qtd = 0;
+					$consultaResposta = sqlsrv_query($conexao,"SELECT * FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data") or die(print_r(sqlsrv_errors()));
+					while ( $linha = sqlsrv_fetch_array( $consultaResposta, SQLSRV_FETCH_ASSOC)){
+						$qtd = $qtd + 1;
+					}
+
+				}//vê o n° de comentários
+
+				if (  $qtd > 0){
+					$consulta = (sqlsrv_query($conexao,"SELECT criador,texto FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data"));
+					while ( $dadosCom = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+						echo"						
+						<div class='post'>
+							<p class='nomeProj'>".$dadosCom['criador']."</p>
+							<p class='txtDescricao'>Descição:</p>
+							<p class='descricao'><i>". '"' . $dadosCom['texto']. '"' ."</i></p>
+						</div>
+						";
+					}
+				}
+
+				?>
+			</div>
 		</div>
 	</div>
 	<?php
