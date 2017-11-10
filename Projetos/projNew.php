@@ -24,7 +24,7 @@
 						Nome do seu projeto. Não pode ser igual ao de nenhum outro projeto registrado no site.
 					</div>
 				</div>
-				<input class="respProjNew" type="text" id="tituloProj" name="titulo" maxlength="30" autofocus="true" style="width: 60%;"><br><br>
+				<input class="respProjNew" type="text" id="tituloProj" name="titulo" maxlength="50" autofocus="true" style="width: 60%;"><br><br>
 				
 				<div class="tituloProjNew"><p class="tlt">Descrição:</p>
 					<div style="display: inline-block;" id="hint2">
@@ -34,7 +34,7 @@
 						Descrição do seu projeto. Explique como ele funciona e qual a ideia por trás dele.
 					</div>
 				</div>
-				<textarea class="respProjNew" type="text" id="descProj" name="descricao" style="max-height: 110px; max-width: 70%; width: 60%; height: 110px;"></textarea><br><br>
+				<textarea class="respProjNew" type="text" id="descProj" name="descricao" style="max-height: 110px; max-width: 70%; width: 60%; height: 110px;" maxlength="250"></textarea><br><br>
 				
 				<div class="tituloProjNew"><p class="tlt">Nota do criador:</p>
 					<div style="display: inline-block;" id="hint3">
@@ -44,7 +44,7 @@
 						Explique aqui se seu projeto precisa de outros softwares para funcionar (opcional).
 					</div>
 				</div>
-				<input class="respProjNew" type="text" name="nota" id="nota" style="width: 60%;"><br><br>
+				<input class="respProjNew" type="text" name="nota" id="nota" maxlength="100" style="width: 60%;"><br><br>
 				
 				<div class="tituloProjNew"> <p class="tlt">Arquivo:</p>
 					<div style="display: inline-block;" id="hint4">

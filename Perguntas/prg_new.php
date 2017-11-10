@@ -61,7 +61,7 @@
 					Sua pergunta. Explique o por que da dúvida.
 				</div>
 			</div><br>
-			<textarea name="perg" style="max-height: 110px; max-width: 70%; width: 60%; height: 110px;margin-left: 15px;" id="descPerg"></textarea><br><br>
+			<textarea name="perg" style="max-height: 110px; max-width: 70%; width: 60%; height: 110px;margin-left: 15px;" id="descPerg" maxlength="400"></textarea><br><br>
 
 			<div class="tituloProjNew"><p class="tlt">Categoria:</p>
 				<div style="display: inline-block;" id="hint3">

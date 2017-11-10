@@ -58,7 +58,7 @@
 				<div id="newComn" style="margin-left: 9.5%">
 					<form method="POST">
 						Adicionar comentário:<br>
-						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto"></textarea><br><br>
+						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto" maxlength="800"></textarea><br><br>
 						<input type="submit" name="comentar" style="float: right;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px; margin-right: 14%"><br>
 					</form>
 				</div>

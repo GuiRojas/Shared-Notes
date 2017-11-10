@@ -26,7 +26,7 @@
 					else{
 						echo "value=".$_SESSION['email']; 
 					}
-				?> class="respProjNew">
+				?> class="respProjNew" maxlength="100">
 
 				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p></div>
 				<input type="password" name="senha_ant" class="respProjNew">
