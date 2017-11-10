@@ -121,7 +121,12 @@ function checarCamposProj(){
 	var d = document.getElementById("descProj").value;
 	var f = document.getElementById("arqProj").value;
 
-	var fields = [t, d, f];
+	if(!f){
+		myAlert("Escolha um arquivo");
+		return;
+	}
+
+	var fields = [t, d];
 	var l = fields.length;
 
 	for (i = 0; i < l-1; i++) {
@@ -152,6 +157,6 @@ function checarCamposLogin(){
 
 function onloadPage(){
 	document.getElementById('postsFechados1').click();
-//	document.getElementById('postsFechados2').click();
+	document.getElementById('postsFechados2').click();
 //	document.getElementById('postsFechados3').click();
 }

@@ -1,17 +1,19 @@
 <html>
 <head>
+	<?php
+	if ( isset($_GET['query'])){ // inicio do if
+		$nomeUsuario = $_GET['query'];
+		include '../Include/getUserData.inc.php';
+		$titulo= "$username";
+	?>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
-	<title><?php echo "Perfis"; ?></title>
+	<title><?php echo "$username|Perfis"; ?></title>
 	<link rel="stylesheet" type="text/css" href="../CSS/padraoSite.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
 <body>
 	<?php
-		if ( isset($_GET['query'])){ // inicio do if
-			$nomeUsuario = $_GET['query'];
-			include '../Include/getUserData.inc.php';
-			$titulo= "$username";
 			include '../Include/top.inc.php';
 			include '../Include/side.inc.php';
 
@@ -21,7 +23,7 @@
 	?>
 	
 	<div id="editPage">
-		<form id="editForm" action='<?php echo "salvarAlteracoes.php" ?>' method="POST" enctype="multipart/form-data">
+		<form id="editForm" action='salvarAlteracoes.php' method="POST" enctype="multipart/form-data">
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
 			<img <?php echo"src='$urlFoto'" ?> id="preview" class='img'>
@@ -115,11 +117,26 @@
 						?>
 					</p></div>
 					<div class='postArea'>
-						<div class='postsFechados'>
-							<p class='nomeProj'>▶</p>
+						<div class='postsFechados' id="postsFechados2">
+							<p class='nomeProj' id="nomeProj2">▶</p>
 						</div>
-						<div class='projDesc'>
-							
+						<div class='projDesc' id="projDesc2">
+							<?php
+								if (  $perguntasFeitas > 0){
+									$consulta = (sqlsrv_query($conexao,"SELECT * FROM pergunta WHERE criador = '". $_GET['query'] ."'"));
+									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+										echo"
+										<a href='../Perguntas/perg.php?query=".$dados['titulo']."'  style='text-decoration:none'> 
+											<div class='post'>
+												<p class='nomeProj'>".$dados['titulo']."</p>
+												<p class='txtDescricao'>Descição:</p>
+												<p class='categoria'><i>". '"' . $dados['categoria']. '"' ."</i></p>
+											</div>
+										</a>
+										";
+									}
+								}
+							?>
 						</div>
 					</div>
 				</div>	

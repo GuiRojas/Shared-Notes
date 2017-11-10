@@ -21,8 +21,11 @@
 			<a href="projNew.php">
 				<div class="stockDivDark">
 					<div class="stockTexto">Postar um projeto</div>
-					<div class="linhaVertical"></div>
-					<div class="stockimage"></div>
+					<div class="stockimage">
+						<br>
+						<span class="fodasse">•algo</span><br><br>
+						<span class="fodasse">•algo</span>
+					</div>
 				</div>
 			</a>
 			<?php
@@ -30,10 +33,10 @@
 			?>
 				<div class="stockDivDark trapProj">
 					<div class="stockTexto"><span class="mainStuff">Postar um projeto</span></div>
-					<div class="linhaVertical"></div>
 					<div class="stockimage">
-						<sapn class="topico">•Seu projeto pode ser avaliado por curtidas</sapn><br>
-						<span class="topico">•Dependendo do numero de curtidas ele pode ir aos relevantes</span>
+						<br>
+						<span class="fodasse">•algo</span><br><br>
+						<span class="fodasse">•algo</span>
 					</div>
 				</div>
 			<?php
@@ -42,17 +45,12 @@
 
 			<a href="projPesq.php">
 				<div class="stockDivLight">
-					<div class="stockimage"></div>
-					<div class="linhaVertical"></div>
+					<div class="stockimage">
+						<br>
+						<span class="fodasse">•algo</span><br><br>
+						<span class="fodasse">•algo</span>
+					</div>
 					<div class="stockTexto">Pesquisar um projeto</div>
-				</div>
-			</a>
-		
-			<a href="projPesq.php">
-				<div class="stockDivDark">
-					<div class="stockTexto">Mais relevantes</div>
-					<div class="linhaVertical"></div>
-					<div class="stockimage"></div>
 				</div>
 			</a>
 		</div>

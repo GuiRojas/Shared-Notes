@@ -8,15 +8,6 @@
 			$nota = $linha['nota'];
 			$nomeArquivo = $linha['proj'];
 		}
-		if($indexCmn!= 0){
-			$consultaComProj = sqlsrv_query($conexao,"SELECT * FROM projComentario WHERE projeto = '$tituloProj' AND codPergunta = $indexCmn");
-			while ($linhaCmn = sqlsrv_fetch_array( $consultaProj, SQLSRV_FETCH_ASSOC)){
-				$criadorCmn = $linhaCmn['criador'];
-				$textoCmn = $linhaCmn['texto'];
-				$data = $linhaCmn['data']; 
-			}	
-		}
-		
 	}
 ?>
 
