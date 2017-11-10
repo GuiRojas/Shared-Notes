@@ -167,6 +167,24 @@ function checarCamposProj(){
 	document.getElementById("env").click();
 }
 
+function checarCamposPerg(){
+	var t = document.getElementById("tituloPerg").value;
+	var d = document.getElementById("descPerg").value;
+	var c = document.getElementById("cat").value;
+
+	var fields = [t, d, c];
+	var l = fields.length;
+
+	for (i = 0; i < l-1; i++) {
+		if (fields[i] == "") {
+		  myAlert("Preencha todos os campos obrigatórios.");
+		  return;
+		}
+	}
+
+	document.getElementById("enviar").click();
+}
+
 function checarCamposLogin(){
 	var t = document.getElementById("tituloProj").value;
 	var d = document.getElementById("descProj").value;
