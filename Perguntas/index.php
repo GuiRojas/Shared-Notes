@@ -15,37 +15,29 @@
 		
 	<div id="container">
 		<div id="home">
-			<?php 
-			if( isset($_SESSION['u'])){
-			?>
-				<a href="perg_new.php">
-					<div class="stockDivLight">
-						<div class="stockTexto">Perguntar</div>
-						<div class="linhaVertical"></div>
-						<div class="stockimage"></div>
-					</div>
-				</a> <!-- codigo em php pra verificar se esta logado se n mandar uma mensagem bonitnha falando pra se logar-->
-			<?php 
-			}else{
-			?> 
-				<div class="stockDivLight trapPerg">
-					<div class="stockTexto">Perguntar</div>
-					<div class="linhaVertical"></div>
-					<div class="stockimage"></div>
-				</div>
-			<?php
-			}
-			?>
 
-				<a href="perg_pesq.php">
-					<div class="stockDivDark">
-						<div class="stockimage"></div>
-						<div class="linhaVertical"></div>
-						<div class="stockTexto">Pesquisar</div>
-					</div>
-				</a>
+			<div class="stockDivLight trapPerg">
+				<div class="stockTexto">Perguntar</div>
+				<div class="stockimage">
+					<br>
+						<span class="fodasse">•algo</span><br><br>
+						<span class="fodasse">•algo</span>
+				</div>
 			</div>
-		</div>	
+
+			<a href="perg_pesq.php">
+				<div class="stockDivDark">
+					<div class="stockimage">
+						<br>
+						<span class="fodasse">•algo</span><br><br>
+						<span class="fodasse">•algo</span>
+					</div>
+					<div class="stockTexto">Pesquisar</div>
+				</div>
+			</a>
+
+		</div>
+	</div>
 	<?php
 		include '../Include/bot.inc.php';
 	?>

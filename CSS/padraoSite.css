@@ -14,6 +14,14 @@ body{
 	background-color: #babbbc;
 }
 
+#container a:visited{
+	color: black;
+}
+
+#container a{
+	color : black;
+}
+
 #tituloSite{
 	height: 70px;
 }
@@ -188,7 +196,7 @@ body{
 
 .txtPostTitle{
 	font-size:24px;
-	margin: 0px 0px 0px 25px
+	margin: 0px 0px 0px 25px;
 }
 
 .postArea{
@@ -202,6 +210,7 @@ body{
 	background-color: #F9F9F9;
 	height: 120px;
 	cursor: pointer;
+	color: black;
 }
 
 .txtDescricao{
@@ -247,8 +256,8 @@ body{
 	height: 170px;
 	background-color: #F9F9F9;
 	display: grid;
-	grid-template: "stockImage linhaVertical stockTexto";
-	grid-auto-columns: 50% 1px 50%;
+	grid-template: "stockImage stockTexto";
+	grid-auto-columns: 50% 50%;
 	vertical-align: middle;
 	cursor: pointer;
 	margin: 5px;
@@ -262,8 +271,8 @@ body{
 	height: 170px;
 	background-color: #F0F0F0;
 	display: grid;
-	grid-template: "stockTexto linhaVertical stockimage";
-	grid-auto-columns: 50% 1px 50%;
+	grid-template: "stockTexto stockimage";
+	grid-auto-columns: 50% 50%;
 	cursor: pointer;
 	margin: 5px;
 }
@@ -286,14 +295,14 @@ body{
 }
 
 .stockimage{
-
+	border-left: 1px solid #d3d3d3;
 }
 
 .stockTexto{
 	font-family: "segoe UI";
 	color: #657493;
 	font-size: 23px;
-	margin: 0 45px;
+	border-left: 1px solid #d3d3d3;
 }
 
 .linhaVertical{
@@ -550,4 +559,16 @@ body{
 	width: 100%-15px;
 	margin-left: 15px;
 	background-color: #EDEDED;
+}
+
+.fodasse{
+	margin-left: 15px;
+}
+
+.link a{
+	color: #5d7ba0 !important;
+}
+
+.link a:visited{
+	color: #5d7ba0 !important;
 }
