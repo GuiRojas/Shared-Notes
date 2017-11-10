@@ -21,8 +21,7 @@
 		//   $uploadOk = 0;
 		//}
 		// Allow certain file formats
-		if($imageFileType != "zip" && $imageFileType != "rar" && $imageFileType != "txt"
-		&& $imageFileType != "html" && $imageFileType != "js" && $imageFileType != "php" ) {
+		if($imageFileType != "zip" && $imageFileType != "rar" && $imageFileType != "7z") {
 		?>    
 		<script> alert("Os arquivos podem ser apenas txt, zip, rar, js, html e php.")</script>
 		<?php 

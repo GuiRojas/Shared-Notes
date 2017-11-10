@@ -51,7 +51,7 @@
 						<img src="../Imagens/hint.png" class="hint">
 					</div>
 					<div id="hintTxt4" class="hintTxt">
-						Escolha o arquivo que será o projeto. Apenas arquivos com as extensões txt, zip, rar, js, html e php serão aceitos.
+						Escolha o arquivo que será o projeto. Apenas arquivos com as extensões zip, rar e 7z serão aceitos.
 					</div>
 				</div>
 				<input id="arqProj" style="margin-left: 10px; margin-top: 5px;" type="file" accept=".txt, .zip, .rar, .js, .html, .php" name="file" value="escolher arquivo"><br>
