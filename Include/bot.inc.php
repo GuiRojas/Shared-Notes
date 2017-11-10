@@ -9,7 +9,7 @@
 		</div>
 
 		<div id="SobreBot">
-			<h1 style="font-size: 20px;color: #555;margin: 0">Luinguiçona</h1>
+			<h1 style="font-size: 20px;color: #555;margin: 0">Site</h1>
 			<span style="color: #444">
 				Termos<br>
 				Política e Segurança<br>
