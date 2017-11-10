@@ -30,7 +30,7 @@
 						echo "$texto";
 					?>
 				</div>
-				<div id="criadorPerg"><?php echo "$criadorPerg"; ?></div>
+				<div class="criadorPergunta"><?php echo "$criadorPerg"; ?></div>
 			</div>
 			<div id="resposta">
 				
