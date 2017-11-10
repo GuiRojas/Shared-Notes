@@ -82,9 +82,13 @@
 
 						$status = sqlsrv_query($conexao,$sql);
 						if($status){
-							echo "<span id='cmnAdd'>Comentário Adicionado!</span>'";
+							?>
+								<script type="text/javascript"> myAlert("Comentário adicionado com sucesso!");</script>
+							<?php
 						}else{
-							echo "<span id='erro'>Não foi possível adicionar o comentário</span>'";
+							?>
+								<script type="text/javascript"> myAlert("Não foi possível adicionar o comentário");</script>
+							<?php
 						}
 					}
 				?>
@@ -105,12 +109,16 @@
 					if (  $qtd > 0){
 						$consulta = (sqlsrv_query($conexao,"SELECT criador,texto FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data"));
 						while ( $dadosCom = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
-							echo"						
-							<div class='post'>
-								<p class='nomeProj'>".$dadosCom['criador']."</p>
-								<p class='txtDescricao'>Descição:</p>
-								<p class='descricao'><i>". '"' . $dadosCom['texto']. '"' ."</i></p>
-							</div>
+							?>		
+							<a href='../Perfis/index.php?query=<?php echo"$dadosCom[criador]" ?>'>			
+							<?php
+							echo"
+								<div class='post'>
+									<p class='nomeProj'>".$dadosCom['criador']."</p>
+									<p class='txtDescricao'>Comentário:</p>
+									<p class='descricao'><i>". '"' . $dadosCom['texto']. '"' ."</i></p>
+								</div>
+							</a>
 							";
 						}
 					}

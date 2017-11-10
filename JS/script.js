@@ -66,7 +66,7 @@ $(document).ready(function(){
 	    	obj.innerHTML = "▶"	;
 	    }
 
-		$('#projDesc1').slideToggle("300", function() {
+		$('#projDesc2').slideToggle("300", function() {
 			myAlertConfirm("Para fazer uma pergunta você precisa estar logado no site. Deseja fazer o login?", "../Login/login.php") ;
 		});
 	})
