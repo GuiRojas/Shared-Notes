@@ -11,30 +11,30 @@
 		if (isset($_GET['query'])){ // inicio do if
 			$titulo = $_GET['query'];
 			include '../Include/getPergData.inc.php';
-			//include '../Include/getrRespData.inc.php';
 			include '../Include/top.inc.php';
 			include '../Include/side.inc.php';
 			
 	?>
 		<div id="container">
 
-			<h3><i><?php echo "$cat"; ?></i></h3> <br>
+			<span style="background-color: #ededed; line-height: 50px; ";><span style="margin-left: 15px">Categoria:</span><?php echo "$cat"; ?> </span> <br>
 
 			<div id="pergunta">
-				
-				<img src=<?php echo "../Perfis/" . $urlFoto ?> class='imgPergunta'>
-				<?php
-					echo "<form align = 'center'><b> $manchete </b></form><br>";
-				?>
+				<div>
+					<img src=<?php echo "../Perfis/" . $urlFoto ?> class='imgPergunta'>
+				</div>
 
 				<div id="textoPerg">
 					<?php
 						echo "$texto";
 					?>
 				</div>
-				<div class="criadorPergunta"><?php echo "$criadorPerg"; ?></div>						
+				<div class="criadorPergunta">
+					<?php echo "$criadorPerg"; ?>		
+				</div>
 			</div>
-		
+
+			<br><hr style="width: 95%;"><br>
 			<!--///////////////////////////////////////////////////////////////////////-->
 			<div style=" background-color: #ededed">
 				<?php
