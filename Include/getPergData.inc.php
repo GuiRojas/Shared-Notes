@@ -12,7 +12,9 @@
 
 			$consultaUsuario = sqlsrv_query($conexao,"SELECT foto FROM usuario WHERE username = '$criadorPerg'");
 
-			while ($linha = sqlsrv_fetch_array( $consultaUsuario, SQLSRV_FETCH_ASSOC))
+			while ($linha2 = sqlsrv_fetch_array( $consultaUsuario, SQLSRV_FETCH_ASSOC)) {
+				$urlFoto = $linha2['foto'];
+			}
 		}
 	}
 ?>
