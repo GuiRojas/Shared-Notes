@@ -148,7 +148,7 @@ function checarCamposProj(){
 	var t = document.getElementById("tituloProj").value;
 	var d = document.getElementById("descProj").value;
 	var f = document.getElementById("arqProj").value;
-	var listaExt = [".js",".zip",".rar",".txt",".php",".html"];
+	var listaExt = [".7z",".zip",".rar"];
 
 	if(!f){
 		myAlert("Escolha um arquivo");

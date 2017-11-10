@@ -1,6 +1,4 @@
 <?php
-if(htmlspecialchars($_POST['senha'])===htmlspecialchars($_POST['senha_conf'])){ 
-
 function testPassword($password)
 {
     if ( strlen( $password ) == 0 )

@@ -54,7 +54,7 @@
 						Escolha o arquivo que será o projeto. Apenas arquivos com as extensões zip, rar e 7z serão aceitos.
 					</div>
 				</div>
-				<input id="arqProj" style="margin-left: 10px; margin-top: 5px;" type="file" accept=".txt, .zip, .rar, .js, .html, .php" name="file" value="escolher arquivo"><br>
+				<input id="arqProj" style="margin-left: 10px; margin-top: 5px;" type="file" accept=".7z, .zip, .rar" name="file" value="escolher arquivo"><br>
 
 				<hr>
 				<input type="button" name="" id="fakeEnviar" value="Enviar" onclick="checarCamposProj()">

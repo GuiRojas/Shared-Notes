@@ -32,53 +32,44 @@
 				include("../Include/connect.inc.php");
 				include("../Include/function.inc.php");
 				
-				if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
-							 
-				if(testPassword(htmlspecialchars($_POST['senha']))>1){
-					if (!validate_email($_POST['email'])){
-    					echo '<span class="campos" id="msgErro">Email Inválido!</span>';
-					}else{
-						
-
-						if((!(strpos($_POST['username'],';')))&&(!(strpos($_POST['senha'],';')))&&(!(strpos($_POST['nome'],';')))){
-
-							$username=htmlspecialchars($_POST['username']);							
-							$senha=htmlspecialchars($_POST['senha']);
-							$email=htmlspecialchars($_POST['email']);
-							$nome=htmlspecialchars($_POST['nome']);
-
-							$senha=password_hash($senha,PASSWORD_BCRYPT,array('cost'=>10));
-
-							$sql = "insert into usuario values( '$username','$email','$nome','$senha', 'sem status', 0, 0,'nada', 'img/null.png', 0)";
-
-							$status = sqlsrv_query( $conexao, $sql);
-
-							if($status){
-								session_start();
-								$_SESSION['u']=$username;
-								$_SESSION['firstTime']= true;
-								$_SESSION['email']=$email;
-								header('Location:../Home/index.php');
+				if (isset($_POST['Cadastrar'])) {
+					
+					if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
+						if(testPassword($senha=htmlspecialchars($_POST['senha']))){
+							if (!validate_email($_POST['email'])){
+		    					?> <script>myAlertLogin("Email inválido")</script> <?php
 							}else{
+								if((!(strpos($_POST['username'],';')))&&(!(strpos($_POST['senha'],';')))&&(!(strpos($_POST['nome'],';')))){
 
-								?> <script>myAlertLogin("Não foi possível realizar a inclusão")</script> <?php
-							}
+									$username=htmlspecialchars($_POST['username']);							
+									$email=htmlspecialchars($_POST['email']);
+									$nome=htmlspecialchars($_POST['nome']);
+
+									$senha=password_hash($senha,PASSWORD_BCRYPT,array('cost'=>10));
+
+									$sql = "insert into usuario values( '$username','$email','$nome','$senha', 'sem status', 0, 0,'nada', 'img/null.png', 0)";
+
+									$status = sqlsrv_query( $conexao, $sql);
+
+									if($status){
+										session_start();
+										$_SESSION['u']=$username;
+										$_SESSION['firstTime']= true;
+										$_SESSION['email']=$email;
+										header('Location:../Home/index.php');
+									}else{
+										?> <script>myAlertLogin("Não foi possível realizar a inclusão")</script> <?php
+									}
+								}else{
+									?> <script>myAlertLogin("Caracteres inválidos")</script> <?php
+								}
+							}					
 						}else{
-							?> <script>myAlertLogin("Caracteres inválidos")</script> <?php
-						}
-					}					
-				}else{
-					?> <script>myAlertLogin("A senha não é forte o suficiente")</script> <?php
-				}		
-
-			}else{
-				?> <script>myAlertLogin("A senha difere da confirmação")</script> <?php
-			}
-
-		}
-
-		?> <br>
-
+							?> <script>myAlertLogin("A senha não é forte o suficiente")</script> <?php
+						}		
+					}else{
+						?> <script>myAlertLogin("A senha difere da confirmação")</script> <br>
+						<?php }} ?>
 			<input type="submit" name="Cadastrar" id="enviar">
 		</form>
 	</div>

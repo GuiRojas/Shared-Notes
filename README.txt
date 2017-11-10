@@ -1,1 +1,0 @@
-﻿vcs tudo gay kkakakk
