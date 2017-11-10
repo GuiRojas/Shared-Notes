@@ -18,9 +18,9 @@
 			<span class="campos">Nome de Usuario:</span><br>
 			<input class="camposInput" type="text" name="username" maxlength="25" ><br>
 			<span class="campos">Senha:</span><br>
-			<input class="camposInput" type="password" name="senha" ><br>
+			<input class="camposInput" type="password" name="senha" maxlength="25"><br>
 			<span class="campos">Confirmar senha:</span><br>
-			<input class="camposInput" type="password" name="senha_conf" ><br>
+			<input class="camposInput" type="password" name="senha_conf" maxlength="25"><br>
 			<span class="campos">Email:</span><br>
 			<input class="camposInput" type="text" name="email" maxlength="100"><br>
 			<span class="campos">Nome:</span><br>
@@ -31,6 +31,7 @@
 			<?php 
 				include("../Include/connect.inc.php");
 				include("../Include/function.inc.php");
+				
 				if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
 							 
 				if(testPassword(htmlspecialchars($_POST['senha']))>1){
