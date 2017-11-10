@@ -20,7 +20,7 @@
 			?>
 			<a href="projNew.php">
 				<div class="stockDivDark">
-					<div class="stockTexto">Postar um projeto</div>
+					<div class="stockTexto"><span class="aa">Postar um projeto</span></div>
 					<div class="stockimage">
 						<br>
 						<span class="fodasse">•algo</span><br><br>
@@ -32,7 +32,7 @@
 			} else{
 			?>
 				<div class="stockDivDark trapProj">
-					<div class="stockTexto"><span class="mainStuff">Postar um projeto</span></div>
+					<div class="stockTexto"><span class="mainStuff"><span class="aa">Postar um projeto</span></span></div>
 					<div class="stockimage">
 						<br>
 						<span class="fodasse">•algo</span><br><br>
@@ -50,7 +50,7 @@
 						<span class="fodasse">•algo</span><br><br>
 						<span class="fodasse">•algo</span>
 					</div>
-					<div class="stockTexto">Pesquisar um projeto</div>
+					<div class="stockTexto"><span class="aa">Pesquisar um projeto</span></div>
 				</div>
 			</a>
 		</div>
