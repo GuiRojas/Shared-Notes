@@ -577,3 +577,26 @@ body{
 .aa{
 	margin-left: 15px;
 }
+
+.criadorPergunta{
+	margin-top: 30px;
+	text-align: center;
+	width: 130px;
+}
+
+.imgPergunta{
+	width:130px;
+	height:130px;
+	position: absolute;
+}
+
+#textoPerg{
+	margin-left: 160px;
+}
+
+#pergunta{
+	margin-bottom:250px;
+	margin-right: 300px;
+	margin-left: 50px;
+	height: 160px;
+}

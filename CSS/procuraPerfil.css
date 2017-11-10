@@ -122,7 +122,7 @@ body{
 	margin: 10% 0;
 }
 
-.img{
+.imgPergunta{
 	width:130px;
 	height:130px;
 	position: absolute;
@@ -458,4 +458,12 @@ input[type="button"]:hover{
 	margin-top: 30px;
 	text-align: center;
 	width: 130px;
+}
+
+.post{
+	margin: 0 30px 30px 30px;
+	background-color: #F9F9F9;
+	height: 120px;
+	cursor: pointer;
+	color: black;
 }
