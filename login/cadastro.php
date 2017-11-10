@@ -127,7 +127,11 @@
 											'cost'=>10
 										 ));
 
+<<<<<<< HEAD
+							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'Sem status', 0, 0, 'Nada', 'null.png', 0)";
+=======
 							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'sem status','nada', 0, 0, 'img/null.png', 0)";
+>>>>>>> 65d24cb6e6b7fe53aa09c937175a16282b23b891
 
 							$status = sqlsrv_query( $conexao, $sql);
 

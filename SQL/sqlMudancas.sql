@@ -1,28 +1,15 @@
-
-alter table usuario add user_status varchar(150) 
-alter table usuario add perguntas_respondidas int
-alter table usuario add perguntas_feitas int
-alter table usuario add especialidade varchar(15)
-alter table usuario add foto ntext
-
-alter table usuario alter column user_status ntext
-alter table usuario alter column especialidade ntext
-
------------------------PROCEDURES---------------------------
-
 create proc login_sp
 @usuario varchar(20) = null
 as
 select * from usuario where username = @usuario
 
-create proc cadastro_sp
+alter proc cadastro_sp
 @usuario varchar(25) = null,
 @email varchar(100) = null,
 @nome varchar(50)= null,
 @senha varchar(60) = null
 as
-insert into usuario values(@usuario,@email,@nome,@senha,'Sem status','Nada',0,0,NULL,'null.png')
-
+insert into usuario values(@usuario,@email,@nome,@senha,'Sem status',0,0,'Nada','null.png',0)
 
 create proc pesquisaUsu_sp
 @palavra varchar(30) = null
@@ -44,6 +31,8 @@ set @pergs = @pergs + 1
 insert into pergunta values(@titulo,@text,@cat,@criador,@data)
 update usuario set perguntas_feitas = @pergs where username = @criador
 end
+
+select * from pergunta
 
 create proc pesqPerg_sp
 @palavra varchar(30) = null

@@ -2,7 +2,7 @@
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
 	<title>Configurações</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/padraoSite.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
 </head>
@@ -15,27 +15,30 @@
 	?>
 		
 	<div id="container">
-		<div id="configainer">
+		<div id="areaFrm">
 
 			<form method="POST">
-				<br>
-				Mudar email:<input type="text" name="email"
+				<div class="tituloProjNew"> <p class="tlt">Mudar email:</p></div>
+				<input type="text" name="email"
 				<?php
 					if(isset($_POST['email']))
 						echo "value=".$_POST['email']; 
 					else{
 						echo "value=".$_SESSION['email']; 
 					}
-				?> >
-				<br><br>
-				Senha Antiga:<input type="password" name="senha_ant">
-				<br>
-				Confirmar senha:<input type="password" name="senha_verf">
-				<br>
-				Senha nova:<input type="password" name="senha_nova">
-				<br><br>
+				?> class="respProjNew">
 
-				<input type="submit" name="vai" value="mudar">
+				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p></div>
+				<input type="password" name="senha_ant" class="respProjNew">
+
+				<div class="tituloProjNew"> <p class="tlt">Confirmar senha:</p></div>
+				<input type="password" name="senha_verf" class="respProjNew">
+
+				<div class="tituloProjNew"> <p class="tlt">Senha nova:</p></div>
+				<input type="password" name="senha_nova" class="respProjNew">
+
+				<hr>
+				<input type="submit" name="vai" value="mudar" class="btnEnviar">
 			</form>
 
 			<?php
@@ -48,10 +51,10 @@
 			    
 			 
 			    $strength = 0;
-			 
+			
 			    /*** get the length of the password ***/
 			    $length = strlen($password);
-			 
+			
 			    /*** check if password is not all lower case ***/
 			    if(strtolower($password) != $password)
 			    {
@@ -158,28 +161,40 @@
 										$status=sqlsrv_query($conexao,$sql);
 				
 										if($status){
-											echo "Senha mudada";
+											?>
+												<script type="text/javascript">myAlert("Senha atualizada com sucesso!")</script>
+											<?php
 										}else{
-											echo "não foi possível mudar a senha";
+											?>
+												<script type="text/javascript">myAlert("Ocorreu um erro")</script>
+											<?php
 										}
 
 
 									}else{
-										echo "senha incorreta!";
+										?>
+											<script type="text/javascript">myAlert("Senha antiga invalida")</script>
+										<?php
 									}
 
 								}
 
 							}else{
-								echo "senha muito fraca!";
+								?>
+									<script type="text/javascript">myAlert("Senha nova muito fraca")</script>
+								<?php
 							}	
 
 						}else{
-							echo "Senha nova não pode ser a senha antiga";
+							?>
+								<script type="text/javascript">myAlert("Senha nova inválida")</script>
+							<?php
 						}
 
 					}else{
-						echo "senhas diferem!";
+						?>
+							<script type="text/javascript">myAlert("Senhas diferem")</script>
+						<?php
 					}
 				}
 			}

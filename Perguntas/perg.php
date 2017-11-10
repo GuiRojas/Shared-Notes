@@ -20,7 +20,7 @@
 			<h3><i><?php echo "$cat"; ?></i></h3> <br>
 
 			<div id="pergunta">
-				<img src=<?php echo "$urlFoto" ?> class='img'>
+				<img src=<?php echo "../Perfis/" . $urlFoto ?> class='img'>
 				<?php
 					echo "<form align = 'center'> $manchete </form><br>";
 				?>
@@ -32,24 +32,7 @@
 				</div>
 			</div>
 			<div id="resposta">
-				<?php
-					if (  $projPostado > 0){
-						$consulta = (sqlsrv_query($conexao,"SELECT * FROM projeto WHERE criador = '". $_GET['query'] ."'"));
-						while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
-							echo"
-							<a href='../Projetos/pagProj.php?query=".$dados['titulo']."'  style='text-decoration:none'> 
-								<div class='post'>
-									<p class='nomeProj'>".$dados['titulo']."</p>
-									<p class='txtDescricao'>Descição:</p>
-									<p class='descricao'><i>". '"' . $dados['descricao']. '"' ."</i></p>
-								</div>
-							</a>
-							";
-						}
-					}
-				?>
-
-
+				
 			</div>
 		</div>
 	<?php

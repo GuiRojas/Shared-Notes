@@ -300,6 +300,7 @@ input[type="button"]:hover{
 	margin-left: 10px;
 	border: 1px solid #bbb;
 	width: 200px;
+	padding: 5px;
 }
 
 .tlt{
@@ -439,4 +440,16 @@ input[type="button"]:hover{
 
 #textoPerg{
 	margin-left: 160px;
+}
+
+.btnEnviar{
+	border:1px solid #303E4D;
+	background-color: #5d7ba0;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+	display: block;
+	width: 120px;
+	height: 30px;
+	margin-left: 30px;
 }

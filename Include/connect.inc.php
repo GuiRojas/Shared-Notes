@@ -3,7 +3,7 @@
 $servidor = "regulus.cotuca.unicamp.br";
 $database="BDPPI17182";
 $uid = "BDPPI17182";
-$pwd = "BDPPI17182";
+$pwd = "StSn17182";
 $InfConexao = array( "Database"=>$database,
 						 "PWD"=>$pwd,
 						 "UID"=>$uid);
