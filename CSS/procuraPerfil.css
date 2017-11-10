@@ -453,3 +453,9 @@ input[type="button"]:hover{
 	height: 30px;
 	margin-left: 30px;
 }
+
+.criadorPergunta{
+	margin-top: 30px;
+	text-align: center;
+	width: 130px;
+}
