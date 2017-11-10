@@ -20,7 +20,7 @@
 			<h3><i><?php echo "$cat"; ?></i></h3> <br>
 
 			<div id="pergunta">
-				<img src=<?php echo "$urlFoto" ?> class='img'>
+				<img src=<?php echo "../Perfis/" . $urlFoto ?> class='img'>
 				<?php
 					echo "<form align = 'center'> $manchete </form><br>";
 				?>

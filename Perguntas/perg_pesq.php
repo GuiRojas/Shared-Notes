@@ -33,7 +33,7 @@
 				$query = htmlspecialchars($_GET['query']);
 				$_SESSION['query'] = $query;
 				if( $query != null or $query != ""){
-			        $status = sqlsrv_query( $conexao, "SELECT titulo FROM projeto WHERE titulo like '$query'", array(), array("Scrollable"=>"buffered"));
+			        $status = sqlsrv_query( $conexao, "SELECT titulo FROM pergunta WHERE titulo like '$query'", array(), array("Scrollable"=>"buffered"));
 
 			        $rowCount= sqlsrv_num_rows($status);
 
@@ -43,14 +43,9 @@
 			        	echo "
 			        	<a class='usuDataA' href='perg.php?query=$query'>
 				        	<div class='usuData'>
-								<div>
-									<span style='display:inline-block; margin: 0;'>$username</span>
-								</div>
+							
 								<div class='linhaVertical'></div>
-								<div>
-									<div style='height:45px'>especialidade : $especialidade</div>
-									<div style='height:45px'>Projetos postados : $projPostado</div>
-								</div>
+								
 							</div>
 			        	</a>";
 			        } else {

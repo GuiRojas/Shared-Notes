@@ -27,7 +27,7 @@
 		<!--usuario apenas acessa seu perfil se estiver logado-->
 		<?php
 			if(isset($_SESSION['u'])){
-				?><a href='../Perfis/index.php?query=<?php echo"$_SESSION[u]" ?>' class='btnLogin subgrupo'><?php echo"$_SESSION[u]" ?></a>;
+				?><a href='../Perfis/index.php?query=<?php echo"$_SESSION[u]" ?>' class='btnLogin subgrupo'><?php echo"$_SESSION[u]" ?></a>
 				<a href='../config/' class='btnLogin subgrupo' id="configDiv">Configurações da conta</a><?php
 			}
 
