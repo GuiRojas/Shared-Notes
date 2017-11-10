@@ -327,11 +327,11 @@ input[type="button"]:hover{
 }
 
 #sobreBot{
-
+	text-decoration: none;
 }
 
 #sSobreBot{
-
+	text-decoration: none;
 }
 
 .hint{
