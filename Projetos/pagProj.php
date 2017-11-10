@@ -109,13 +109,12 @@
 					if (  $qtd > 0){
 						$consulta = (sqlsrv_query($conexao,"SELECT criador,texto FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data"));
 						while ( $dadosCom = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
-							?>		
-							<a href='../Perfis/index.php?query=<?php echo"$dadosCom[criador]" ?>'>			
-							<?php
+							$nome = $dadosCom['criador'];
 							echo"
+							<a href='../Perfis/index.php?query=$nome'>			
 								<div class='post'>
-									<p class='nomeProj'>".$dadosCom['criador']."</p>
-									<p class='txtDescricao'>Comentário:</p>
+									<p class='nomeProj'>".$nome."</p>
+									<p class='txtDescricao'>Descição:</p>
 									<p class='descricao'><i>". '"' . $dadosCom['texto']. '"' ."</i></p>
 								</div>
 							</a>
