@@ -2,7 +2,13 @@ create table usuario(
 	username varchar(25) primary key,
 	email varchar(100) not null,
 	nome varchar(50) not null,
-	senha varchar(60) not null
+	senha varchar(60) not null,
+	user_status ntext,
+	perguntas_respondidas int,
+	perguntas_feitas int,
+	especialidade varchar(15) not null,
+	foto ntext not null,
+	projetos_postados int
 )
 
 create table pergunta(
@@ -35,14 +41,6 @@ create table projComentario(
 	constraint fkCrid foreign key (criador) references usuario (username)
 )
 
-create table seguir(
-	codSeguidor int identity(1,1) primary key,
-	uSeguidor varchar(25) not null,
-	uSeguindo varchar(25) not null,
-	constraint fkUsgr foreign key (uSeguidor) references usuario(username),
-	constraint fkUsgn foreign key (uSeguindo) references usuario(username)	
-)
-
 create table projeto(
 	titulo varchar(50) primary key,
 	descricao ntext not null,
@@ -54,11 +52,5 @@ create table projeto(
 select * from comentario
 select * from pergunta
 select * from usuario
-select * from seguir
 select * from projeto
 select * from projComentario
-
-
-insert into projComentario values('xd',1,'nodoya','xddddd',GETDATE())
-
-use BDPPI17182
