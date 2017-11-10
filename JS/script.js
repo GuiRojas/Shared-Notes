@@ -56,6 +56,20 @@ $(document).ready(function(){
 
 		});
 	})
+
+	$("#postsFechados2").click(function(){
+		var obj = document.getElementById("nomeProj2");
+	    if ( obj.innerHTML == "▶")
+	    {
+	    	obj.innerHTML = "▼";
+	    }else{
+	    	obj.innerHTML = "▶"	;
+	    }
+
+		$('#projDesc1').slideToggle("300", function() {
+
+		});
+	})
 })
 
 function displayNoneParent( param){
@@ -120,9 +134,21 @@ function checarCamposProj(){
 	var t = document.getElementById("tituloProj").value;
 	var d = document.getElementById("descProj").value;
 	var f = document.getElementById("arqProj").value;
+	var listaExt = [".js",".zip",".rar",".txt",".php",".html"];
 
 	if(!f){
 		myAlert("Escolha um arquivo");
+		return;
+	}
+
+	var a = 0;
+	for(i=0; i<= listaExt.length-1; i++){
+		if( f.indexOf(listaExt[i]) != -1 ){
+			a++;
+		}
+	}
+	if(a == 0){
+		myAlert("Extensão inválida.");
 		return;
 	}
 

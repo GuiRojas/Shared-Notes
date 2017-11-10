@@ -32,7 +32,8 @@
 
 			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"><?php echo"$status"?></textarea>
 			<span class="campoSpan">Especialidade:</span> 
-			<select name="especialidade" id="chngEspecialidade" class="campo" value='<?php echo"$especialidade" ?>' >
+			<select name="especialidade" id="chngEspecialidade" class="campo" >
+				<option style="display: none" selected><?php echo"$especialidade" ?></option>
 				<option>Nada</option>
 				<option>Tudo sobre front end</option>
 				<option>Tudo sobre back end</option>
@@ -89,13 +90,13 @@
 							<?php
 								if (  $projPostado > 0){
 									$consulta = (sqlsrv_query($conexao,"SELECT * FROM projeto WHERE criador = '". $_GET['query'] ."'"));
-									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+									while ( $dadosPerg = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 										echo"
-										<a href='../Projetos/pagProj.php?query=".$dados['titulo']."'  style='text-decoration:none'> 
+										<a href='../Projetos/pagProj.php?query=".$dadosPerg['titulo']."'  style='text-decoration:none'> 
 											<div class='post'>
-												<p class='nomeProj'>".$dados['titulo']."</p>
+												<p class='nomeProj'>".$dadosPerg['titulo']."</p>
 												<p class='txtDescricao'>Descição:</p>
-												<p class='descricao'><i>". '"' . $dados['descricao']. '"' ."</i></p>
+												<p class='descricao'><i>". '"' . $dadosPerg['descricao']. '"' ."</i></p>
 											</div>
 										</a>
 										";

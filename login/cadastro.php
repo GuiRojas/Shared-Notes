@@ -29,8 +29,8 @@
 			<span class="campos"><a href="login.php">Já tem uma conta? Entre aqui.</a></span><br>	
 
 			<?php 
-		include("../Include/connect.inc.php");
-		if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
+				include("../Include/connect.inc.php");
+				if(isset($_POST['username'])&&isset($_POST['senha'])&&isset($_POST['senha_conf'])&&isset($_POST['email'])&&isset($_POST['nome'])){
 			
 
 			if(htmlspecialchars($_POST['senha'])===htmlspecialchars($_POST['senha_conf'])){ 
@@ -123,15 +123,9 @@
 							$email=htmlspecialchars($_POST['email']);
 							$nome=htmlspecialchars($_POST['nome']);
 
-							$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array(
-											'cost'=>10
-										 ));
+							$stored_pass=password_hash($senha,PASSWORD_BCRYPT,array('cost'=>10));
 
-<<<<<<< HEAD
-							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'Sem status', 0, 0, 'Nada', 'null.png', 0)";
-=======
-							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'sem status','nada', 0, 0, 'img/null.png', 0)";
->>>>>>> 65d24cb6e6b7fe53aa09c937175a16282b23b891
+							$sql = "insert into usuario values( '$username','$email','$nome','$stored_pass', 'sem status', 0, 0,'nada', 'img/null.png', 0)";
 
 							$status = sqlsrv_query( $conexao, $sql);
 
@@ -143,7 +137,7 @@
 								header('Location:../Home/index.php');
 							}else{
 
-								?> <script>myAlertLogin("Não foi possível realizar a inclusão)</script> <?php
+								?> <script>myAlertLogin("Não foi possível realizar a inclusão")</script> <?php
 							}
 						}else{
 							?> <script>myAlertLogin("Caracteres inválidos")</script> <?php
