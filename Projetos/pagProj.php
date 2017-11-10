@@ -59,7 +59,7 @@
 					<form method="POST">
 						Adicionar comentário:<br>
 						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto"></textarea><br><br>
-						<input type="submit" name="comentar" style="float: right;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;"><br>
+						<input type="submit" name="comentar" style="float: right;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px; margin-right: 14%"><br>
 					</form>
 				</div>
 				<?php 
@@ -69,7 +69,7 @@
 					<form method="POST">
 						Adicionar comentário:<br>
 						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto"></textarea><br><br>
-						<input type="button" value="Enviar" style="float: right;margin-right: 14%;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;" id="commentTrap"><br>
+						<input type="button" value="Enviar" style="float: right;margin-right: 14%;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px; margin-right: 14%" id="commentTrap"><br>
 					</form>
 				</div>
 				<?php
@@ -114,7 +114,7 @@
 							<a href='../Perfis/index.php?query=$nome'>			
 								<div class='post'>
 									<p class='nomeProj'>".$nome."</p>
-									<p class='txtDescricao'>Descição:</p>
+									<p class='txtDescricao'>Comentário:</p>
 									<p class='descricao'><i>". '"' . $dadosCom['texto']. '"' ."</i></p>
 								</div>
 							</a>
