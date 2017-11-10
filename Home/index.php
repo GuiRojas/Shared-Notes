@@ -26,7 +26,7 @@
 
 			<a href="../Perfis/perfilMenu.php" style="text-decoration:none">
 				<div class="stockDivLight">
-					<div class="stockTexto">Procure por outras pessoas</div>
+					<div class="stockTexto"><span class="aa">Procure por outras pessoas</span></div>
 					<div class="stockimage">
 						<br>
 						<span class="fodasse">•algo</span><br><br>
@@ -42,13 +42,13 @@
 						<span class="fodasse">•algo</span><br><br>
 						<span class="fodasse">•algo</span>
 					</div>
-					<div class="stockTexto">Pergunte ou responda</div>
+					<div class="stockTexto"><span class="aa">Pergunte ou responda</span></div>
 				</div>
 			</a>
 			
 			<a href="../projetos/index.php" style="text-decoration:none">
 				<div class="stockDivLight"><!--vai pro perfil da pessoa, se n tiver logada, abre o login-->
-					<div class="stockTexto">Compartilhe seus projetos</div>
+					<div class="stockTexto"><span class="aa">Compartilhe seus projetos</span></div>
 					<div class="stockimage">
 						<br>
 						<span class="fodasse">•algo</span><br><br>

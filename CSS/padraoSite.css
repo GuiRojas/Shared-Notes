@@ -303,6 +303,7 @@ body{
 	color: #657493;
 	font-size: 23px;
 	border-left: 1px solid #d3d3d3;
+	line-height: 170px;
 }
 
 .linhaVertical{
@@ -493,11 +494,11 @@ body{
 }
 
 #sobreBot{
-
+	text-decoration: none;
 }
 
 #sSobreBot{
-
+	text-decoration: none;
 }
 
 .closebtn {
@@ -571,4 +572,8 @@ body{
 
 .link a:visited{
 	color: #5d7ba0 !important;
+}
+
+.aa{
+	margin-left: 15px;
 }

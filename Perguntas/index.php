@@ -17,7 +17,7 @@
 		<div id="home">
 
 			<div class="stockDivLight trapPerg">
-				<div class="stockTexto">Perguntar</div>
+				<div class="stockTexto"><span class="aa">Perguntar</span></div>
 				<div class="stockimage">
 					<br>
 						<span class="fodasse">•algo</span><br><br>
@@ -32,7 +32,7 @@
 						<span class="fodasse">•algo</span><br><br>
 						<span class="fodasse">•algo</span>
 					</div>
-					<div class="stockTexto">Pesquisar</div>
+					<div class="stockTexto"><span class="aa">Pesquisar</span></div>
 				</div>
 			</a>
 
