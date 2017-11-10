@@ -2,7 +2,7 @@
 	include 'connect.inc.php';
 	if ( $conexao){
 
-		$consultaPergunta = sqlsrv_query($conexao,"SELECT titulo, texto, categoria, criador, data FROM pergunta WHERE titulo = '$nomePerg'");
+		$consultaPergunta = sqlsrv_query($conexao,"SELECT titulo, texto, categoria, criador, data FROM pergunta WHERE titulo = '$titulo'");
 		while ( $linha = sqlsrv_fetch_array( $consultaPergunta, SQLSRV_FETCH_ASSOC)){
 			$manchete = $linha['titulo'];
 			$texto = $linha['texto'];
