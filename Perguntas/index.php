@@ -19,18 +19,16 @@
 			<div class="stockDivLight trapPerg">
 				<div class="stockTexto"><span class="aa">Perguntar</span></div>
 				<div class="stockimage">
-					<br>
-						<span class="fodasse">•algo</span><br><br>
-						<span class="fodasse">•algo</span>
+					<br><br><br>
+						<span class="fodasse">•Não fique com a duvida,pergunte-a aqui</span>
 				</div>
 			</div>
 
 			<a href="perg_pesq.php">
 				<div class="stockDivDark">
 					<div class="stockimage">
-						<br>
-						<span class="fodasse">•algo</span><br><br>
-						<span class="fodasse">•algo</span>
+						<br><br><br>
+						<span class="fodasse">•Ajude as pessoas com o seu conhecimento</span>
 					</div>
 					<div class="stockTexto"><span class="aa">Pesquisar</span></div>
 				</div>

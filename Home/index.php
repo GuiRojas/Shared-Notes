@@ -50,7 +50,7 @@
 					<div class="stockTexto"><span class="aa">Compartilhe seus projetos</span></div>
 					<div class="stockimage">
 						<br><br><br>
-						<span class="fodasse">•Poste seus projetos e as pessoas poderão baixá-los em su perfil</span><br><br>
+						<span class="fodasse">•Poste seus projetos e as pessoas poderão baixá-los em seu perfil</span><br><br>
 					</div>
 				</div>
 			</a>
