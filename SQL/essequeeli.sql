@@ -1,6 +1,5 @@
 select * from resposta
-select * from pergunta
-select * from projComentario
+select * from pergunta 
 select * from projeto
 select * from usuario
 
