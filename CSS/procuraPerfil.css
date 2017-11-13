@@ -1,4 +1,3 @@
-body{
 	margin: 0;	
 	border-color: #4e5156;
 	font-family: "Segoe UI";
@@ -13,6 +12,12 @@ body{
 	grid-template-rows: 105px auto auto;
 	background-color: #babbbc;
 }
+
+input[type="button"]:hover{
+	background-color: #303E4D;
+}
+
+/* ID */
 
 #tituloSite{
 	height: 70px;
@@ -53,6 +58,156 @@ body{
 	grid-area: side;
 	z-index: 10;
 }
+
+
+#container{
+	display: grid;
+	grid-area: container;
+	background-color: white;
+	z-index: 10;
+	grid-template-rows: 50px auto;
+}
+
+#profile{
+	text-align: center;
+	border-left: 1px solid #717A83;
+	margin: 10% 0;
+}
+
+#informacoes{
+	text-align: left;
+	padding: 30px;
+}
+
+#conteudo{
+	width: auto;
+}
+
+#containerInfo{
+	grid-template-columns: auto 300px;
+	display: grid;
+}
+
+#menu{
+	background-color: #303E4D;
+	color: white;
+	border: none;
+	font-family: "Segoe UI";
+	height: 35px;
+	cursor: pointer;
+}
+
+#procuraUsuario{
+	display: grid;
+	grid-template-columns: auto 30px;
+	width: 70%;
+	height: 25px;
+	margin: 15px 15%;
+}
+
+#query{
+	height: 25px;
+	width: 100%;
+	border: 1px solid grey;
+	outline-width: 0;
+	font-size: 17px;
+	text-align: center;
+}
+
+#btnInput{
+	border: 1px solid grey;
+	border-left: 0;
+	height: 25px;
+	width: 30px;
+	background: url(../Imagens/procura.png) center no-repeat;
+	background-size: 22px 22px;
+}
+
+#RAs{
+	margin-top: 2px;
+	margin-left: 350px;
+	width: 150px;
+	height: 100px;
+}
+
+#criadores{
+	width: 350px;
+	height: 150px;
+}
+
+#areaFrm{
+	width: 100%;
+	height: 100%;
+}
+
+#env{
+	background-color: #ddd;
+	width: 200px;
+	margin-left: 10px;
+}
+
+#bot{
+	background-color: #babbbc;
+	grid-area: bot;
+	border-top: 1px solid black;
+	width: 70%;
+	margin: 0 10%;
+	margin-left: 300px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+#sobreBot{
+	text-decoration: none;
+}
+
+#sSobreBot{
+	text-decoration: none;
+}
+
+#hint1:hover + #hintTxt1{
+	display: inline-block;
+}
+
+#hint2:hover + #hintTxt2{
+	display: inline-block;
+}
+
+#hint3:hover + #hintTxt3{
+	display: inline-block;
+}
+
+#hint4:hover + #hintTxt4{
+	display: inline-block;
+}
+
+#fakeEnviar{
+	margin-left: 10px;
+	background-color: #5D7BA0;
+	border : 1px solid #303E4D;
+	color: white;
+	cursor: pointer;
+	width: 120px;
+	font-size: 18px;
+}
+
+#fakeEnviar:hover{
+	background-color: #303E4D;
+}
+
+#pergunta{
+	display: block;
+	width: 60%;
+	margin: 0 15%;
+	min-height: 170px;
+	background-color: #ededed;
+}
+
+#textoPerg{
+	margin-left: 160px;
+}
+
+/* Classes */
 
 .a{
 	display: block;
@@ -108,19 +263,7 @@ body{
 	background-color: #D3D3D3;
 }
 
-#container{
-	display: grid;
-	grid-area: container;
-	background-color: white;
-	z-index: 10;
-	grid-template-rows: 50px auto;
-}
 
-#profile{
-	text-align: center;
-	border-left: 1px solid #717A83;
-	margin: 10% 0;
-}
 
 .imgPergunta{
 	width:130px;
@@ -130,28 +273,6 @@ body{
 	position: absolute;
 }
 
-#informacoes{
-	text-align: left;
-	padding: 30px;
-}
-
-#conteudo{
-	width: auto;
-}
-
-#containerInfo{
-	grid-template-columns: auto 300px;
-	display: grid;
-}
-
-#menu{
-	background-color: #303E4D;
-	color: white;
-	border: none;
-	font-family: "Segoe UI";
-	height: 35px;
-	cursor: pointer;
-}
 
 
 .subgrupo{
@@ -173,39 +294,10 @@ body{
 	background-color: #303E4D;
 }
 
-input[type="button"]:hover{
-	background-color: #303E4D;
-}
-
 .stockimage{
 	margin: 50px;
 }
 
-#procuraUsuario{
-	display: grid;
-	grid-template-columns: auto 30px;
-	width: 70%;
-	height: 25px;
-	margin: 15px 15%;
-}
-
-#query{
-	height: 25px;
-	width: 100%;
-	border: 1px solid grey;
-	outline-width: 0;
-	font-size: 17px;
-	text-align: center;
-}
-
-#btnInput{
-	border: 1px solid grey;
-	border-left: 0;
-	height: 25px;
-	width: 30px;
-	background: url(../Imagens/procura.png) center no-repeat;
-	background-size: 22px 22px;
-}
 
 .usuario{
 	cursor: pointer;
@@ -272,17 +364,6 @@ input[type="button"]:hover{
  	margin-top: 35px; 
  }
 
-#RAs{
-	margin-top: 2px;
-	margin-left: 350px;
-	width: 150px;
-	height: 100px;
-}
-
-#criadores{
-	width: 350px;
-	height: 150px;
-}
 
 .tituloProjNew{
 	width: 100%;
@@ -292,10 +373,6 @@ input[type="button"]:hover{
 	background-color: #d3d3d3;
 }
 
-#areaFrm{
-	width: 100%;
-	height: 100%;
-}
 
 .respProjNew{
 	margin-top: 5px;
@@ -311,30 +388,6 @@ input[type="button"]:hover{
 	display: inline-block;
 }
 
-#env{
-	background-color: #ddd;
-	width: 200px;
-	margin-left: 10px;
-}
-
-#bot{
-	background-color: #babbbc;
-	grid-area: bot;
-	border-top: 1px solid black;
-	width: 70%;
-	margin: 0 10%;
-	margin-left: 300px;
-	display: grid;
-	grid-template-columns: 50% 50%;
-}
-
-#sobreBot{
-	text-decoration: none;
-}
-
-#sSobreBot{
-	text-decoration: none;
-}
 
 .hint{
 	height: 15px;
@@ -363,21 +416,6 @@ input[type="button"]:hover{
 	left: -10px;top: 1px;
 }
 
-#hint1:hover + #hintTxt1{
-	display: inline-block;
-}
-
-#hint2:hover + #hintTxt2{
-	display: inline-block;
-}
-
-#hint3:hover + #hintTxt3{
-	display: inline-block;
-}
-
-#hint4:hover + #hintTxt4{
-	display: inline-block;
-}
 
 .closebtn {
     margin-right: 15px;
@@ -396,19 +434,6 @@ input[type="button"]:hover{
     color: #5D7BA0;
 }
 
-#fakeEnviar{
-	margin-left: 10px;
-	background-color: #5D7BA0;
-	border : 1px solid #303E4D;
-	color: white;
-	cursor: pointer;
-	width: 120px;
-	font-size: 18px;
-}
-
-#fakeEnviar:hover{
-	background-color: #303E4D;
-}
 
 .msgConfirm{
 	margin-left: 10px;
@@ -433,17 +458,6 @@ input[type="button"]:hover{
 	margin: 10px;
 }
 
-#pergunta{
-	display: block;
-	width: 60%;
-	margin: 0 15%;
-	min-height: 170px;
-	background-color: #ededed;
-}
-
-#textoPerg{
-	margin-left: 160px;
-}
 
 .btnEnviar{
 	border:1px solid #303E4D;

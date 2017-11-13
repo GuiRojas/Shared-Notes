@@ -1,4 +1,5 @@
 <?php
+//retorna a força de uma senha
 function testPassword($password)
 {
     if ( strlen( $password ) == 0 )
@@ -61,6 +62,7 @@ function testPassword($password)
     return $strength;
 }
 
+//verifica se o email é valido, checando numa lista de domínios válidos
 function validate_email($email){
     if(!preg_match ("/^[\w\.-]{1,}\@([\da-zA-Z-]{1,}\.){1,}[\da-zA-Z-]+$/", $email))
         return false;

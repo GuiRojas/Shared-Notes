@@ -16,6 +16,7 @@
 	<div id="container">
 		<div id="home">
 		<?php 
+			//caso seja a primeira visita do usuario, exibe uma mensagem de Boas Vindas
 			if (isset($_SESSION['firstTime']) && $_SESSION['firstTime']) {
 				?>
 					<script type="text/javascript"> myAlert("Bem-vindo(a) ao Shared Notes!");</script>

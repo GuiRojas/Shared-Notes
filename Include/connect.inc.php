@@ -1,5 +1,4 @@
 <?php
-//$servidor = "DESKTOP-TITAN\SQLEXPRESS";
 $servidor = "regulus.cotuca.unicamp.br";
 $database="BDPPI17182";
 $uid = "BDPPI17182";

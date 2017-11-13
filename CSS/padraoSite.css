@@ -14,6 +14,8 @@ body{
 	background-color: #babbbc;
 }
 
+/* ID */
+
 #container a:visited{
 	color: black;
 }
@@ -61,6 +63,160 @@ body{
 	grid-area: side;
 	z-index: 10;
 }
+
+#container{
+	grid-template-columns: auto 300px;
+	display: grid;
+	grid-area: container;
+	background-color: white;
+	z-index: 10;
+}
+
+#profile{
+	text-align: center;
+	border-left: 1px solid #717A83;
+	margin: 10% 0;
+}
+
+#informacoes{
+	text-align: left;
+	padding: 30px;
+}
+
+#conteudo{
+	width: auto;
+}
+
+#containerInfo{
+	grid-template-columns: auto 300px;
+	display: grid;
+}
+
+#menu{
+	background-color: #303E4D;
+	color: white;
+	border: none;
+	font-family: "Segoe UI";
+	height: 35px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+#profilePosts{
+	margin: 0 5%;
+}
+
+#home{
+	margin-right: -300px;/*gambiarra, desculpa(n mexe)*/
+}
+
+#home a{
+	text-decoration: none;
+}
+
+#corpoTexto{
+	background-color:#F6F6F6;
+	height: auto;
+	margin: 15px 40px;
+}
+
+#perguntainer{
+	grid-template-columns: 30% 30% 30%;
+	display:inline-block;
+	margin: 0 5%;
+}
+
+#edit{
+	margin: auto 0;
+	height: 16px;
+	width: 16px;
+}
+
+#menuImg{
+	height: 35px;
+	width: 35px;
+}
+
+#editPage{
+	background: rgba(0,0,0,0.7);
+	position:fixed;
+    padding:0;
+    margin:0;
+    display:none;
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+	z-index: 1000;
+}
+
+#editForm{
+	width: 500px;
+	height: 600px;
+	margin: 40px auto;
+	background-color: white;
+	box-shadow: 0px 0px 30px #666;
+}
+
+#editForm h1{
+	margin: 0;
+	margin-left: 30px;
+	color:#303E4D;
+}
+
+#chngStatus{
+	font-size: 16px;
+}
+
+#chngEspecialidade{
+	width: 15em;
+}
+
+#btns{
+	margin: 0 20%;
+	margin-top: 60px; 
+	display: grid;
+	grid-template-columns: 55% 45%;
+}
+
+#carregarFoto{
+	width: 50%;
+	margin: 0 25%;
+	margin-top: 30px;
+}
+
+#bot{
+	background-color: #babbbc;
+	grid-area: bot;
+	border-top: 1px solid black;
+	width: 70%;
+	margin: 0 10%;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	margin-left: 300px;
+}
+
+#sobreBot{
+	text-decoration: none;
+}
+
+#sSobreBot{
+	text-decoration: none;
+}
+
+#textoPerg{
+	margin-left: 160px;
+}
+
+#pergunta{
+	margin-bottom:250px;
+	margin-right: 300px;
+	margin-left: 50px;
+	height: 160px;
+}
+
+/* Classes */
 
 .a{
 	display: block;
@@ -116,19 +272,6 @@ body{
 	background-color: #D3D3D3;
 }
 
-#container{
-	grid-template-columns: auto 300px;
-	display: grid;
-	grid-area: container;
-	background-color: white;
-	z-index: 10;
-}
-
-#profile{
-	text-align: center;
-	border-left: 1px solid #717A83;
-	margin: 10% 0;
-}
 
 .img{
 	margin-top: 20px;
@@ -138,29 +281,7 @@ body{
 	display: block;
 }
 
-#informacoes{
-	text-align: left;
-	padding: 30px;
-}
 
-#conteudo{
-	width: auto;
-}
-
-#containerInfo{
-	grid-template-columns: auto 300px;
-	display: grid;
-}
-
-#menu{
-	background-color: #303E4D;
-	color: white;
-	border: none;
-	font-family: "Segoe UI";
-	height: 35px;
-	cursor: pointer;
-	vertical-align: middle;
-}
 
 .subgrupo{
 	display: block;
@@ -181,9 +302,6 @@ body{
 	background-color: #303E4D;
 }
 
-#profilePosts{
-	margin: 0 5%;
-}
 
 .postTitle{
 	vertical-align:text-top;
@@ -286,13 +404,6 @@ body{
 	background-color: #e3e3e3;
 }
 
-#home{
-	margin-right: -300px;/*gambiarra, desculpa(n mexe)*/
-}
-
-#home a{
-	text-decoration: none;
-}
 
 .stockimage{
 	border-left: 1px solid #d3d3d3;
@@ -311,17 +422,7 @@ body{
 	border-left: 1px solid #dedede;
 }
 
-#corpoTexto{
-	background-color:#F6F6F6;
-	height: auto;
-	margin: 15px 40px;
-}
 
-#perguntainer{
-	grid-template-columns: 30% 30% 30%;
-	display:inline-block;
-	margin: 0 5%;
-}
 
 .btnEditar{
 	height: 24px;
@@ -342,38 +443,6 @@ body{
 	background-color: #5d7ba0;
 }
 
-#edit{
-	margin: auto 0;
-	height: 16px;
-	width: 16px;
-}
-
-#menuImg{
-	height: 35px;
-	width: 35px;
-}
-
-#editPage{
-	background: rgba(0,0,0,0.7);
-	position:fixed;
-    padding:0;
-    margin:0;
-    display:none;
-    top:0;
-    left:0;
-
-    width: 100%;
-    height: 100%;
-	z-index: 1000;
-}
-
-#editForm{
-	width: 500px;
-	height: 600px;
-	margin: 40px auto;
-	background-color: white;
-	box-shadow: 0px 0px 30px #666;
-}
 
 .campo{
 	display: block;
@@ -387,19 +456,6 @@ body{
 	margin-top:30px;
 }
 
-#editForm h1{
-	margin: 0;
-	margin-left: 30px;
-	color:#303E4D;
-}
-
-#chngStatus{
-	font-size: 16px;
-}
-
-#chngEspecialidade{
-	width: 15em;
-}
 
 .btnCancelar{
 	background-color: #EDEDED; 
@@ -427,12 +483,6 @@ body{
 	background-color: #5d7ba0;
 }
 
-#btns{
-	margin: 0 20%;
-	margin-top: 60px; 
-	display: grid;
-	grid-template-columns: 55% 45%;
-}
 
 .campoPerfil{
 	word-wrap: break-word;
@@ -467,11 +517,6 @@ body{
 	margin-top: 30px;
 }
 
-#carregarFoto{
-	width: 50%;
-	margin: 0 25%;
-	margin-top: 30px;
-}
 
 .topico{
 	margin:0;
@@ -482,24 +527,6 @@ body{
 	display: none; 
 }
 
-#bot{
-	background-color: #babbbc;
-	grid-area: bot;
-	border-top: 1px solid black;
-	width: 70%;
-	margin: 0 10%;
-	display: grid;
-	grid-template-columns: 50% 50%;
-	margin-left: 300px;
-}
-
-#sobreBot{
-	text-decoration: none;
-}
-
-#sSobreBot{
-	text-decoration: none;
-}
 
 .closebtn {
     margin-right: 15px;
@@ -588,15 +615,4 @@ body{
 	width:130px;
 	height:130px;
 	position: absolute;
-}
-
-#textoPerg{
-	margin-left: 160px;
-}
-
-#pergunta{
-	margin-bottom:250px;
-	margin-right: 300px;
-	margin-left: 50px;
-	height: 160px;
 }

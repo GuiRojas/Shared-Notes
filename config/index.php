@@ -21,12 +21,8 @@
 			<form method="POST">
 				<div class="tituloProjNew"> <p class="tlt">Mudar email:</p></div>
 				<input type="text" name="email"
-				<?php
-					if(isset($_POST['email']))
-						echo "value=".$_POST['email']; 
-					else{
-						echo "value=".$_SESSION['email']; 
-					}
+				<?php				
+					echo "value=".$_SESSION['email']; 					
 				?> class="respProjNew" maxlength="100">
 
 				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p></div>
@@ -45,12 +41,13 @@
 			<?php
 			include '../Include/connect.inc.php';
 
+			//verifica se está preenchido o campo do email
 			if(isset($_POST['email'])){
 				if(!(validate_email($_POST['email'])))
 					echo "Email inválido!";
 				else{
 					$sql = ("UPDATE usuario SET email = '".$_POST['email']."' WHERE username= '".$_SESSION['u']."'");
-
+					//muda o email no banco de dados
 					$status = sqlsrv_query($conexao,$sql);
 					if($status){
 						$_SESSION['email']=$_POST['email'];
@@ -60,15 +57,20 @@
 
 			}
 
+			//verifica se estão preenchidos os campos de senha
 			if((isset($_POST['senha_ant']))&&(isset($_POST['senha_nova']))&&(isset($_POST['senha_verf']))){
 
-				if(($_POST['senha_ant']=='')&&($_POST['senha_nova']=='')&&($_POST['senha_verf']=='')){
-					//  :)
+				//e não estão vazias
+				if(($_POST['senha_ant']=='')&&($_POST['senha_nova']=='')&&($_POST['	senha_verf']=='')){
+						//  nada
 				}else{
+					//vê se elas são iguais
 					if($_POST['senha_nova'] == $_POST['senha_verf']){
 
+						//caso senha nova e antiga sejam iguais
 						if($_POST['senha_ant'] == $_POST['senha_nova']){
 
+							//verifica segunrança da senha e altera no bando de dados
 							if(testPassword(htmlspecialchars($_POST['senha_nova']))>1){
 
 								$sql=("login_sp '".$_SESSION['u']."'");
@@ -78,6 +80,7 @@
 
 									$pass_verf=$dados[3];	
 
+									//caso a senha antiga esteja correta
 									if(password_verify($_POST['senha_ant'],$pass_verf)){
 
 										$stored_pass=password_hash(htmlspecialchars($_POST['senha_nova']),PASSWORD_BCRYPT,array(
@@ -96,36 +99,38 @@
 											?>
 												<script type="text/javascript">myAlert("Ocorreu um erro")</script>
 											<?php
-										}
+										}//status
 
 
 									}else{
 										?>
-											<script type="text/javascript">myAlert("Senha antiga invalida")</script>
+											<script type="text/javascript">myAlert("Senha antiga incorreta")</script>
 										<?php
-									}
+									}//else do pass_verify
 
-								}
+								}//select
 
 							}else{
 								?>
 									<script type="text/javascript">myAlert("Senha nova muito fraca")</script>
 								<?php
-							}	
+							}//else da força da senha	
 
 						}else{
 							?>
-								<script type="text/javascript">myAlert("Senha nova inválida")</script>
+								<script type="text/javascript">myAlert("Senha nova igual à antiga")</script>
 							<?php
-						}
+						}//else das senhas iguais
 
 					}else{
 						?>
 							<script type="text/javascript">myAlert("Senhas diferem")</script>
 						<?php
-					}
-				}
-			}
+					}//else das senhas diferentes
+
+				}//else dos campos preenchidos
+				
+			}//else do isset
 			
 			?>
 
