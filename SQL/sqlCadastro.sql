@@ -6,23 +6,22 @@ create table usuario(
 )
 
 create table pergunta(
-	codPergunta int identity(1,1) primary key,
-	titulo varchar(30) not null,
-	texto ntext,
-	categoria varchar(30) not null,
-	criador varchar(25) not null,
-	data datetime not null,
-	constraint fkUUUsername foreign key (criador) references usuario (username)
+titulo varchar(30) primary key,
+texto ntext not null,
+categoria varchar(30) not null,
+criador varchar(25) not null,
+data datetime not null
+constraint fkccrr foreign key (criador) references usuario(username)
 )
 
-create table comentario(
-	codComentario int identity(1,1) primary key,
-	codPergunta int not null,
-	username varchar(25) not null,
-	data datetime not null,
-	texto ntext not null
-	constraint fkURL foreign key (codPergunta) references pergunta (codPergunta),
-	constraint fkUsername foreign key (username) references usuario (username)
+create table resposta(
+codComentario int primary key identity(1,1),
+tituloPerg varchar(30) not null,
+username varchar(25) not null,
+texto ntext not null,
+data datetime not null
+constraint fktitprg foreign key (tituloPerg) references pergunta(titulo),
+constraint fkcccrrr foreign key (username  ) references usuario (username)
 )
 
 create table projeto(
