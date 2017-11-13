@@ -18,7 +18,6 @@
 			<input type="text" class="camposInput" name="username" maxlength="25" id="nomeLogin" ><br/><br>
 			<span class="campos" type="password">Senha:</span><br/>
 			<input type="password" class="camposInput" name="senha" maxlength="25" id="senhaLogin" ><br/><br>
-			<span class="campos"><a href="#">Esqueceu sua senha?</a></span><br/>
 			<span class="campos"><a href="cadastro.php">Não tem uma conta? cadastre-se aqui.</a></span><br>
 
 		<?php
