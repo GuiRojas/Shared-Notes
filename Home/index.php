@@ -12,7 +12,7 @@
 		include '../Include/top.inc.php';
 		include '../Include/side.inc.php';
 	?>
-		
+
 	<div id="container">
 		<div id="home">
 		<?php 
