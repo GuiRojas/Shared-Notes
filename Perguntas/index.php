@@ -23,7 +23,7 @@
 					<div class="stockTexto"><span class="aa">Perguntar</span></div>
 					<div class="stockimage">
 						<br><br><br>
-							<span class="fodasse">•Não fique com a duvida,pergunte-a aqui</span>
+							<span class="stockSubItem">•Não fique com a duvida,pergunte-a aqui</span>
 					</div>
 				</div>
 			</a>
@@ -34,7 +34,7 @@
 				<div class="stockTexto"><span class="aa">Perguntar</span></div>
 				<div class="stockimage">
 					<br><br><br>
-						<span class="fodasse">•Não fique com a duvida,pergunte-a aqui</span>
+						<span class="stockSubItem">•Não fique com a duvida,pergunte-a aqui</span>
 				</div>
 			</div>
 		<?php
@@ -45,7 +45,7 @@
 				<div class="stockDivDark">
 					<div class="stockimage">
 						<br><br><br>
-						<span class="fodasse">•Ajude as pessoas com o seu conhecimento</span>
+						<span class="stockSubItem">•Ajude as pessoas com o seu conhecimento</span>
 					</div>
 					<div class="stockTexto"><span class="aa">Pesquisar</span></div>
 				</div>
