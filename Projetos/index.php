@@ -23,8 +23,8 @@
 					<div class="stockTexto"><span class="aa">Postar um projeto</span></div>
 					<div class="stockimage">
 						<br>
-						<span class="fodasse">•Compartilhe seu projetos com os outros</span><br><br>
-						<span class="fodasse">•As pessoas dar dicas comentando os projetos</span>
+						<span class="stockSubItem">•Compartilhe seu projetos com os outros</span><br><br>
+						<span class="stockSubItem">•As pessoas dar dicas comentando os projetos</span>
 					</div>
 				</div>
 			</a>
@@ -35,8 +35,8 @@
 					<div class="stockTexto"><span class="mainStuff"><span class="aa">Postar um projeto</span></span></div>
 					<div class="stockimage">
 						<br>
-						<span class="fodasse">•Compartilhe seu projetos com os outros</span><br><br>
-						<span class="fodasse">•As pessoas dar dicas comentando os projetos</span>
+						<span class="stockSubItem">•Compartilhe seu projetos com os outros</span><br><br>
+						<span class="stockSubItem">•As pessoas dar dicas comentando os projetos</span>
 					</div>
 				</div>
 			<?php
@@ -47,8 +47,8 @@
 				<div class="stockDivLight">
 					<div class="stockimage">
 						<br>
-						<span class="fodasse">•Procure o projeto de seus amigos</span><br><br>
-						<span class="fodasse">•Comente-os para ajudar o criador</span>
+						<span class="stockSubItem">•Procure o projeto de seus amigos</span><br><br>
+						<span class="stockSubItem">•Comente-os para ajudar o criador</span>
 					</div>
 					<div class="stockTexto"><span class="aa">Pesquisar um projeto</span></div>
 				</div>
