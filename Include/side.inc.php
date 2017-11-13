@@ -35,7 +35,7 @@
 				echo "<a href='../login/login.php' class='subgrupo'>Entrar</a>";
 				echo "<a href='../login/cadastro.php' class='subgrupo'>Cadastrar</a>";
 			}else{
-				echo "<a href='../login/doLogout.php' class='btnLogin subgrupo'>Sair</a>";
+				echo "<a href='../login/intermedioLogout.php' class='btnLogin subgrupo'>Sair</a>";
 			}		
 		?>			 
 	</div>
