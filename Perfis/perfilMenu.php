@@ -28,32 +28,38 @@
 		<?php
 			include("../Include/connect.inc.php");
 
-			if(isset($_GET['query'])){
+			if(isset($_GET['query'])){//bloco de pesquisa
 
 				$query = htmlspecialchars($_GET['query']);
-				$_SESSION['query'] = $query;
 				if( $query != null or $query != ""){
-			        $status = sqlsrv_query( $conexao, "SELECT username FROM usuario WHERE username like '$query'", array(), array("Scrollable"=>"buffered"));
+			        
+					$qtd = 0;
+					$consultaUsuario = sqlsrv_query($conexao,"SELECT * FROM usuario WHERE username like '%$query%'") or die(print_r(sqlsrv_errors()));
+					while ( $linha = sqlsrv_fetch_array( $consultaUsuario, SQLSRV_FETCH_ASSOC)){
+						$qtd = $qtd + 1;
+					}				
 
-			        $rowCount= sqlsrv_num_rows($status);
 
-					if ( $rowCount >=1) { 
-			        	$nomeUsuario = "$query";
-						include '../Include/getUserData.inc.php';
-			        	echo "
-			        	<a class='usuDataA' href='index.php?query=$query'>
-				        	<div class='usuData'>
-								<div class='nomeEFoto'>
-										<img class='imgProfilePreview' src='$urlFoto'>
-										<span style='display:inline-block; margin: 0;'>$username</span>
+					if ( $qtd > 0) { 
+						$consulta = (sqlsrv_query($conexao,"SELECT * FROM usuario WHERE username like '%$query%'"));
+						while ( $dadosUsu = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+							echo "
+				        	<a class='usuDataA' href='index.php?query=".$dadosUsu['username']."'>
+					        	<div class='usuData'>
+									<div class='nomeEFoto'>
+											<img class='imgProfilePreview' src='".$dadosUsu['foto']."'>
+											<span style='display:inline-block; margin: 0;'>".$dadosUsu['username']."</span>
+									</div>
+									<div class='linhaVertical'></div>
+									<div class='info'>
+										<div style='height:45px'>especialidade : ".$dadosUsu['especialidade']."</div>
+										<div style='height:45px'>Projetos postados : ".$dadosUsu['projetos_postados']."</div>
+									</div>
 								</div>
-								<div class='linhaVertical'></div>
-								<div class='info'>
-									<div style='height:45px'>especialidade : $especialidade</div>
-									<div style='height:45px'>Projetos postados : $projPostado</div>
-								</div>
-							</div>
-			        	</a>";
+				        	</a>";
+						}
+						echo "<br><br>";
+			        	
 			        } else {
 				        ?> <script>myAlert("Usuario \"<?php  echo"$query"  ?>\" não encontrado.")</script> <?php
 				    }

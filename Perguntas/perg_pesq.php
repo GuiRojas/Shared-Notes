@@ -33,25 +33,29 @@
 				$query = htmlspecialchars($_GET['query']);
 				$_SESSION['query'] = $query;
 				if( $query != null or $query != ""){
-			        $status = sqlsrv_query( $conexao, "SELECT titulo FROM pergunta WHERE titulo like '$query'", array(), array("Scrollable"=>"buffered"));
 
-			        $rowCount= sqlsrv_num_rows($status);
+					$qtd = 0;
+			        $consultaPergunta = sqlsrv_query($conexao, "SELECT * FROM pergunta WHERE titulo like '%$query%'") or die(print_r(sqlsrv_errors()));
+			        while ( $linha = sqlsrv_fetch_array( $consultaPergunta, SQLSRV_FETCH_ASSOC)){
+						$qtd = $qtd + 1;
+					}	
 
-					if ( $rowCount >=1) { 
-			        	$nomeUsuario = "$query";
-						include '../Include/getUserData.inc.php';
-			        	echo "
-			        	<a class='usuDataA' href='perg.php?query=$query'>
+				    if ( $qtd > 0) { 
+						$consulta = (sqlsrv_query($conexao,"SELECT * FROM pergunta WHERE titulo like '%$query%'"));
+						while ( $dadosPerg = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+							echo "
+			        	<a class='usuDataA' href='perg.php?query=".$dadosPerg['titulo']."'>
 				        	<div class='usuData'>
 							
-								<div class='linhaVertical'>$query</div>
+								<div class='linhaVertical'>".$dadosPerg['titulo']."</div>
 								
 							</div>
-			        	</a>";
-			        } else {
-				        ?> <script>myAlert("Usuario \"<?php  echo"$query"  ?>\" não encontrado.")</script> <?php
-				    }
-		        }
+			        	</a><br>";
+						}
+						echo "<br><br>";
+					}
+
+				}
 			}
 		?>
 	</div>

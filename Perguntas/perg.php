@@ -96,7 +96,7 @@
 
 					}//vê o n° de comentários
 
-					if (  $qtd > 0){
+					if ( $qtd > 0){
 						$consulta = (sqlsrv_query($conexao,"SELECT username,texto FROM resposta WHERE tituloPerg = '$titulo' ORDER BY data"));
 						while ( $dadosResp = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 							echo"						
