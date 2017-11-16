@@ -26,6 +26,7 @@
 		</form>
 		
 		<?php
+
 			include("../Include/connect.inc.php");
 
 			if(isset($_GET['query'])){//bloco de pesquisa
@@ -53,7 +54,6 @@
 									<div class='linhaVertical'></div>
 									<div class='info'>
 										<div style='height:45px'>especialidade : ".$dadosUsu['especialidade']."</div>
-										<div style='height:45px'>Projetos postados : ".$dadosUsu['projetos_postados']."</div>
 									</div>
 								</div>
 				        	</a>";
