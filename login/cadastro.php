@@ -47,7 +47,7 @@
 
 									$senha=password_hash($senha,PASSWORD_BCRYPT,array('cost'=>10));
 
-									$sql = "insert into usuario values( '$username','$email','$nome','$senha', 'sem status', 0, 0,'nada', 'img/null.png', 0)";
+									$sql = "cadastro_sp $username, $email, $nome, $senha";
 
 									$status = sqlsrv_query( $conexao, $sql);
 
