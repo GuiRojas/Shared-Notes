@@ -74,6 +74,26 @@
 				</div>
 				<?php
 					}
+					//apagar
+					if($criador==$_SESSION['u']){
+					?>
+						<form method="POST">
+						<input type="submit" name="apagar" value="apagar">	
+						</form>				
+
+					<?php
+					}
+					
+					if(isset($_POST['apagar'])){
+						$sqlApg = "DELETE FROM projComentario WHERE Projeto = '$titulo';DELETE FROM projeto WHERE titulo = '$titulo'";
+						$status = sqlsrv_query($conexao,$sqlApg);
+						if($status){
+							header('Location:../Perfis/index.php?query='.$criador);
+						}
+					}
+
+
+					//comentar
 					if(isset($_POST['comentar'])){
 						$user  = htmlspecialchars($_SESSION['u']);
 						$texto = htmlspecialchars($_POST['texto']);

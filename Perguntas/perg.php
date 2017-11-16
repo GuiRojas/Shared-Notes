@@ -39,6 +39,7 @@
 			<div style=" background-color: #ededed">
 				<?php
 					if(isset($_SESSION['u'])){
+						
 				?>
 				<div id="newComn" style="margin-left: 9.5%">
 					<form method="POST">
@@ -59,6 +60,27 @@
 				</div>
 				<?php
 					}
+
+					//caso o usuario tenha criado a pergunta, permite-o apagá-la
+					if($criadorPerg==$_SESSION['u']){
+					?>
+						<form method="POST">
+						<input type="submit" name="apagar" value="apagar">	
+						</form>				
+
+					<?php
+					}
+					
+					if(isset($_POST['apagar'])){
+						$sqlApg = "DELETE FROM resposta WHERE tituloPerg = '$titulo';DELETE FROM pergunta WHERE titulo = '$titulo'";
+						$status = sqlsrv_query($conexao,$sqlApg);
+						if($status){
+							header('Location:../Perfis/index.php?query='.$criadorPerg);
+						}
+					}
+
+
+					//comentario
 					if(isset($_POST['comentar'])){
 						$user  = htmlspecialchars($_SESSION['u']);
 						$texto = htmlspecialchars($_POST['texto']);

@@ -142,40 +142,7 @@
 					</div>
 				</div>	
 
-				<div class='info'>
-					<div class='postTitle'><p class='txtPostTitle'>Perguntas respondidas(<?php echo"$perguntasRespondidas" ?>)
-						<?php
-							if((isset($_SESSION['u']))&&($_SESSION['u'] == $_GET['query'])){
-						?>
-						<div class="link"><a href="../Perguntas/index.php"> Responder uma pergunta</a></div>
-						<?php
-							};
-						?>
-					</p></div>
-					<div class='postArea'>	
-						<div class='postsFechados' id="postsFechados3">
-							<p class='nomeProj' id="nomeProj3">▶</p>
-						</div>
-						<div class="projDesc" id="projDesc3">
-							<?php
-								if (  $perguntasFeitas > 0){
-									$consulta = (sqlsrv_query($conexao,"SELECT * FROM resposta WHERE username = '". $_GET['query'] ."' GROUP BY tituloPerg"));
-									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
-										echo"
-										<a href='../Perguntas/perg.php?query=".$dados['tituloPerg']."'  style='text-decoration:none'> 
-											<div class='post'>
-												<p class='nomeProj'>".$dados['tituloPerg']."</p>
-												<p class='txtDescricao'>Descição:</p>
-												<p class='categoria'><i>". '"' . $dados['categoria']. '"' ."</i></p>
-											</div>
-										</a>
-										";
-									}
-								}
-							?>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 
 			<?php include '../Include/profile.inc.php';?>
