@@ -7,16 +7,6 @@ body{
 	width: 100%;
 }
 
-h1{
-	color: white;
-	text-align: center;
-	font-size: 40px;
-	margin: 0;
-	margin-top: 100px;
-}
-
-a{
-	color: #5b97d3
 #cadastro{
 	margin: 0  auto;
 	width: 400px;
@@ -25,47 +15,6 @@ a{
 	background-color: white;
 	padding: 30px 0;
 	box-shadow: 0.5px 0 10px #303E4D;
-}
-
-#cadastro::after {
-    position: fixed;
-    z-index: -1;
-    background-color: #5d7ba0;
-    width: 100%;
-    height: 50%;
-    content: '';
-    top: 0;
-    left: 0;
-}
-
-#enviar{
-	width: 70%;
-	margin: 0 15%;
-	background-color: #3a4c60;
-	border: 1px solid #303E4D;
-	cursor: pointer;
-	font-family: "segoe UI";
-	font-size: 17px;
-	border-radius: 2px;
-	color: white;
-}
-
-#enviar:hover{
-	background-color: #5d7ba0;
-}
-
-#titulo{
-	font-family: "segoe UI";
-	font-size: 40px;
-	position: absolute;
-	top: 0;
-	color: #303E4D;
-	margin-left: 40px;
-	margin: 15px;
-}
-
-#msgErro{
-	color: red;
 }
 
 .campos{
@@ -86,6 +35,60 @@ a{
 .camposInput:focus{
 	border-bottom: 1px solid black;
 }
+
+#cadastro::after {
+    position: fixed;
+    z-index: -1;
+    background-color: #5d7ba0;
+    width: 100%;
+    height: 50%;
+    content: '';
+    top: 0;
+    left: 0;
+}
+
+h1{
+	color: white;
+	text-align: center;
+	font-size: 40px;
+	margin: 0;
+	margin-top: 100px;
+}
+
+#enviar{
+	width: 70%;
+	margin: 0 15%;
+	background-color: #3a4c60;
+	border: 1px solid #303E4D;
+	cursor: pointer;
+	font-family: "segoe UI";
+	font-size: 17px;
+	border-radius: 2px;
+	color: white;
+}
+
+#enviar:hover{
+	background-color: #5d7ba0;
+}
+
+a{
+	color: #5b97d3;
+}
+
+#titulo{
+	font-family: "segoe UI";
+	font-size: 40px;
+	position: absolute;
+	top: 0;
+	color: #303E4D;
+	margin-left: 40px;
+	margin: 15px;
+}
+
+#msgErro{
+	color: red;
+}
+
 .closebtn {
     margin-right: 15px;
     color: white;

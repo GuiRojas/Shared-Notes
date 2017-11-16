@@ -6,7 +6,7 @@
 		<a href="../home" class="a" id="homeDiv">Home</a> <!--class="aAtivo"-->
 		<a href='../Projetos' class='a' id="projetoDiv">Projetos</a>
 		<?php
-			//apenas permite a postagem de um projeto caso o usuario esteja logado
+
 			if(isset($_SESSION['u'])){
 				$user = $_SESSION['u'];
 				?><a href='../Projetos/projNew.php' class='aSub'>Postar um projeto</a><?php
@@ -15,7 +15,7 @@
 
 		<a href="../Perguntas" class="a" id="perguntaDiv">Perguntas</a>		
 		<?php
-			//apenas permite fazer uma pergunta caso o usuario esteja logado
+
 			if(isset($_SESSION['u'])){
 				$user = $_SESSION['u'];
 				?><a href='../Perguntas/prg_new.php' class='aSub' >Fazer uma pergunta</a><?php
