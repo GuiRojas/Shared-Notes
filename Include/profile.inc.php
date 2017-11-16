@@ -26,8 +26,6 @@ echo"
 			<hr>
 			Projetos postados:<br>
 			$projPostado<br>
-			Perguntas respondidas:<br>
-			$perguntasRespondidas<br>
 			Perguntas feitas:<br>
 			$perguntasFeitas<br>
 		</span>
