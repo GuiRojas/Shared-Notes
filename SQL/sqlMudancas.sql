@@ -9,7 +9,7 @@ alter proc cadastro_sp
 @nome varchar(50)= null,
 @senha varchar(60) = null
 as
-insert into usuario values(@usuario,@email,@nome,@senha,'Sem status',0,0,'Nada','null.png',0)
+insert into usuario values(@usuario,@email,@nome,@senha,'Sem status','Sem Status','null.png')
 
 create proc pesquisaUsu_sp
 @palavra varchar(30) = null
