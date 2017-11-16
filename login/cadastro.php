@@ -47,7 +47,7 @@
 
 									$senha=password_hash($senha,PASSWORD_BCRYPT,array('cost'=>10));
 
-									$sql = "cadastro_sp $username, $email, $nome, $senha";
+									$sql = "cadastro_sp '$username', '$email', '$nome', '$senha'";
 
 									$status = sqlsrv_query( $conexao, $sql);
 
