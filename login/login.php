@@ -44,10 +44,11 @@
 						<script>myAlertLogin("Senha errada");</script>
 						<?php
 					}
-				}else
+				}else{
 					?>
 					<script>myAlertLogin("Usuario inexistente")</script>
 					<?php
+				}
 			}
 
 		?>
