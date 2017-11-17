@@ -76,14 +76,15 @@
 					}
 					//apagar
 					if (isset($_SESSION['u'])) {
-					if($criador==$_SESSION['u']){
-					?>
-						<form method="POST">
-						<input type="submit" name="apagar" value="apagar">	
-						</form>				
+						if($criador==$_SESSION['u']){
+						?>
+							<form method="POST">
+							<input type="submit" name="apagar" value="apagar">	
+							</form>				
 
-					<?php
-					}}
+						<?php
+						}
+					}
 					
 					if(isset($_POST['apagar'])){
 						$sqlApg = "DELETE FROM projComentario WHERE Projeto = '$titulo';DELETE FROM projeto WHERE titulo = '$titulo'";
