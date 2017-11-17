@@ -1,7 +1,7 @@
 <html>
 <head>
 	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
-	<title><?php echo "Perfis"; ?></title>
+	<title><?php if (isset($_GET['query'])){ echo $_GET['query']."|Perguntas"; }else{echo "Pergunta Inexistente";} ?></title>
 	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
@@ -62,13 +62,15 @@
 					}
 
 					//caso o usuario tenha criado a pergunta, permite-o apagá-la
-					if($criadorPerg==$_SESSION['u']){
-					?>
-						<form method="POST">
-						<input type="submit" name="apagar" value="apagar">	
-						</form>				
+					if (isset($_SESSION['u'])){
+						if($criadorPerg==$_SESSION['u']){
+						?>
+							<form method="POST">
+							<input type="submit" name="apagar" value="apagar">	
+							</form>				
 
-					<?php
+						<?php
+						}
 					}
 					
 					if(isset($_POST['apagar'])){
