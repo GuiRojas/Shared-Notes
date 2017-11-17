@@ -48,17 +48,17 @@
 					<img src="../Imagens/hint.png" class="hint">
 				</div>
 				<div id="hintTxt1" class="hintTxt">
-					Título da pergunta. Não pode ser igual ao de nenhuma outra pergunta registrada no site.
+					<p class="descHint">Título da pergunta. Não pode ser igual ao de nenhuma outra pergunta registrada no site.</p>
 				</div>
 			</div>
-			<input class="respProjNew" type="text" name="titulo" maxlength="30" id="tituloPerg"><br><br>
+			<input class="respProjNew" type="text" name="titulo" maxlength="30" id="tituloPerg" style="width: 60%; margin-left: 15px;"><br><br>
 
 			<div class="tituloProjNew"><p class="tlt">Pergunta:</p>
 				<div style="display: inline-block;" id="hint2">
 					<img src="../Imagens/hint.png" class="hint">
 				</div>
 				<div id="hintTxt2" class="hintTxt">
-					Sua pergunta. Explique o por que da dúvida.
+					<p class="descHint">Sua pergunta. Explique o por que da dúvida.</p>
 				</div>
 			</div><br>
 			<textarea name="perg" style="max-height: 110px; max-width: 70%; width: 60%; height: 110px;margin-left: 15px;" id="descPerg" maxlength="400"></textarea><br><br>
@@ -68,7 +68,7 @@
 					<img src="../Imagens/hint.png" class="hint">
 				</div>
 				<div id="hintTxt3" class="hintTxt">
-					Selecione de qual categoria a sua pergunta mais se encaixa.
+					<p class="descHint">Selecione de qual categoria a sua pergunta mais se encaixa.</p>
 				</div>
 			</div><br>
 

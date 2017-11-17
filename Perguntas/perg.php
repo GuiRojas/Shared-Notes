@@ -89,15 +89,6 @@
 
 						$status = sqlsrv_query($conexao,$sql);
 						if($status){
-
-							$sqlA = "SELECT perguntas_respondidas FROM usuario WHERE username ='".$_SESSION['u']."'";
-							$statusA = sqlsrv_query($conexao,$sqlA);
-							while ($incCoisa = sqlsrv_fetch_array( $statusA, SQLSRV_FETCH_ASSOC)){
-								$qtdResp = $incCoisa['perguntas_respondidas'];
-								$qtdResp ++;
-								sqlsrv_query($conexao, "UPDATE usuario SET perguntas_respondidas =$qtdResp WHERE username ='".$_SESSION['u']."'");
-							}
-
 							echo "<span id='cmnAdd'>Reposta Adicionada!</span>'";
 						}else{
 							echo "<span id='erro'>Não foi possível adicionar a Resposta!</span>'";

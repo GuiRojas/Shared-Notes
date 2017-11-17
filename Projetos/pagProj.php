@@ -75,13 +75,15 @@
 				<?php
 					}
 					//apagar
-					if($criador==$_SESSION['u']){
-					?>
-						<form method="POST">
-						<input type="submit" name="apagar" value="apagar">	
-						</form>				
+					if (isset($_SESSION['u'])) {
+						if($criador==$_SESSION['u']){
+						?>
+							<form method="POST">
+							<input type="submit" name="apagar" value="apagar">	
+							</form>				
 
-					<?php
+						<?php
+						}
 					}
 					
 					if(isset($_POST['apagar'])){
