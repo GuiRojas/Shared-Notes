@@ -57,8 +57,6 @@
 	</div>
 
 	<?php
-		
-				}else{//se não, permite a opção de seguir
 				}
 			}
 		}else{
