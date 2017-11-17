@@ -75,6 +75,7 @@
 				<?php
 					}
 					//apagar
+					if (isset($_SESSION['u'])) {
 					if($criador==$_SESSION['u']){
 					?>
 						<form method="POST">
@@ -82,7 +83,7 @@
 						</form>				
 
 					<?php
-					}
+					}}
 					
 					if(isset($_POST['apagar'])){
 						$sqlApg = "DELETE FROM projComentario WHERE Projeto = '$titulo';DELETE FROM projeto WHERE titulo = '$titulo'";
