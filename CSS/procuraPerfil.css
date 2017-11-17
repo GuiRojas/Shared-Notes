@@ -350,6 +350,7 @@ input[type="button"]:hover{
 	font-size: 18px;
 	margin-left: 15px;
 	margin-top: 7px;
+	border-radius: 3px;
 }
 
 .hintTxt:after {
@@ -361,6 +362,10 @@ input[type="button"]:hover{
 	display: block;width: 0;
 	z-index: 1;
 	left: -10px;top: 1px;
+}
+
+.descHint{
+	margin: 5px;
 }
 
 #hint1:hover + #hintTxt1{
