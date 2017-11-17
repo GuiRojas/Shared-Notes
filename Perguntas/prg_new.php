@@ -33,6 +33,7 @@
 			$status = sqlsrv_query($conexao,$sql);
 
 			if($status){
+				$_SESSION['pergFeita'] = true;
 				header("Location:perg.php?query=$titulo");
 				//no futuro, redirecionar à pag da pergunta
 			}else{

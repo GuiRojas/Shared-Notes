@@ -16,8 +16,28 @@
 			
 	?>
 		<div id="container">
+			<?php 
+				if( isset($_SESSION['pergFeita']) && $_SESSION['pergFeita']){
+					?>
+						<script type="text/javascript"> myAlert("Pergunta feita com sucesso!");</script>
+					<?php
+					$_SESSION['pergFeita'] = false;
+				}
 
+			?>
 			<span style="background-color: #ededed; line-height: 50px; ";><span style="margin-left: 15px">Categoria:</span><?php echo "$cat"; ?> </span> <br>
+			
+			<?php
+			//caso o usuario tenha criado a pergunta, permite-o apagá-la
+			if (isset($_SESSION['u'])){
+				if($criadorPerg==$_SESSION['u']){
+				?>
+					<form method="POST" style="position: absolute;margin-top: 75px;margin-left: 88px;">
+					<input type="submit" name="apagar" value="apagar" style="display: inline-block;">	
+					</form>				
+				<?php
+				}
+			}?>
 
 			<div id="pergunta">
 				<div id="foto">
@@ -45,7 +65,7 @@
 					<form method="POST">
 						Adicionar Resposta:<br>
 						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto" maxlength="800"></textarea><br><br>
-						<input type="submit" name="comentar" style="float: right;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;"><br>
+						<input type="submit" name="comentar" style="margin-right: 11%;float: right;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;"><br>
 					</form>
 				</div>
 				<?php 
@@ -55,22 +75,10 @@
 					<form method="POST">
 						Adicionar Resposta:<br>
 						<textarea style="height: 100px;max-height: 200px;width: 89%;max-width: 89%;min-width:89%;margin-left: 0 14%;" name="texto"></textarea><br><br>
-						<input type="button" value="Enviar" style="float: right;margin-right: 14%;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;" id="commentTrap"><br>
+						<input type="button" value="Enviar" style="display: inline-block;float: right;background-color: #5d7ba0 ; border: 1px solid #303e4d; cursor: pointer; padding: 10px 20px;" id="commentTrap"><br>
 					</form>
 				</div>
 				<?php
-					}
-
-					//caso o usuario tenha criado a pergunta, permite-o apagá-la
-					if (isset($_SESSION['u'])){
-						if($criadorPerg==$_SESSION['u']){
-						?>
-							<form method="POST">
-							<input type="submit" name="apagar" value="apagar">	
-							</form>				
-
-						<?php
-						}
 					}
 					
 					if(isset($_POST['apagar'])){
@@ -91,9 +99,13 @@
 
 						$status = sqlsrv_query($conexao,$sql);
 						if($status){
-							echo "<span id='cmnAdd'>Reposta Adicionada!</span>'";
+							?>
+								<script type="text/javascript"> myAlert("Resposta feita!");</script>
+							<?php
 						}else{
-							echo "<span id='erro'>Não foi possível adicionar a Resposta!</span>'";
+							?>
+								<script type="text/javascript"> myAlert("Não foi possível adicionar a resposta.");</script>
+							<?php
 						}
 					}
 				?>
