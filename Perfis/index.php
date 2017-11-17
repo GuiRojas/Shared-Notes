@@ -24,12 +24,15 @@
 	
 	<div id="editPage">
 		<form id="editForm" action='salvarAlteracoes.php' method="POST" enctype="multipart/form-data">
+			<textarea  style="display: none" id="statusFoto" name="statusFoto">false</textarea>
+
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
 			<img <?php echo"src='$urlFoto'" ?> id="preview" class='img'>
 			<div id="btnsFoto">
-				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 90%" id="carregarFoto" class="btnSalvar" value="Mudar a foto" onclick="document.getElementById('mudarFoto').click();" />
-				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 100%" class="btnCancelar" value="Remover foto" onclick="document.getElementById('preview').src = 'img/null.png';" />
+				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 90%" id="carregarFoto" class="btnSalvar" value="Mudar a foto"
+					onclick="document.getElementById('mudarFoto').click();document.getElementById('preview').src = document.getElementById('mudarFoto').value" />
+				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 100%" value="Remover foto" onclick="fotoDefault();document.getElementById('preview').src = 'img/null.png'"/>
 			</div>
 			<input type="file" style="display:none;" id="mudarFoto" name="file" accept="image/*">
 

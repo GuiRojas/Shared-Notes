@@ -64,6 +64,16 @@
 			user_status = '".$_POST['status']."',
 			especialidade = '".$_POST['especialidade']."'
 			WHERE username= '".$_SESSION['u']."'");
+
+		if( $_POST['statusFoto'] == "true" ){
+			$_POST['statusFoto'] = "false";
+
+			$sql = ("UPDATE usuario SET 
+				user_status = '".$_POST['status']."',
+				especialidade = '".$_POST['especialidade']."',
+				foto = 'img/null.png'   
+				WHERE username= '".$_SESSION['u']."'");
+		}
 	}
 
 	sqlsrv_query($conexao,$sql);
