@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title></title>
+	<title>Sobre</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
 	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
 	<script type="text/javascript" src="../JS/script.js"></script>
