@@ -26,11 +26,11 @@
 
 				<div id="textoPerg">
 					<?php
-						echo "<p style='margin:0;margin-top:5px;'> $texto </p>";
+						echo "<p style='margin:0;margin-top:5px;font-size: 16px;'> $texto </p>";
 					?>
 				</div>
 				<div class="criadorPergunta">
-					<?php echo "<p style='margin:0'>$criadorPerg </p>"; ?>		
+					<?php echo "<p style='margin:0;'><a href='../Perfis/index.php?query=$criadorPerg' style='color: #222'> $criadorPerg </a></p>"; ?>		
 				</div>
 			</div>
 
