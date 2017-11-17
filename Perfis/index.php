@@ -131,8 +131,8 @@
 										<a href='../Perguntas/perg.php?query=".$dados['titulo']."'  style='text-decoration:none'> 
 											<div class='post'>
 												<p class='nomeProj'>".$dados['titulo']."</p>
-												<p class='txtDescricao'>Descição:</p>
-												<p class='categoria'><i>". '"' . $dados['categoria']. '"' ."</i></p>
+												<p class='txtDescricao'>Categoria:</p>
+												<p class='descricao'><i>". '"' . $dados['categoria']. '"' ."</i></p>
 											</div>
 										</a>
 										";
