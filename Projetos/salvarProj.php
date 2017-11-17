@@ -48,8 +48,7 @@
 
 		$projPostado = $projPostado+1;
 
-			$sql = ("INSERT INTO projeto VALUES ('".$_POST['titulo']."', '".$_POST['descricao']."', '" . $_POST['nota']. "', '".$_SESSION['u']."' , '" . $save_file_name. "');
-					UPDATE usuario SET projetos_postados = ". $projPostado . " WHERE username = '". $_SESSION['u'] ."' ");
+			$sql = ("INSERT INTO projeto VALUES ('".$_POST['titulo']."', '".$_POST['descricao']."', '" . $_POST['nota']. "', '".$_SESSION['u']."' , '" . $save_file_name. "')");
 
 		sqlsrv_query($conexao,$sql);
 
