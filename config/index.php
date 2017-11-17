@@ -32,11 +32,11 @@
 				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p></div>
 				<input type="password" name="senha_ant" class="respProjNew">
 
-				<div class="tituloProjNew"> <p class="tlt">Confirmar senha:</p></div>
-				<input type="password" name="senha_verf" class="respProjNew">
-
 				<div class="tituloProjNew"> <p class="tlt">Senha nova:</p></div>
 				<input type="password" name="senha_nova" class="respProjNew">
+
+				<div class="tituloProjNew"> <p class="tlt">Confirmar senha:</p></div>
+				<input type="password" name="senha_verf" class="respProjNew">
 
 				<hr>
 				<input type="submit" name="vai" value="mudar" class="btnEnviar">
