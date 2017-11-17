@@ -31,8 +31,8 @@
 			<img <?php echo"src='$urlFoto'" ?> id="preview" class='img'>
 			<div id="btnsFoto">
 				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 90%" id="carregarFoto" class="btnSalvar" value="Mudar a foto"
-					onclick="document.getElementById('mudarFoto').click();document.getElementById('preview').src = document.getElementById('mudarFoto').value" />
-				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 100%" value="Remover foto" onclick="fotoDefault();document.getElementById('preview').src = 'img/null.png'"/>
+					onclick="document.getElementById('mudarFoto').click();document.getElementById('preview').src = document.getElementById('mudarFoto').value;if(document.getElementById('mudarFoto').value == null){document.getElementById('preview').src = 'img/null.png'}" />
+				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 100%" value="Remover foto" onclick="fotoDefault();document.getElementById('preview').src = 'img/null.png'}"/>
 			</div>
 			<input type="file" style="display:none;" id="mudarFoto" name="file" accept="image/*">
 
