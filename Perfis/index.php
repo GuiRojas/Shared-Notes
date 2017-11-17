@@ -27,11 +27,14 @@
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
 			<img <?php echo"src='$urlFoto'" ?> id="preview" class='img'>
-			<input type="button" id="carregarFoto" class="btnSalvar" value="Mudar a foto" onclick="document.getElementById('mudarFoto').click();" />
+			<div id="btnsFoto">
+				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 90%" id="carregarFoto" class="btnSalvar" value="Mudar a foto" onclick="document.getElementById('mudarFoto').click();" />
+				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 100%" class="btnCancelar" value="Remover foto" onclick="document.getElementById('mudarFoto').innerHtml = 'img/null.jpg';" />
+			</div>
 			<input type="file" style="display:none;" id="mudarFoto" name="file" accept="image/*">
 
 			<span class="campoSpan">Status:</span> <textarea name="status" cols="50" rows="3" class="campo" maxlength="150"><?php echo"$status"?></textarea>
-			<span class="campoSpan">Especialidade:</span> 
+			<span class="campoSpan">Especialidade:</span>
 			<select name="especialidade" id="chngEspecialidade" class="campo" >
 				<option style="display: none" selected><?php echo"$especialidade" ?></option>
 				<option>Nada</option>
