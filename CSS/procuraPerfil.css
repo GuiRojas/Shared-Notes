@@ -444,10 +444,15 @@ input[type="button"]:hover{
 	margin: 0 15%;
 	min-height: 170px;
 	background-color: #ededed;
+	display: grid;
+	grid-template:"foto textoPeg"
+				  "criadorPergunta textoPerg";
+	grid-template-rows: 160px 20px;
+	grid-template-columns:160px auto;
 }
 
 #textoPerg{
-	margin-left: 160px;
+	
 }
 
 .btnEnviar{
@@ -463,10 +468,8 @@ input[type="button"]:hover{
 }
 
 .criadorPergunta{
-	margin-top: 45px;
 	margin-left: 15px;
-	text-align: center;
-	width: 130px;
+	font-size: 14px;
 }
 
 .post{

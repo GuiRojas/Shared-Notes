@@ -20,17 +20,17 @@
 			<span style="background-color: #ededed; line-height: 50px; ";><span style="margin-left: 15px">Categoria:</span><?php echo "$cat"; ?> </span> <br>
 
 			<div id="pergunta">
-				<div>
+				<div id="foto">
 					<img src=<?php echo "../Perfis/" . $urlFoto ?> class='imgPergunta'>
 				</div>
 
 				<div id="textoPerg">
 					<?php
-						echo "$texto";
+						echo "<p style='margin:0;margin-top:5px;'> $texto </p>";
 					?>
 				</div>
 				<div class="criadorPergunta">
-					<?php echo "$criadorPerg"; ?>		
+					<?php echo "<p style='margin:0'>$criadorPerg </p>"; ?>		
 				</div>
 			</div>
 
