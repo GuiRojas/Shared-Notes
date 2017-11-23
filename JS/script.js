@@ -218,3 +218,7 @@ function onloadPage(){
 	document.getElementById('postsFechados2').click();
 	document.getElementById('postsFechados3').click();
 }
+
+function fotoDefault(){
+	document.getElementById("statusFoto").innerHTML = "true";
+}
