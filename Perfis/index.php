@@ -93,7 +93,7 @@
 						<div class='projDesc' id="projDesc1">
 							<?php
 								if (  $projPostado > 0){
-									$consulta = (sqlsrv_query($conexao,"SELECT * FROM projeto WHERE criador = '". $_GET['query'] ."'"));
+									$consulta = (sqlsrv_query($conexao,"selectProj_sp '". $_GET['query'] ."'"));
 									while ( $dadosPerg = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 										echo"
 										<a href='../Projetos/pagProj.php?query=".$dadosPerg['titulo']."'  style='text-decoration:none'> 
@@ -128,7 +128,7 @@
 						<div class='projDesc' id="projDesc2">
 							<?php
 								if (  $perguntasFeitas > 0){
-									$consulta = (sqlsrv_query($conexao,"SELECT * FROM pergunta WHERE criador = '". $_GET['query'] ."'"));
+									$consulta = (sqlsrv_query($conexao,"selectPerg_sp '".$_GET['query']."'"));
 									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 										echo"
 										<a href='../Perguntas/perg.php?query=".$dados['titulo']."'  style='text-decoration:none'> 

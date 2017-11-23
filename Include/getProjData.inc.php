@@ -1,7 +1,7 @@
 <?php 
 	include 'connect.inc.php';
 	if ( $conexao){
-		$consultaProj = sqlsrv_query($conexao,"SELECT * FROM projeto WHERE titulo = '$tituloProj'");
+		$consultaProj = sqlsrv_query($conexao,"getProjData_sp '$tituloProj'");
 		while ($linha = sqlsrv_fetch_array( $consultaProj, SQLSRV_FETCH_ASSOC)){
 			$criador = $linha['criador'];
 			$descricao = $linha['descricao'];

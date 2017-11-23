@@ -35,14 +35,14 @@
 				if( $query != null or $query != ""){
 			        
 					$qtd = 0;
-					$consultaUsuario = sqlsrv_query($conexao,"SELECT * FROM usuario WHERE username like '%$query%'") or die(print_r(sqlsrv_errors()));
+					$consultaUsuario = sqlsrv_query($conexao,"selectUser_sp '$query'") or die(print_r(sqlsrv_errors()));
 					while ( $linha = sqlsrv_fetch_array( $consultaUsuario, SQLSRV_FETCH_ASSOC)){
 						$qtd = $qtd + 1;
 					}				
 
 
 					if ( $qtd > 0) { 
-						$consulta = (sqlsrv_query($conexao,"SELECT * FROM usuario WHERE username like '%$query%'"));
+						$consulta = (sqlsrv_query($conexao,"selectUser_sp '$query'"));
 						while ( $dadosUsu = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 							echo "
 				        	<a class='usuDataA' href='index.php?query=".$dadosUsu['username']."'>

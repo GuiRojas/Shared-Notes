@@ -49,7 +49,7 @@
 				if(!(validate_email($_POST['email'])))
 					echo "Email inválido!";
 				else{
-					$sql = ("UPDATE usuario SET email = '".$_POST['email']."' WHERE username= '".$_SESSION['u']."'");
+					$sql = ("mudarEmail_sp '".$_SESSION['u']"','".$_POST['email']."'");
 
 					$status = sqlsrv_query($conexao,$sql);
 					if($status){
@@ -84,8 +84,7 @@
 														'cost'=>10
 													 ));
 
-										$sql = "UPDATE usuario SET senha = '$stored_pass'
-										        WHERE  username = '".$_SESSION['u']."'";
+										$sql = ("mudarSenha_sp '".$_SESSION['u']."','$stored_pass'");
 										$status=sqlsrv_query($conexao,$sql);
 				
 										if($status){
