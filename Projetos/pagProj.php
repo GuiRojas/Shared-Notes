@@ -87,7 +87,7 @@
 					}
 					
 					if(isset($_POST['apagar'])){
-						$sqlApg = "DELETE FROM projComentario WHERE Projeto = '$titulo';DELETE FROM projeto WHERE titulo = '$titulo'";
+						$sqlApg = "deleteProj_sp '$titulo'";
 						$status = sqlsrv_query($conexao,$sqlApg);
 						if($status){
 							header('Location:../Perfis/index.php?query='.$criador);
@@ -100,7 +100,7 @@
 						$user  = htmlspecialchars($_SESSION['u']);
 						$texto = htmlspecialchars($_POST['texto']);
 
-						$sql = "insert into projComentario values('$tituloProj','$user','$texto',GETDATE())";		
+						$sql = "commentProj_sp '$tituloProj','$user','$texto'";		
 
 						$status = sqlsrv_query($conexao,$sql);
 						if($status){
@@ -121,7 +121,7 @@
 
 					if ( $conexao){
 						$qtd = 0;
-						$consultaResposta = sqlsrv_query($conexao,"SELECT * FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data") or die(print_r(sqlsrv_errors()));
+						$consultaResposta = sqlsrv_query($conexao,"selectComProj_sp '$tituloProj'") or die(print_r(sqlsrv_errors()));
 						while ( $linha = sqlsrv_fetch_array( $consultaResposta, SQLSRV_FETCH_ASSOC)){
 							$qtd = $qtd + 1;
 						}
@@ -129,7 +129,7 @@
 					}//vê o n° de comentários
 
 					if (  $qtd > 0){
-						$consulta = (sqlsrv_query($conexao,"SELECT criador,texto FROM projComentario WHERE projeto = '$tituloProj' ORDER BY data"));
+						$consulta = (sqlsrv_query($conexao,"selectComProj_sp '$tituloProj'"));
 						while ( $dadosCom = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 							$nome = $dadosCom['criador'];
 							echo"

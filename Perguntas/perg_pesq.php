@@ -35,13 +35,13 @@
 				if( $query != null or $query != ""){
 
 					$qtd = 0;
-			        $consultaPergunta = sqlsrv_query($conexao, "SELECT * FROM pergunta WHERE titulo like '%$query%'") or die(print_r(sqlsrv_errors()));
+			        $consultaPergunta = sqlsrv_query($conexao, "searchPerg_sp '$query'") or die(print_r(sqlsrv_errors()));
 			        while ( $linha = sqlsrv_fetch_array( $consultaPergunta, SQLSRV_FETCH_ASSOC)){
 						$qtd = $qtd + 1;
 					}	
 
 				    if ( $qtd > 0) { 
-						$consulta = (sqlsrv_query($conexao,"SELECT * FROM pergunta WHERE titulo like '%$query%'"));
+						$consulta = (sqlsrv_query($conexao,"searchPerg_sp '$query'"));
 						while ( $dadosPerg = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 							echo "
 			        	<a class='usuDataA' href='perg.php?query=".$dadosPerg['titulo']."'>

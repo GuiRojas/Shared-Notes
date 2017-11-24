@@ -124,3 +124,88 @@ begin
 	SELECT * FROM usuario WHERE username like '%@nome%'
 end
 
+create proc updatePerfilFoto_sp
+@status ntext = null,
+@esp varchar(15) = null,
+@foto ntext = null,
+@user varchar(25) = null
+as
+begin
+	update usuario set user_status = @status,especialidade = @esp,
+		foto = @foto where username = @user
+end
+
+create proc updatePerfilSemFoto_sp
+@status ntext = null,
+@esp varchar(15) = null,
+@user varchar(25) = null
+as
+begin
+	update usuario set user_status = @status,especialidade = @esp
+		where username = @user
+end
+
+create proc deletePerg_sp
+@titulo varchar(30) = null
+as
+begin
+	DELETE FROM resposta WHERE tituloPerg = @titulo
+	DELETE FROM pergunta WHERE titulo = @titulo
+end
+
+create proc getComentario_sp
+@titulo varchar(30) = null
+as
+begin
+	SELECT username,texto FROM resposta WHERE tituloPerg = @titulo ORDER BY data
+end
+
+create proc searchPerg_sp
+@query nvarchar = null
+as
+begin
+	SELECT * FROM pergunta WHERE titulo like '%@query%'
+end
+
+create proc deleteProj_sp
+@titulo varchar(50) = null
+as
+begin
+	DELETE FROM projComentario WHERE Projeto = @titulo
+	DELETE FROM projeto WHERE titulo = @titulo
+end
+
+create proc commentProj_sp
+@proj varchar(50) = null,
+@user varchar(25) = null,
+@texto ntext      = null
+as
+begin
+	insert into projComentario values(@proj,@user,@texto,GETDATE())
+end
+
+create proc selectComProj_sp
+@titulo varchar(50) = null
+as
+begin
+	SELECT * FROM projComentario WHERE projeto = @titulo ORDER BY data
+end
+
+create proc searchProj_sp
+@query nvarchar = null
+as
+begin
+	SELECT * FROM projeto WHERE titulo like '%@query%'
+end
+
+create proc insertProj_sp
+@titulo varchar(50)  = null,
+@desc   ntext        = null,
+@nota   ntext        = null,
+@criador varchar(25) = null,
+@proj   ntext        = null
+as
+begin
+	INSERT INTO projeto VALUES 
+		(@titulo,@desc,@nota,@criador,@proj)
+end

@@ -82,7 +82,7 @@
 					}
 					
 					if(isset($_POST['apagar'])){
-						$sqlApg = "DELETE FROM resposta WHERE tituloPerg = '$titulo';DELETE FROM pergunta WHERE titulo = '$titulo'";
+						$sqlApg = "deletePerg_sp $titulo";
 						$status = sqlsrv_query($conexao,$sqlApg);
 						if($status){
 							header('Location:../Perfis/index.php?query='.$criadorPerg);
@@ -112,19 +112,15 @@
 
 				<!--///////////////////////////////////////////////////////////////////////////////////-->
 				<div id="commentContainer" style="margin: 0 7%;">
-					<?php			
+					<?php	
 
-					if ( $conexao){
-						$qtd = 0;
-						$consultaResposta = sqlsrv_query($conexao,"SELECT * FROM Resposta WHERE tituloPerg = '$titulo' ORDER BY data") or die(print_r(sqlsrv_errors()));
-						while ( $linha = sqlsrv_fetch_array( $consultaResposta, SQLSRV_FETCH_ASSOC)){
-							$qtd = $qtd + 1;
-						}
-
-					}//vê o n° de comentários
+					$consulta = (sqlsrv_query($conexao,"getComentario_sp '$titulo'"));
+					while ( $dadosResp = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+						$qtd = $qtd+1;
+					}							
 
 					if ( $qtd > 0){
-						$consulta = (sqlsrv_query($conexao,"SELECT username,texto FROM resposta WHERE tituloPerg = '$titulo' ORDER BY data"));
+						$consulta = (sqlsrv_query($conexao,"getComentario_sp '$titulo'"));
 						while ( $dadosResp = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 							echo"						
 							<div class='post'>
