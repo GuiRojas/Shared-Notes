@@ -54,16 +54,26 @@
 		}
 
 
-		$sql = ("UPDATE usuario SET 
-			user_status = '".$_POST['status']."',
-			especialidade = '".$_POST['especialidade']."',
-			foto = '" . $save_file_name. "'   
-			WHERE username= '".$_SESSION['u']."'");
+		$sql = ("updatePerfilFoto_sp '".$_POST['status']."
+					','".$_POST['status']."
+					','".$_POST['especialidade']."
+					','" . $save_file_name. "
+					','".$_SESSION['u']."'");
 	}else{
-		$sql = ("UPDATE usuario SET 
-			user_status = '".$_POST['status']."',
-			especialidade = '".$_POST['especialidade']."'
-			WHERE username= '".$_SESSION['u']."'");
+		$sql = ("updatePerfilSemFoto_sp '".$_POST['status']."
+					','".$_POST['status']."
+					','".$_POST['especialidade']."
+					','".$_SESSION['u']."'");
+
+		if( $_POST['statusFoto'] == "true" ){
+			$_POST['statusFoto'] = "false";
+
+			$sql = ("updatePerfilFoto_sp '".$_POST['status']."
+						','".$_POST['status']."
+						','".$_POST['especialidade']."
+						',img/null.png'
+						','".$_SESSION['u']."'");
+		}
 	}
 
 	sqlsrv_query($conexao,$sql);

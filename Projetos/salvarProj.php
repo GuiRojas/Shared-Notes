@@ -48,7 +48,7 @@
 
 		$projPostado = $projPostado+1;
 
-			$sql = ("INSERT INTO projeto VALUES ('".$_POST['titulo']."', '".$_POST['descricao']."', '" . $_POST['nota']. "', '".$_SESSION['u']."' , '" . $save_file_name. "')");
+			$sql = ("insertProj_sp '".$_POST['titulo']."', '".$_POST['descricao']."', '" . $_POST['nota']. "', '".$_SESSION['u']."' , '" . $save_file_name. "'");
 
 		sqlsrv_query($conexao,$sql);
 

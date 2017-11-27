@@ -24,12 +24,15 @@
 	
 	<div id="editPage">
 		<form id="editForm" action='salvarAlteracoes.php' method="POST" enctype="multipart/form-data">
+			<textarea  style="display: none" id="statusFoto" name="statusFoto">false</textarea>
+
 			<h1> <?php echo "$username";?> </h1>
 			<hr>
 			<img <?php echo"src='$urlFoto'" ?> id="preview" class='img'>
 			<div id="btnsFoto">
-				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 90%" id="carregarFoto" class="btnSalvar" value="Mudar a foto" onclick="document.getElementById('mudarFoto').click();" />
-				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 100%" class="btnCancelar" value="Remover foto" onclick="document.getElementById('preview').src = 'img/null.png';" />
+				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 90%" id="carregarFoto" class="btnSalvar" value="Mudar a foto"
+					onclick="document.getElementById('mudarFoto').click();document.getElementById('preview').src = document.getElementById('mudarFoto').value;if(document.getElementById('mudarFoto').value == null){document.getElementById('preview').src = 'img/null.png'}" />
+				<input type="button" style="height: 25px; margin: 0; margin-top: 10px; width: 100%" value="Remover foto" onclick="fotoDefault();document.getElementById('preview').src = 'img/null.png'}"/>
 			</div>
 			<input type="file" style="display:none;" id="mudarFoto" name="file" accept="image/*">
 
@@ -90,7 +93,7 @@
 						<div class='projDesc' id="projDesc1">
 							<?php
 								if (  $projPostado > 0){
-									$consulta = (sqlsrv_query($conexao,"SELECT * FROM projeto WHERE criador = '". $_GET['query'] ."'"));
+									$consulta = (sqlsrv_query($conexao,"selectProj_sp '". $_GET['query'] ."'"));
 									while ( $dadosPerg = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 										echo"
 										<a href='../Projetos/pagProj.php?query=".$dadosPerg['titulo']."'  style='text-decoration:none'> 
@@ -125,7 +128,7 @@
 						<div class='projDesc' id="projDesc2">
 							<?php
 								if (  $perguntasFeitas > 0){
-									$consulta = (sqlsrv_query($conexao,"SELECT * FROM pergunta WHERE criador = '". $_GET['query'] ."'"));
+									$consulta = (sqlsrv_query($conexao,"selectPerg_sp '".$_GET['query']."'"));
 									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 										echo"
 										<a href='../Perguntas/perg.php?query=".$dados['titulo']."'  style='text-decoration:none'> 

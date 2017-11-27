@@ -1,11 +1,8 @@
 <html>
-<head>
-	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
-	<title>Configurações</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
-	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="../JS/script.js"></script>
-</head>
+	<?php
+		$title = "Configurações";
+		include '../include/headPP.inc.php';
+	?> 
 <body>
 	<?php
 		$titulo= "Configurações";
@@ -49,7 +46,7 @@
 				if(!(validate_email($_POST['email'])))
 					echo "Email inválido!";
 				else{
-					$sql = ("UPDATE usuario SET email = '".$_POST['email']."' WHERE username= '".$_SESSION['u']."'");
+					$sql = ("mudarEmail_sp '".$_SESSION['u']."','".$_POST['email']."'");
 
 					$status = sqlsrv_query($conexao,$sql);
 					if($status){
@@ -84,8 +81,7 @@
 														'cost'=>10
 													 ));
 
-										$sql = "UPDATE usuario SET senha = '$stored_pass'
-										        WHERE  username = '".$_SESSION['u']."'";
+										$sql = ("mudarSenha_sp '".$_SESSION['u']."','$stored_pass'");
 										$status=sqlsrv_query($conexao,$sql);
 				
 										if($status){

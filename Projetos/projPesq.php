@@ -1,11 +1,8 @@
 <html>
-<head>
-	<link rel="shortcut icon" href="../Imagens/logoSite.png" />
-	<title>Procurar Projetos</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/procuraPerfil.css">
-	<script type="text/javascript" src="../JS/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="../JS/script.js"></script>
-</head>
+	<?php
+		$title = "Procurar Projetos";
+		include '../include/headPP.inc.php';
+	?> 
 <body>
 	<?php	
 		$titulo= "Pesquisar projetos";
@@ -34,13 +31,13 @@
 				if( $query != null or $query != ""){
 
 			        $qtd = 0;
-			        $consultaProjeto = sqlsrv_query($conexao, "SELECT * FROM projeto WHERE titulo like '%$query%'") or die(print_r(sqlsrv_errors()));
+			        $consultaProjeto = sqlsrv_query($conexao, "searchProj_sp '$query'") or die(print_r(sqlsrv_errors()));
 			        while ( $linha = sqlsrv_fetch_array( $consultaProjeto, SQLSRV_FETCH_ASSOC))
 						$qtd = $qtd + 1;
 					
 
 					if ( $qtd > 0) { 
-						$consulta = (sqlsrv_query($conexao,"SELECT * FROM projeto WHERE titulo like '%$query%'"));
+						$consulta = (sqlsrv_query($conexao,"searchProj_sp '$query'"));
 						while ( $dadosProj = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 							echo "<a class='usuDataA' href='pagProj.php?query=".$dadosProj['titulo']."'>
 
