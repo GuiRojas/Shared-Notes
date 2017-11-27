@@ -1,7 +1,7 @@
 <?php 
 	include 'connect.inc.php';
 	if ( $conexao){
-		$consultaResposta = sqlsrv_query($conexao,"getRespData $codPergunta");
+		$consultaResposta = sqlsrv_query($conexao,"getRespData '$codPergunta'");
 		while ( $linha = sqlsrv_fetch_array( $consultaResposta, SQLSRV_FETCH_ASSOC)){
 			$userResp = $linha['username'];
 			$dataResp = $linha['data'];

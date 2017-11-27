@@ -2,7 +2,9 @@
 	include 'connect.inc.php';
 	if ( $conexao){
 
-		$consultaPergunta = sqlsrv_query($conexao,"consultaPergunta_sp $titulo");
+		$crit = htmlspecialchars($titulo);
+
+		$consultaPergunta = sqlsrv_query($conexao,"consultaPergunta_sp '$crit'");
 		while ( $linha = sqlsrv_fetch_array( $consultaPergunta, SQLSRV_FETCH_ASSOC)){
 			$manchete = $linha['titulo'];
 			$texto = $linha['texto'];

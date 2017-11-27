@@ -114,13 +114,17 @@
 				<div id="commentContainer" style="margin: 0 7%;">
 					<?php	
 
-					$consulta = (sqlsrv_query($conexao,"getComentario_sp '$titulo'"));
+					$qtd = 0;
+
+					$crit = htmlspecialchars($titulo);
+
+					$consulta = (sqlsrv_query($conexao,"selectComProj_sp '$crit'"));
 					while ( $dadosResp = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 						$qtd = $qtd+1;
 					}							
 
 					if ( $qtd > 0){
-						$consulta = (sqlsrv_query($conexao,"getComentario_sp '$titulo'"));
+						$consulta = (sqlsrv_query($conexao,"selectComProj_sp '$titulo'"));
 						while ( $dadosResp = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
 							echo"						
 							<div class='post'>

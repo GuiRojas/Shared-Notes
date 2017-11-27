@@ -133,13 +133,13 @@
 							<?php
 								if (  $perguntasFeitas > 0){
 
-									$sql = "selectPerg_sp '::query'";
+									$sql = "searchPerg_sp '::query'";
+
 									$sql = str_replace('::query',$_GET['query'],$sql);
 
-
-
 									$consulta = sqlsrv_query($conexao,$sql);
-									while ( $dados = sqlsrv_fetch_array( $consulta, SQLSRV_FETCH_ASSOC)){
+
+									while ( $dados =sqlsrv_fetch_array($consulta, SQLSRV_FETCH_ASSOC)){
 										echo"
 										<a href='../Perguntas/perg.php?query=".$dados['titulo']."'  style='text-decoration:none'> 
 											<div class='post'>
