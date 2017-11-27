@@ -27,7 +27,7 @@
 			include("../Include/connect.inc.php");
 
 			if(isset($_GET['query'])){//bloco de pesquisa
-
+				
 				$query = htmlspecialchars($_GET['query']);
 				if( $query != null or $query != ""){
 			        

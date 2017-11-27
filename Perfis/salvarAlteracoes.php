@@ -54,27 +54,22 @@
 		}
 
 
-		$sql = ("updatePerfilFoto_sp '".$_POST['status']."
-					','".$_POST['status']."
-					','".$_POST['especialidade']."
-					','" . $save_file_name. "
-					','".$_SESSION['u']."'");
+		$sql = ("updatePerfilFoto_sp '::status','::espec','::foto','::user'");
 	}else{
-		$sql = ("updatePerfilSemFoto_sp '".$_POST['status']."
-					','".$_POST['status']."
-					','".$_POST['especialidade']."
-					','".$_SESSION['u']."'");
 
 		if( $_POST['statusFoto'] == "true" ){
 			$_POST['statusFoto'] = "false";
 
-			$sql = ("updatePerfilFoto_sp '".$_POST['status']."
-						','".$_POST['status']."
-						','".$_POST['especialidade']."
-						',img/null.png'
-						','".$_SESSION['u']."'");
+			$sql = ("updatePerfilFoto_sp '::status','::espec',img/null.png','::user'");
+		}else{
+			$sql = ("updatePerfilSemFoto_sp '::status','::espec','::user'");
 		}
 	}
+
+	$sql = str_replace('::status', $_POST['status']       , $sql);
+	$sql = str_replace('::espec' , $_POST['especialidade'], $sql);
+	$sql = str_replace('::foto'  , $save_file_name        , $sql);
+	$sql = str_replace('::user'  , $_SESSION['u']         , $sql);
 
 	sqlsrv_query($conexao,$sql);
 	

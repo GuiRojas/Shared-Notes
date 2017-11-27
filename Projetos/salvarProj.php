@@ -48,7 +48,13 @@
 
 		$projPostado = $projPostado+1;
 
-			$sql = ("insertProj_sp '".$_POST['titulo']."', '".$_POST['descricao']."', '" . $_POST['nota']. "', '".$_SESSION['u']."' , '" . $save_file_name. "'");
+		$sql = ("insertProj_sp '::titulo', '::desc', '::nota', '::user' , '::foto'");
+
+		$sql = str_replace('::titulo', $_POST['titulo']    , $sql);
+		$sql = str_replace('::desc'  , $_POST['descricao'] , $sql);
+		$sql = str_replace('::nota'  , $_POST['nota']      , $sql);
+		$sql = str_replace('::user'  , $_SESSION['u']      , $sql);
+		$sql = str_replace('::foto'  , $save_file_name     , $sql);
 
 		sqlsrv_query($conexao,$sql);
 

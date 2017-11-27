@@ -46,7 +46,9 @@
 				if(!(validate_email($_POST['email'])))
 					echo "Email inválido!";
 				else{
-					$sql = ("mudarEmail_sp '".$_SESSION['u']."','".$_POST['email']."'");
+					$sql = ("mudarEmail_sp '::user','::email'");
+					$sql = str_replace('::user',$_SESSION['u'],$sql);
+					$sql = str_replace('::email',$_POST['email'],$sql);
 
 					$status = sqlsrv_query($conexao,$sql);
 					if($status){
@@ -68,7 +70,9 @@
 
 							if(testPassword(htmlspecialchars($_POST['senha_nova']))>1){
 
-								$sql=("login_sp '".$_SESSION['u']."'");
+								$sql = ("login_sp '::user'");
+								$sql = str_replace('::user', $_SESSION['u'], $sql);
+
 								$status=sqlsrv_query($conexao,$sql);
 
 								if($dados=sqlsrv_fetch_array($status)){
@@ -81,7 +85,9 @@
 														'cost'=>10
 													 ));
 
-										$sql = ("mudarSenha_sp '".$_SESSION['u']."','$stored_pass'");
+										$sql = ("mudarSenha_sp '::user','$stored_pass'");
+										$sql = str_replace('::user', $_SESSION['u'], $sql);
+										
 										$status=sqlsrv_query($conexao,$sql);
 				
 										if($status){

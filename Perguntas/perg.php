@@ -95,7 +95,7 @@
 						$user  = htmlspecialchars($_SESSION['u']);
 						$texto = htmlspecialchars($_POST['texto']);
 
-						$sql = "insert into resposta values('$titulo','$user','$texto',GETDATE())";		
+						$sql = "comentar_sp '$titulo','$user','$texto'";		
 
 						$status = sqlsrv_query($conexao,$sql);
 						if($status){

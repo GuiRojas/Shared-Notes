@@ -209,3 +209,13 @@ begin
 	INSERT INTO projeto VALUES 
 		(@titulo,@desc,@nota,@criador,@proj)
 end
+
+create proc comentar_sp
+@titulo varchar(30) = null,
+@user   varchar(25) = null,
+@texto  ntext       = null
+as
+begin
+	insert into resposta values(@titulo,@user,@texto,GETDATE())
+end
+
