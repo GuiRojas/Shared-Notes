@@ -71,7 +71,13 @@
 	$sql = str_replace('::foto'  , $save_file_name        , $sql);
 	$sql = str_replace('::user'  , $_SESSION['u']         , $sql);
 
-	sqlsrv_query($conexao,$sql);
+	if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+		sqlsrv_query($conexao,$sql);									
+	}else{
+		?>
+			<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
+		<?php
+	}	
 	
 	if ( isset($_SESSION['u']))
 		echo $_SESSION['u'];

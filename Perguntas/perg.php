@@ -95,18 +95,26 @@
 						$user  = htmlspecialchars($_SESSION['u']);
 						$texto = htmlspecialchars($_POST['texto']);
 
-						$sql = "comentar_sp '$titulo','$user','$texto'";		
+						$sql = "comentar_sp '$titulo','$user','$texto'";	
 
-						$status = sqlsrv_query($conexao,$sql);
-						if($status){
-							?>
-								<script type="text/javascript"> myAlert("Resposta feita!");</script>
-							<?php
+						if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+							$status = sqlsrv_query($conexao,$sql);
+							if($status){
+								?>
+									<script type="text/javascript"> myAlert("Resposta feita!");</script>
+								<?php
+							}else{
+								?>
+									<script type="text/javascript"> myAlert("Não foi possível adicionar a resposta.");</script>
+								<?php
+							}
 						}else{
 							?>
-								<script type="text/javascript"> myAlert("Não foi possível adicionar a resposta.");</script>
+								<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
 							<?php
-						}
+						}		
+
+						
 					}
 				?>
 

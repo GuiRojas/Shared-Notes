@@ -46,17 +46,24 @@
 
 									$sql = "cadastro_sp '$username', '$email', '$nome', '$senha'";
 
-									$status = sqlsrv_query( $conexao, $sql);
+									if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+										$status = sqlsrv_query( $conexao, $sql);
 
-									if($status){
-										session_start();
-										$_SESSION['u']=$username;
-										$_SESSION['firstTime']= true;
-										$_SESSION['email']=$email;
-										header('Location:../Home/index.php');
+										if($status){
+											session_start();
+											$_SESSION['u']=$username;
+											$_SESSION['firstTime']= true;
+											$_SESSION['email']=$email;
+											header('Location:../Home/index.php');
+										}else{
+											?> <script>myAlertLogin("Não foi possível realizar a inclusão")</script> <?php
+										}											
 									}else{
-										?> <script>myAlertLogin("Não foi possível realizar a inclusão")</script> <?php
+										?>
+											<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
+										<?php
 									}
+									
 								}else{
 									?> <script>myAlertLogin("Caracteres inválidos")</script> <?php
 								}

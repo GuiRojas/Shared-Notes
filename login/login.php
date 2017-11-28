@@ -26,26 +26,35 @@
 
 				$sql=("login_sp '$username'");
 
-				$status=sqlsrv_query($conexao,$sql);
 
-				if($dados=sqlsrv_fetch_array($status)){
-					$pass_verf=$dados[3];
-					$email=$dados[1];
-					if(password_verify($senha,$pass_verf)){
-						session_start();
-						$_SESSION['u'] = $username;
-						$_SESSION['email'] = $email;
-						header('Location:../Home/index.php');
+				if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+					$status=sqlsrv_query($conexao,$sql);
+
+					if($dados=sqlsrv_fetch_array($status)){
+						$pass_verf=$dados[3];
+						$email=$dados[1];
+						if(password_verify($senha,$pass_verf)){
+							session_start();
+							$_SESSION['u'] = $username;
+							$_SESSION['email'] = $email;
+							header('Location:../Home/index.php');
+						}else{
+							?>
+							<script>myAlertLogin("Senha errada");</script>
+							<?php
+						}
 					}else{
 						?>
-						<script>myAlertLogin("Senha errada");</script>
+						<script>myAlertLogin("Usuario inexistente")</script>
 						<?php
 					}
+
 				}else{
 					?>
-					<script>myAlertLogin("Usuario inexistente")</script>
+						<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
 					<?php
 				}
+				
 			}
 
 		?>

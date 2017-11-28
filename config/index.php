@@ -50,11 +50,16 @@
 					$sql = str_replace('::user',$_SESSION['u'],$sql);
 					$sql = str_replace('::email',$_POST['email'],$sql);
 
-					$status = sqlsrv_query($conexao,$sql);
-					if($status){
-						$_SESSION['email']=$_POST['email'];
+					if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+						$status = sqlsrv_query($conexao,$sql);
+						if($status){
+							$_SESSION['email']=$_POST['email'];
+						}
+					}else{
+						?>
+							<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
+						<?php
 					}
-	
 				}
 
 			}
@@ -88,18 +93,24 @@
 										$sql = ("mudarSenha_sp '::user','$stored_pass'");
 										$sql = str_replace('::user', $_SESSION['u'], $sql);
 										
-										$status=sqlsrv_query($conexao,$sql);
-				
-										if($status){
-											?>
-												<script type="text/javascript">myAlert("Senha atualizada com sucesso!")</script>
-											<?php
+										if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+											$status=sqlsrv_query($conexao,$sql);
+															
+											if($status){
+												?>
+													<script type="text/javascript">myAlert("Senha atualizada com sucesso!")</script>
+												<?php
+											}else{
+												?>
+													<script type="text/javascript">myAlert("Ocorreu um erro")</script>
+												<?php
+											}
+
 										}else{
 											?>
-												<script type="text/javascript">myAlert("Ocorreu um erro")</script>
+												<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
 											<?php
-										}
-
+										}									
 
 									}else{
 										?>

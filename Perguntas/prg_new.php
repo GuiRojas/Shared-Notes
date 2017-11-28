@@ -30,15 +30,21 @@
 
 			$sql = ("addPerg_sp '$titulo','$perg','$cat','$user'");
 
-			$status = sqlsrv_query($conexao,$sql);
+			if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+				$status = sqlsrv_query($conexao,$sql);
 
-			if($status){
-				$_SESSION['pergFeita'] = true;
-				header("Location:perg.php?query=$titulo");
-				//no futuro, redirecionar à pag da pergunta
+				if($status){
+					$_SESSION['pergFeita'] = true;
+					header("Location:perg.php?query=$titulo");
+					//no futuro, redirecionar à pag da pergunta
+				}else{
+					echo '<span class="campos" id="msgErro">Não foi possível incluir a pergunta</span><br>';
+				}
 			}else{
-				echo '<span class="campos" id="msgErro">Não foi possível incluir a pergunta</span><br>';
-			}
+				?>
+					<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
+				<?php
+			}				
 		}
 	?>
 		

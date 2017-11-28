@@ -56,9 +56,15 @@
 		$sql = str_replace('::user'  , $_SESSION['u']      , $sql);
 		$sql = str_replace('::foto'  , $save_file_name     , $sql);
 
-		sqlsrv_query($conexao,$sql);
+		if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+			sqlsrv_query($conexao,$sql);
 
-		$_SESSION['projPostado'] = true;
+			$_SESSION['projPostado'] = true;
+		}else{
+			?>
+				<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
+			<?php
+		}	
 
 		header("Location: pagProj.php?query=$_POST[titulo]");
 	}else{

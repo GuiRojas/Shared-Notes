@@ -102,16 +102,25 @@
 
 						$sql = "commentProj_sp '$tituloProj','$user','$texto'";		
 
-						$status = sqlsrv_query($conexao,$sql);
-						if($status){
-							?>
-								<script type="text/javascript"> myAlert("Comentário adicionado com sucesso!");</script>
-							<?php
+						if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+							$status = sqlsrv_query($conexao,$sql);
+							if($status){
+								?>
+									<script type="text/javascript"> myAlert("Comentário adicionado com sucesso!");</script>
+								<?php
+							}else{
+								?>
+									<script type="text/javascript"> myAlert("Não foi possível adicionar o comentário");</script>
+								<?php
+							}
 						}else{
 							?>
-								<script type="text/javascript"> myAlert("Não foi possível adicionar o comentário");</script>
+								<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
 							<?php
-						}
+						}	
+
+
+						
 					}
 				?>
 
