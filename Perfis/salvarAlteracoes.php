@@ -71,7 +71,7 @@
 	$sql = str_replace('::foto'  , $save_file_name        , $sql);
 	$sql = str_replace('::user'  , $_SESSION['u']         , $sql);
 
-	if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+	if((!strpos($sql,'DROP'))&&(!strpos($sql,'drop'))&&(!strpos($sql,'DELETE'))&&(!strpos($sql,'delete'))&&(!strpos($sql,'UPDATE'))&&(!strpos($sql,'update'))){
 		sqlsrv_query($conexao,$sql);									
 	}else{
 		?>

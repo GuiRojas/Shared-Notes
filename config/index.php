@@ -15,30 +15,6 @@
 	<div id="container">
 		<div id="areaFrm">
 
-			<form method="POST">
-				<div class="tituloProjNew"> <p class="tlt">Mudar email:</p></div>
-				<input type="text" name="email"
-				<?php
-					if(isset($_POST['email']))
-						echo "value=".$_POST['email']; 
-					else{
-						echo "value=".$_SESSION['email']; 
-					}
-				?> class="respProjNew" maxlength="100">
-
-				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p></div>
-				<input type="password" name="senha_ant" class="respProjNew">
-
-				<div class="tituloProjNew"> <p class="tlt">Senha nova:</p></div>
-				<input type="password" name="senha_nova" class="respProjNew">
-
-				<div class="tituloProjNew"> <p class="tlt">Confirmar senha:</p></div>
-				<input type="password" name="senha_verf" class="respProjNew">
-
-				<hr>
-				<input type="submit" name="vai" value="mudar" class="btnEnviar">
-			</form>
-
 			<?php
 			include '../Include/connect.inc.php';
 
@@ -50,7 +26,7 @@
 					$sql = str_replace('::user',$_SESSION['u'],$sql);
 					$sql = str_replace('::email',$_POST['email'],$sql);
 
-					if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+					if((!strpos($sql,'DROP'))&&(!strpos($sql,'drop'))){
 						$status = sqlsrv_query($conexao,$sql);
 						if($status){
 							$_SESSION['email']=$_POST['email'];
@@ -66,12 +42,12 @@
 
 			if((isset($_POST['senha_ant']))&&(isset($_POST['senha_nova']))&&(isset($_POST['senha_verf']))){
 
-				if(($_POST['senha_ant']=='')&&($_POST['senha_nova']=='')&&($_POST['senha_verf']=='')){
+				if(($_POST['senha_ant']=='')||($_POST['senha_nova']=='')||($_POST['senha_verf']=='')){
 					//  :)
 				}else{
 					if($_POST['senha_nova'] == $_POST['senha_verf']){
 
-						if($_POST['senha_ant'] == $_POST['senha_nova']){
+						if($_POST['senha_ant'] != $_POST['senha_nova']){
 
 							if(testPassword(htmlspecialchars($_POST['senha_nova']))>1){
 
@@ -93,7 +69,7 @@
 										$sql = ("mudarSenha_sp '::user','$stored_pass'");
 										$sql = str_replace('::user', $_SESSION['u'], $sql);
 										
-										if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+										if((!strpos($sql,'DROP'))&&(!strpos($sql,'drop'))&&(!strpos($sql,'DELETE'))&&(!strpos($sql,'delete'))&&(!strpos($sql,'UPDATE'))&&(!strpos($sql,'update'))){
 											$status=sqlsrv_query($conexao,$sql);
 															
 											if($status){
@@ -128,19 +104,41 @@
 
 						}else{
 							?>
-								<script type="text/javascript">myAlert("Senha nova inválida")</script>
+								<script type="text/javascript">myAlert("Senha nova igual a antiga")</script>
 							<?php
 						}
 
 					}else{
 						?>
-							<script type="text/javascript">myAlert("Senhas diferem")</script>
+							<script type="text/javascript">myAlert("Senhas difere da confirmação")</script>
 						<?php
 					}
 				}
 			}
 			
 			?>
+
+			<form method="POST">
+				<div class="tituloProjNew"> <p class="tlt">Mudar email:</p></div>
+				<input type="text" name="email"
+				<?php
+					{
+						echo "value=".$_SESSION['email']; 
+					}
+				?> class="respProjNew" maxlength="100">
+
+				<div class="tituloProjNew"> <p class="tlt">Senha antiga:</p></div>
+				<input type="password" name="senha_ant" class="respProjNew">
+
+				<div class="tituloProjNew"> <p class="tlt">Senha nova:</p></div>
+				<input type="password" name="senha_nova" class="respProjNew">
+
+				<div class="tituloProjNew"> <p class="tlt">Confirmar senha:</p></div>
+				<input type="password" name="senha_verf" class="respProjNew">
+
+				<hr>
+				<input type="submit" name="vai" value="mudar" class="btnEnviar">
+			</form>
 
 		</div>			
 	</div>

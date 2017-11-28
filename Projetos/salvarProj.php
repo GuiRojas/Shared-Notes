@@ -56,17 +56,17 @@
 		$sql = str_replace('::user'  , $_SESSION['u']      , $sql);
 		$sql = str_replace('::foto'  , $save_file_name     , $sql);
 
-		if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+		if((!strpos($sql,'DROP'))&&(!strpos($sql,'drop'))&&(!strpos($sql,'DELETE'))&&(!strpos($sql,'delete'))&&(!strpos($sql,'UPDATE'))&&(!strpos($sql,'update'))){
 			sqlsrv_query($conexao,$sql);
 
 			$_SESSION['projPostado'] = true;
+			header("Location: pagProj.php?query=$_POST[titulo]");
 		}else{
 			?>
 				<script type="text/javascript">myAlert("texto Inválido no campo preenchido")</script>
 			<?php
+			header("Location: projNew.php");
 		}	
-
-		header("Location: pagProj.php?query=$_POST[titulo]");
 	}else{
 		echo "Preencha todos os campos.";
 	}

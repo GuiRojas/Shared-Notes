@@ -5,6 +5,7 @@
 	?> 
 <body>
 	<?php
+		$titulo = 'Postar projeto';
 		include '../Include/top.inc.php';
 		include '../Include/side.inc.php';
 	?>

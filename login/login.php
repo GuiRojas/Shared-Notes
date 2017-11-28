@@ -27,7 +27,7 @@
 				$sql=("login_sp '$username'");
 
 
-				if((!strpos($sql,'DROP'))||(!strpos($sql,'drop'))){
+				if((!strpos($sql,'DROP'))&&(!strpos($sql,'drop'))&&(!strpos($sql,'DELETE'))&&(!strpos($sql,'delete'))&&(!strpos($sql,'UPDATE'))&&(!strpos($sql,'update'))){
 					$status=sqlsrv_query($conexao,$sql);
 
 					if($dados=sqlsrv_fetch_array($status)){
